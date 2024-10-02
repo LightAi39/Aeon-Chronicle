@@ -18,6 +18,7 @@ public class TurnPickerState : ICombatState
 
     public void Enter()
     {
+        Debug.Log("Picking next turn...");
         _turnController = CombatManager.Instance.turnController;
         var nextTurnDetails = _turnController.GetNextTurn();
         _isFriendly = nextTurnDetails.team == 0;
@@ -42,6 +43,6 @@ public class TurnPickerState : ICombatState
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Exiting turn picker.");
     }
 }

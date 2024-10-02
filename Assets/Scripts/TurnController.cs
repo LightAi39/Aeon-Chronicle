@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TurnController : MonoBehaviour
 {
-    private List<TurnOrderEntry> _turnOrder;
+    private List<TurnOrderEntry> _turnOrder = new();
     void Start()
     {
         // create the turn order list
