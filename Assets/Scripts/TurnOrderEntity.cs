@@ -97,42 +97,29 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        int damageTaken;
         if (state != State.Defending)
         {
-            int damageTaken = Convert.ToInt32(Mathf.Clamp(damage - def/2, 0, Mathf.Infinity));
-            int trueDamage = damageTaken - shield;
-            if (trueDamage > 0)
-            {
-                currentHp -=  trueDamage;
-                if (currentHp < 0)
-                {
-                    currentHp = 0;
-                }
-            }
-            shield -= damageTaken;
-            if (shield < 0)
-            {
-                shield = 0;
-            }
+            damageTaken = Convert.ToInt32(Mathf.Clamp(damage - def/2, 0, Mathf.Infinity));
         }
         else
         {
-            int damageTaken = Convert.ToInt32(Mathf.Clamp((damage - def/2)/2, 0, Mathf.Infinity));
-            int trueDamage = damageTaken - shield;
-            if (trueDamage > 0)
+            damageTaken = Convert.ToInt32(Mathf.Clamp((damage - def/2)/2, 0, Mathf.Infinity));
+        }
+        int trueDamage = damageTaken - shield;
+        if (trueDamage > 0)
+        {
+            currentHp -=  trueDamage;
+            if (currentHp < 0)
             {
-                currentHp -=  trueDamage;
-                if (currentHp < 0)
-                {
                     currentHp = 0;
-                }
-            }
-            shield -= damageTaken;
-            if (shield < 0)
-            {
-                shield = 0;
             }
         }
+        shield -= damageTaken;
+        if (shield < 0)
+        {
+            shield = 0;
+        }    
     }
 
     public void Defend()
