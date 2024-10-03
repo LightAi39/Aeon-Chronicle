@@ -88,7 +88,7 @@ public class TurnOrderEntity : MonoBehaviour
     public async void Attack(TurnOrderEntity entity)
     {
         entity.GetTargeted();
-        await Task.Delay(500);
+        await Task.Delay(1000);
         entity.TakeDamage(this.atk);
         await Task.Delay(2000);
         entity.GetUntargeted();
@@ -104,6 +104,10 @@ public class TurnOrderEntity : MonoBehaviour
             if (trueDamage > 0)
             {
                 currentHp -=  trueDamage;
+                if (currentHp < 0)
+                {
+                    currentHp = 0;
+                }
             }
             shield -= damageTaken;
             if (shield < 0)
@@ -118,6 +122,10 @@ public class TurnOrderEntity : MonoBehaviour
             if (trueDamage > 0)
             {
                 currentHp -=  trueDamage;
+                if (currentHp < 0)
+                {
+                    currentHp = 0;
+                }
             }
             shield -= damageTaken;
             if (shield < 0)
