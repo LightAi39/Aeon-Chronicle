@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7a60895dc8c641aff0bf0e023b091, type: 3}
   m_Name: Dps Character
   m_EditorClassIdentifier: 
-  name: 
-  maxHp: 10
-  currentHp: 10
-  maxSp: 0
-  currentSp: 0
-  atk: 0
-  def: 0
+  name: Swordfighter
+  maxHp: 20
+  currentHp: 20
+  maxSp: 12
+  currentSp: 12
+  shield: 0
+  atk: 8
+  def: 5
   state: 0
-  skills: []
+  skills:
+  - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}

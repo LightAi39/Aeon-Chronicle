@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class Tank : MonoBehaviour
 {
-    public Enemy enemy;
-    public Skeleton()
+    public Character character;
+    void Awake()
     {
-        enemy.name = "Skeleton";
+        character.name = "Paladin";
     }
     void Start()
     {
