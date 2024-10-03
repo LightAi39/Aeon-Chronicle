@@ -6,6 +6,7 @@ using UnityEngine;
 public class TurnController : MonoBehaviour
 {
     private List<TurnOrderEntry> _turnOrder = new();
+    
     void Awake()
     {
         // create the turn order list
@@ -18,7 +19,7 @@ public class TurnController : MonoBehaviour
                 currentDelay = entity.startDelay,
             });
         }
-
+        
         SortList();
     }
 

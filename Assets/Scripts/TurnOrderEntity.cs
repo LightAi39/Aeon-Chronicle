@@ -38,6 +38,7 @@ public class TurnOrderEntity : MonoBehaviour
     
     private bool isActiveTurn = false;
     private bool isTargeted = false;
+    private bool died = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -53,11 +54,35 @@ public class TurnOrderEntity : MonoBehaviour
             def = character.def;
             skills = character.skills;
         }
+
+        CombatManager.Instance.TargetChanged += CheckTargeting;
     }
     
     void Update()
     {
         hpTextBox.text = currentHp.ToString();
+        
+        turnIndicator.color = isActiveTurn ? Color.white : Color.red;
+        turnIndicator.enabled = isActiveTurn || isTargeted;
+
+        if (!died && currentHp == 0)
+        {
+            transform.position -= Vector3.down * 6.8f;
+            transform.Rotate(75f, 0f, 0f);
+            died = true;
+        }
+    }
+
+    public void CheckTargeting()
+    {
+        if (team == 1 && CombatManager.Instance.targetingManager.IsActivelyTargeting)
+        {
+            isTargeted = CombatManager.Instance.targetingManager.TargetedEnemy.Equals(this);
+        }
+        else if (team == 1)
+        {
+            isTargeted = false;
+        }
         
         turnIndicator.color = isActiveTurn ? Color.white : Color.red;
         turnIndicator.enabled = isActiveTurn || isTargeted;
@@ -87,12 +112,21 @@ public class TurnOrderEntity : MonoBehaviour
     
     public async void Attack(TurnOrderEntity entity)
     {
-        entity.GetTargeted();
-        await Task.Delay(1000);
-        entity.TakeDamage(this.atk);
-        await Task.Delay(2000);
-        entity.GetUntargeted();
-        EndTurn(); // temp
+        if (team == 1) // temp, for enemy AI
+        {
+            entity.GetTargeted();
+            await Task.Delay(1000);
+            entity.TakeDamage(this.atk);
+            await Task.Delay(500);
+            entity.GetUntargeted();
+            EndTurn(); // temp
+        }
+        else
+        {
+            entity.TakeDamage(this.atk);
+            EndTurn(); // temp
+        }
+        
     }
 
     public void TakeDamage(int damage)

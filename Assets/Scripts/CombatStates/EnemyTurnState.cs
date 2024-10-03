@@ -17,11 +17,19 @@ public class EnemyTurnState : ICombatState
     public void Enter()
     {
         Debug.Log("Enemy Turn Start");
-        // TODO: handle AI
-        _entity.StartTurn();
+        if (_entity.currentHp == 0)
+        {
+            // TODO: handle death
+            _entity.EndTurn();
+        }
+        else
+        {
+            // TODO: handle AI
+            _entity.StartTurn();
         
-        // placeholder logic
-        _entity.Attack(_entity.EntityToAttackTemp);
+            // placeholder logic
+            _entity.Attack(_entity.EntityToAttackTemp);
+        }
     }
 
     public void Execute()

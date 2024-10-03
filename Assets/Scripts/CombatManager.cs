@@ -10,6 +10,7 @@ public class CombatManager : MonoBehaviour
     
     public CombatSequenceController combatSequenceController;
     public TurnController turnController;
+    public TargetingManager targetingManager;
     
     void Awake()
     {
@@ -18,6 +19,7 @@ public class CombatManager : MonoBehaviour
 
     public event UnityAction EntityCompletedAction;
     public event UnityAction CombatStateChanged;
+    public event UnityAction TargetChanged; 
 
     public void DoCombatStateChanged()
     {
@@ -27,5 +29,10 @@ public class CombatManager : MonoBehaviour
     public void DoEntityCompletedAction()
     {
         EntityCompletedAction?.Invoke();
+    }
+
+    public void DoTargetChanged()
+    {
+        TargetChanged?.Invoke();
     }
 }
