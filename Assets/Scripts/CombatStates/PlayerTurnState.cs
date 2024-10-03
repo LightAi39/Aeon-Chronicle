@@ -6,23 +6,27 @@ using UnityEngine;
 public class PlayerTurnState : ICombatState
 {
     private readonly CombatSequenceController _controller;
-    private readonly int _characterIndex;
+    private readonly TurnOrderEntity _entity;
 
-    public PlayerTurnState(CombatSequenceController combatSequenceController, int characterIndex)
+    public PlayerTurnState(CombatSequenceController combatSequenceController, TurnOrderEntity entity)
     {
         _controller = combatSequenceController;
-        _characterIndex = characterIndex;
+        _entity = entity;
     }
     
     public void Enter()
     {
         Debug.Log("Player Turn Start");
         // TODO: handle initialization of UI or player actions
+        _entity.StartTurn();
+        
+        // placeholder logic
+        _entity.Attack(_entity.EntityToAttackTemp);
     }
 
     public void Execute()
     {
-        if (_controller.IsPlayerActionComplete())
+        if (_controller.IsEntityActionComplete())
         {
             _controller.ChangeState(new ActionState(_controller));
         }

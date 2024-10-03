@@ -9,7 +9,7 @@ public class TurnPickerState : ICombatState
     private TurnController _turnController;
     private bool _isReady;
     private bool _isFriendly;
-    private int _characterIndex;
+    private TurnOrderEntity _character;
 
     public TurnPickerState(CombatSequenceController combatSequenceController)
     {
@@ -22,7 +22,7 @@ public class TurnPickerState : ICombatState
         _turnController = CombatManager.Instance.turnController;
         var nextTurnDetails = _turnController.GetNextTurn();
         _isFriendly = nextTurnDetails.team == 0;
-        _characterIndex = nextTurnDetails.characterIndex;
+        _character = nextTurnDetails.entity;
         _isReady = true;
     }
 
@@ -32,11 +32,11 @@ public class TurnPickerState : ICombatState
         {
             if (_isFriendly)
             {
-                _controller.ChangeState(new PlayerTurnState(_controller, _characterIndex));
+                _controller.ChangeState(new PlayerTurnState(_controller, _character));
             }
             else
             {
-                _controller.ChangeState(new EnemyTurnState(_controller, _characterIndex));
+                _controller.ChangeState(new EnemyTurnState(_controller, _character));
             }
         }
     }
