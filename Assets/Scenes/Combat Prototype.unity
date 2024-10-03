@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715d2199a38d1b249ba24d1d6ea5176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 4644ad337329c824f90bafb0df8acd58, type: 2}
 --- !u!1 &683583904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8050105824119901614, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728b3ac103b1fce42986e9790e549f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 3470b1475525fc841ad0b659c9d951d8, type: 2}
 --- !u!1 &745500301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8050105824119901614, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
@@ -493,8 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573c7d8a9ea9dc745950841a2d45a8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  name: Cleric
+  character: {fileID: 11400000, guid: 4bec04b17a62fe7459cd9d02f2439d36, type: 2}
 --- !u!1 &1131588517
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715d2199a38d1b249ba24d1d6ea5176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 0396d11b6bf649a45a394760ec3a9468, type: 2}
 --- !u!1 &1606531530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8050105824119901614, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
@@ -684,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715d2199a38d1b249ba24d1d6ea5176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 11400000, guid: d8d34392b3f56aa409e8a439185fa289, type: 2}
 --- !u!1001 &1816633988
 PrefabInstance:
   m_ObjectHideFlags: 0
