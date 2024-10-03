@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7a60895dc8c641aff0bf0e023b091, type: 3}
   m_Name: Enemy Brute
   m_EditorClassIdentifier: 
-  name: Swordfighter
+  name: Brute
   maxHp: 20
-  currentHp: 20
-  maxSp: 12
-  currentSp: 12
-  shield: 0
-  atk: 8
-  def: 5
-  state: 0
+  maxSp: 0
+  atk: 3
+  def: 3
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
