@@ -7,7 +7,7 @@ public class Skill : MonoBehaviour
     public string name;
     public Skilltype skilltype;
     public string description;
-    public int value;
+    public int value; //multiplier for stat for now
     public int spCost;
     public enum Skilltype {
         Damage,

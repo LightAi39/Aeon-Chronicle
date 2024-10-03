@@ -10,7 +10,7 @@ public class Dps : MonoBehaviour
     public Dps()
     {
         character.name = "Swordfighter";
-        Skill skill = new Skill("Slash", "Slashes the enemy", Skill.Skilltype.Damage, 15, 5);
+        Skill skill = new Skill("Slash", "Slashes the enemy", Skill.Skilltype.Damage, 2, 5);
         character.skills.Add(skill);
     }
 
