@@ -9,52 +9,21 @@ public class TurnController : MonoBehaviour
     void Awake()
     {
         // create the turn order list
-        _turnOrder.Add(new TurnOrderEntry()
+        var allEntities = FindObjectsOfType<TurnOrderEntity>();
+        foreach (var entity in allEntities)
         {
-            team = 0,
-            characterIndex = 0,
-            currentDelay = 0
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 0,
-            characterIndex = 1,
-            currentDelay = 10
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 0,
-            characterIndex = 2,
-            currentDelay = 20
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 0,
-            characterIndex = 3,
-            currentDelay = 50
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 1,
-            characterIndex = 0,
-            currentDelay = 30
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 1,
-            characterIndex = 2,
-            currentDelay = 40
-        });
-        _turnOrder.Add(new TurnOrderEntry()
-        {
-            team = 1,
-            characterIndex = 3,
-            currentDelay = 60
-        });
+            _turnOrder.Add(new TurnOrderEntry()
+            {
+                entity = entity,
+                currentDelay = entity.startDelay,
+            });
+        }
+
+        SortList();
     }
 
     // gets the next turn (and advances time to make the next turn 0 delay)
-    public (int team, int characterIndex) GetNextTurn()
+    public TurnOrderEntry GetNextTurn()
     {
         if (_turnOrder[0].currentDelay > 0)
         {
@@ -64,15 +33,14 @@ public class TurnController : MonoBehaviour
                 turn.currentDelay -= delayToRemove;
             }
         }
-        
-        return (_turnOrder[0].team, _turnOrder[0].characterIndex);
+
+        return _turnOrder[0];
     }
 
     public void FinishCurrentTurn()
     {
         Debug.Log("Forwarding turn");
-        //TODO: make delay amount not hardcoded
-        int delayAmount = 60;
+        int delayAmount = _turnOrder[0].entity.delayPerTurn;
 
         _turnOrder[0].currentDelay = delayAmount;
         SortList();
@@ -86,7 +54,8 @@ public class TurnController : MonoBehaviour
 
 public class TurnOrderEntry
 {
-    public int team;
-    public int characterIndex;
+    public TurnOrderEntity entity;
+    public int team => entity.team;
+    public int characterIndex => entity.characterIndex;
     public int currentDelay;
 }

@@ -6,7 +6,15 @@ using UnityEngine;
 public class CombatSequenceController : MonoBehaviour
 {
     private ICombatState _currentState;
-    
+
+    private bool _entityCompletedAction = false;
+    private bool _actionComplete = true;
+
+    void Awake()
+    {
+        CombatManager.Instance.EntityCompletedAction += () => _entityCompletedAction = true;
+        CombatManager.Instance.CombatStateChanged += SetActionsToIncomplete;
+    }
     
     void Start()
     {
@@ -22,26 +30,26 @@ public class CombatSequenceController : MonoBehaviour
     public void ChangeState(ICombatState newState)
     {
         _currentState.Exit();
+        CombatManager.Instance.DoCombatStateChanged();
         _currentState = newState;
         _currentState.Enter();
     }
     
     // condition checks
-    public bool IsPlayerActionComplete()
+    public bool IsEntityActionComplete()
     {
-        return true;
-        //TODO: real logic
+        return _entityCompletedAction;
     }
-
-    public bool IsEnemyActionComplete()
-    {
-        return true;
-        //TODO: real logic
-    }
-
+    
     public bool IsActionComplete()
     {
-        return true;
-        //TODO: real logic
+        return _actionComplete;
     }
+
+    public void SetActionsToIncomplete()
+    {
+        _entityCompletedAction = false;
+    }
+    
+    
 }
