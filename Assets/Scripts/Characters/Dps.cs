@@ -6,14 +6,10 @@ using UnityEngine;
 public class Dps : MonoBehaviour
 {
     public Character character;
-
-    public Dps()
+    void Awake()
     {
         character.name = "Swordfighter";
-        Skill skill = new Skill("Slash", "Slashes the enemy", Skill.Skilltype.Damage, 2, 5);
-        character.skills.Add(skill);
     }
-
     void Start()
     {
         

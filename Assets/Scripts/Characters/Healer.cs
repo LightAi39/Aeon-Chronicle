@@ -6,11 +6,9 @@ using UnityEngine;
 public class Healer : MonoBehaviour
 {
     public Character character;
-    public Healer()
+    void Awake()
     {
         character.name = "Cleric";
-        Skill skill = new Skill("Heal", "Heals an ally.", Skill.Skilltype.Healing, 2, 6);
-        character.skills.Add(skill);
     }
     void Start()
     {

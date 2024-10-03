@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7a60895dc8c641aff0bf0e023b091, type: 3}
   m_Name: Healer Character
   m_EditorClassIdentifier: 
-  hp: 0
-  sp: 0
-  atk: 0
-  def: 0
-  skills: []
+  name: Cleric
+  maxHp: 15
+  currentHp: 15
+  maxSp: 24
+  currentSp: 24
+  shield: 0
+  atk: 6
+  def: 4
+  state: 0
+  skills:
+  - {fileID: 11400000, guid: cb072da4cc2579345a8e4688099a575d, type: 2}

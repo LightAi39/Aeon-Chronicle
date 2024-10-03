@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
+[CreateAssetMenu]
+public class Skill : ScriptableObject
 {
     public string name;
     public Skilltype skilltype;
@@ -13,14 +14,6 @@ public class Skill : MonoBehaviour
         Damage,
         Defense,
         Healing
-    }
-    public Skill(string name, string description, Skilltype skilltype, int value, int spCost)
-    {
-        this.name = name;
-        this.description = description;
-        this.skilltype = skilltype;
-        this.value = value;
-        this.spCost = spCost;
     }
     void Start()
     {

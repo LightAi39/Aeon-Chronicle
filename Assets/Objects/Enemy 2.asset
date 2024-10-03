@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 698a15d4179004c4c93d546695548dc1, type: 3}
-  m_Name: Enemy 2
+  m_Name: Skeleton
   m_EditorClassIdentifier: 
-  hp: 0
+  maxHp: 0
+  currentHp: 0
   atk: 0
   def: 0

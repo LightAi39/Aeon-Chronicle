@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7a60895dc8c641aff0bf0e023b091, type: 3}
   m_Name: Tank Character
   m_EditorClassIdentifier: 
-  hp: 0
-  sp: 0
-  atk: 0
-  def: 0
-  skills: []
+  name: Paladin
+  maxHp: 34
+  currentHp: 34
+  maxSp: 16
+  currentSp: 16
+  shield: 0
+  atk: 3
+  def: 8
+  state: 0
+  skills:
+  - {fileID: 11400000, guid: 352d0d3de9c138546bddadce2ee5d718, type: 2}
