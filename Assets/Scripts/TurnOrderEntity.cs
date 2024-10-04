@@ -33,6 +33,7 @@ public class TurnOrderEntity : MonoBehaviour
     
     [Space(20)]
     public TextMeshPro hpTextBox;
+    public TextMeshPro shieldTextBox;
     public TextMeshPro turnIndicator;
     public TextMeshPro defenseIndicator;
     public TurnOrderEntity EntityToAttackTemp;
@@ -62,6 +63,7 @@ public class TurnOrderEntity : MonoBehaviour
     void Update()
     {
         hpTextBox.text = currentHp.ToString();
+        shieldTextBox.text = shield != 0 ? "+" + shield : "";
         
         turnIndicator.color = isActiveTurn ? Color.white : Color.red;
         turnIndicator.enabled = isActiveTurn || isTargeted;
