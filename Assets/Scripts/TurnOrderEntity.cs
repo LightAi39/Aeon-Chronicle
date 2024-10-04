@@ -180,7 +180,7 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseSkill(Skill skillUsed, TurnOrderEntity? enemy, TurnOrderEntity? actingEntity)
+    public void UseSkill(Skill skillUsed, TurnOrderEntity enemy/*, TurnOrderEntity? actingEntity*/)
     {
         switch(skillUsed.skilltype)
         {
@@ -194,6 +194,7 @@ public class TurnOrderEntity : MonoBehaviour
             GetHealed(skillUsed.value * atk); //use attack stat for healing for now
             break;
         }
+        EndTurn();
     }
 
     public void UseItem(TurnOrderEntity targetEntity/*, Item item*/) //hard coded as a healthpotion rn

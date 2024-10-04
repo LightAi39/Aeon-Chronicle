@@ -83,4 +83,14 @@ public class TargetingManager : MonoBehaviour
             teammate.Defend();
         }
     }
+
+    public void UseSkillWithCurrentTeammate()
+    {
+        if (IsActivelyTargeting)
+        {
+            var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
+
+            teammate.UseSkill(teammate.skills[0], TargetedEnemy);
+        }
+    }
 }

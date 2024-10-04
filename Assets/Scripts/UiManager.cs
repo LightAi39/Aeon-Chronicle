@@ -17,14 +17,21 @@ public class UiManager : MonoBehaviour
 
     public void ShowSkillPanel()
     {
-        skillPanel.SetActive(true);
-        itemPanel.SetActive(false);
+        if (CombatManager.Instance.targetingManager.IsActivelyTargeting)
+        {
+            skillPanel.SetActive(!skillPanel.activeSelf);
+            itemPanel.SetActive(false);
+        }
+        
     }
 
     public void ShowItemPanel()
     {
-        skillPanel.SetActive(false);
-        itemPanel.SetActive(true);
+        if (CombatManager.Instance.targetingManager.IsActivelyTargeting)
+        {
+            skillPanel.SetActive(false);
+            itemPanel.SetActive(!itemPanel.activeSelf);
+        }
     }
 
     public void Start()
@@ -76,5 +83,13 @@ public class UiManager : MonoBehaviour
             img.color = entity.team == 0 ? Color.cyan : Color.red;
             orderPanelEntries.Add(newObject);
         }
+        
+        // TODO: this is temp
+        // this is to update the skill/item info
+        skillPanel.SetActive(false);
+        itemPanel.SetActive(false);
+
+        var buttonText = skillPanel.GetComponentInChildren<TextMeshProUGUI>();
+        buttonText.text = CombatManager.Instance.turnController.GetNextTurn().entity.skills[0].name;
     }
 }
