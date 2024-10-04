@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Brute
   maxHp: 20
   maxSp: 0
-  atk: 3
+  atk: 6
   def: 3
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}

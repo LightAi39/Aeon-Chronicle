@@ -33,11 +33,14 @@ public class TurnOrderEntity : MonoBehaviour
     
     [Space(20)]
     public TextMeshPro hpTextBox;
+    public TextMeshPro shieldTextBox;
     public TextMeshPro turnIndicator;
+    public TextMeshPro defenseIndicator;
     public TurnOrderEntity EntityToAttackTemp;
     
     private bool isActiveTurn = false;
     private bool isTargeted = false;
+    private bool died = false;
     
     // Start is called before the first frame update
     void Awake()
@@ -53,11 +56,38 @@ public class TurnOrderEntity : MonoBehaviour
             def = character.def;
             skills = character.skills;
         }
+
+        CombatManager.Instance.TargetChanged += CheckTargeting;
     }
     
     void Update()
     {
         hpTextBox.text = currentHp.ToString();
+        shieldTextBox.text = shield != 0 ? "+" + shield : "";
+        
+        turnIndicator.color = isActiveTurn ? Color.white : Color.red;
+        turnIndicator.enabled = isActiveTurn || isTargeted;
+
+        if (!died && currentHp == 0)
+        {
+            transform.position -= Vector3.down * 6.8f;
+            transform.Rotate(75f, 0f, 0f);
+            died = true;
+        }
+
+        defenseIndicator.enabled = state == State.Defending;
+    }
+
+    public void CheckTargeting()
+    {
+        if (team == 1 && CombatManager.Instance.targetingManager.IsActivelyTargeting)
+        {
+            isTargeted = CombatManager.Instance.targetingManager.TargetedEnemy.Equals(this);
+        }
+        else if (team == 1)
+        {
+            isTargeted = false;
+        }
         
         turnIndicator.color = isActiveTurn ? Color.white : Color.red;
         turnIndicator.enabled = isActiveTurn || isTargeted;
@@ -67,6 +97,7 @@ public class TurnOrderEntity : MonoBehaviour
     public void StartTurn()
     {
         isActiveTurn = true;
+        state = State.Idle;
     }
 
     public void GetTargeted()
@@ -87,49 +118,54 @@ public class TurnOrderEntity : MonoBehaviour
     
     public async void Attack(TurnOrderEntity entity)
     {
-        entity.GetTargeted();
-        await Task.Delay(500);
-        entity.TakeDamage(this.atk);
-        await Task.Delay(2000);
-        entity.GetUntargeted();
-        EndTurn(); // temp
+        if (team == 1) // temp, for enemy AI
+        {
+            entity.GetTargeted();
+            await Task.Delay(1000);
+            entity.TakeDamage(this.atk);
+            await Task.Delay(500);
+            entity.GetUntargeted();
+            EndTurn(); // temp
+        }
+        else
+        {
+            entity.TakeDamage(this.atk);
+            EndTurn(); // temp
+        }
+        
     }
 
     public void TakeDamage(int damage)
     {
+        int damageTaken;
         if (state != State.Defending)
         {
-            int damageTaken = Convert.ToInt32(Mathf.Clamp(damage - def/2, 0, Mathf.Infinity));
-            int trueDamage = damageTaken - shield;
-            if (trueDamage > 0)
-            {
-                currentHp -=  trueDamage;
-            }
-            shield -= damageTaken;
-            if (shield < 0)
-            {
-                shield = 0;
-            }
+            damageTaken = Convert.ToInt32(Mathf.Clamp(damage - def/2, 0, Mathf.Infinity));
         }
         else
         {
-            int damageTaken = Convert.ToInt32(Mathf.Clamp((damage - def/2)/2, 0, Mathf.Infinity));
-            int trueDamage = damageTaken - shield;
-            if (trueDamage > 0)
+            damageTaken = Convert.ToInt32(Mathf.Clamp((damage - def/2)/2, 0, Mathf.Infinity));
+        }
+        int trueDamage = damageTaken - shield;
+        if (trueDamage > 0)
+        {
+            currentHp -=  trueDamage;
+            if (currentHp < 0)
             {
-                currentHp -=  trueDamage;
-            }
-            shield -= damageTaken;
-            if (shield < 0)
-            {
-                shield = 0;
+                    currentHp = 0;
             }
         }
+        shield -= damageTaken;
+        if (shield < 0)
+        {
+            shield = 0;
+        }    
     }
 
     public void Defend()
     {
-        state = State.Defending; //idk fix way to get out tomorrow (like when getting a turn set the state to idle)
+        state = State.Defending; // gets set to idle in the start of the next turn
+        EndTurn();
     }
 
     public void GetHealed(int healing)
@@ -146,7 +182,7 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseSkill(Skill skillUsed, TurnOrderEntity? enemy, TurnOrderEntity? actingEntity)
+    public void UseSkill(Skill skillUsed, TurnOrderEntity enemy/*, TurnOrderEntity? actingEntity*/)
     {
         switch(skillUsed.skilltype)
         {
@@ -160,6 +196,7 @@ public class TurnOrderEntity : MonoBehaviour
             GetHealed(skillUsed.value * atk); //use attack stat for healing for now
             break;
         }
+        EndTurn();
     }
 
     public void UseItem(TurnOrderEntity targetEntity/*, Item item*/) //hard coded as a healthpotion rn

@@ -18,10 +18,9 @@ public class PlayerTurnState : ICombatState
     {
         Debug.Log("Player Turn Start");
         // TODO: handle initialization of UI or player actions
+        // TODO; remove the stupid
+        CombatManager.Instance.targetingManager.ActivateTargeting();
         _entity.StartTurn();
-        
-        // placeholder logic
-        _entity.Attack(_entity.EntityToAttackTemp);
     }
 
     public void Execute()
@@ -35,5 +34,7 @@ public class PlayerTurnState : ICombatState
     public void Exit()
     {
         Debug.Log("Player Turn End");
+        // TODO; remove the stupid
+        CombatManager.Instance.targetingManager.DeactivateTargeting();
     }
 }
