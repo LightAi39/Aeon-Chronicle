@@ -73,4 +73,14 @@ public class TargetingManager : MonoBehaviour
         IsActivelyTargeting = false;
         CombatManager.Instance.DoTargetChanged();
     }
+
+    public void DefendWithCurrentTeammate()
+    {
+        if (IsActivelyTargeting)
+        {
+            var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
+
+            teammate.Defend();
+        }
+    }
 }

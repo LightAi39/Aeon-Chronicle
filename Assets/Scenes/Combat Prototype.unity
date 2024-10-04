@@ -394,6 +394,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 727347630735150388, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4839994274768966834, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8568341967264232008, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -714,6 +717,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 727347630735150388, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4839994274768966834, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8568341967264232008, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
@@ -1067,7 +1073,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 376727695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1222461188}
+        m_TargetAssemblyTypeName: TargetingManager, Assembly-CSharp
+        m_MethodName: DefendWithCurrentTeammate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &376727695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,6 +2133,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 727347630735150388, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4839994274768966834, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8568341967264232008, guid: 356459bf17c6bea4d9a16dae4d33eb02, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -3072,6 +3093,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7495031179235432812, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2326844370605056078, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8422140186011115201, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -3924,6 +3948,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7495031179235432812, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2326844370605056078, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8422140186011115201, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -4000,6 +4027,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7495031179235432812, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2326844370605056078, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8422140186011115201, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}

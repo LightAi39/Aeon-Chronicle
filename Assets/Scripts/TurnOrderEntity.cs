@@ -34,6 +34,7 @@ public class TurnOrderEntity : MonoBehaviour
     [Space(20)]
     public TextMeshPro hpTextBox;
     public TextMeshPro turnIndicator;
+    public TextMeshPro defenseIndicator;
     public TurnOrderEntity EntityToAttackTemp;
     
     private bool isActiveTurn = false;
@@ -71,6 +72,8 @@ public class TurnOrderEntity : MonoBehaviour
             transform.Rotate(75f, 0f, 0f);
             died = true;
         }
+
+        defenseIndicator.enabled = state == State.Defending;
     }
 
     public void CheckTargeting()
@@ -92,6 +95,7 @@ public class TurnOrderEntity : MonoBehaviour
     public void StartTurn()
     {
         isActiveTurn = true;
+        state = State.Idle;
     }
 
     public void GetTargeted()
@@ -158,7 +162,8 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void Defend()
     {
-        state = State.Defending; //idk fix way to get out tomorrow (like when getting a turn set the state to idle)
+        state = State.Defending; // gets set to idle in the start of the next turn
+        EndTurn();
     }
 
     public void GetHealed(int healing)
