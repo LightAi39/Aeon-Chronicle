@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TurnController : MonoBehaviour
 {
+    public List<TurnOrderEntry> TurnOrder => _turnOrder;
     private List<TurnOrderEntry> _turnOrder = new();
     
     void Awake()
