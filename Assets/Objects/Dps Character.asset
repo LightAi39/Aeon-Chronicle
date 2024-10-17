@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Swordfighter
   maxHp: 20
-  currentHp: 20
   maxSp: 12
-  currentSp: 12
-  shield: 0
-  atk: 8
-  def: 5
-  state: 0
+  strength: 8
+  resilience: 4
+  intelligence: 1
+  mind: 2
+  agility: 7
+  critChance: 25
+  critDamage: 50
+  damageType: 0
+  element: 4
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
