@@ -55,6 +55,7 @@ public class TurnOrderEntity : MonoBehaviour
     public TextMeshPro shieldTextBox;
     public TextMeshPro turnIndicator;
     public TextMeshPro defenseIndicator;
+    public StatusbarController statusbar;
     public TurnOrderEntity EntityToAttackTemp;
     
     private bool isActiveTurn = false;
@@ -89,12 +90,42 @@ public class TurnOrderEntity : MonoBehaviour
 
         if (!died && currentHp == 0)
         {
-            transform.position -= Vector3.down * 6.8f;
-            transform.Rotate(75f, 0f, 0f);
+            //transform.position -= Vector3.down * 6.8f;
+            //transform.Rotate(75f, 0f, 0f);
+            StartCoroutine(Death());
             died = true;
         }
 
         defenseIndicator.enabled = state == State.Defending;
+    }
+
+    private IEnumerator Death()
+    {
+        Vector3 startPosition = transform.localPosition;
+        Vector3 targetPosition = startPosition + Vector3.up * 7f; // Moving down by 6.8 units
+        Quaternion startRotation = transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(75f, 180f, 0f); // Target rotation
+
+        float elapsedTime = 0f;
+        float transitionDuration = 1f; // Duration for the transition, adjust as needed
+
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Calculate the interpolation factor
+            float t = Mathf.Clamp01(elapsedTime / transitionDuration);
+
+            // Smoothly interpolate the position and rotation
+            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, t);
+            transform.localRotation = Quaternion.Lerp(startRotation, targetRotation, t);
+
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure the final position and rotation are set
+        transform.position = targetPosition;
+        transform.rotation = targetRotation;
     }
 
     public void CheckTargeting()
@@ -179,16 +210,21 @@ public class TurnOrderEntity : MonoBehaviour
         {
             shield = 0;
         }    
+        
+        // set damage in healthbar here
+        statusbar.UpdateStatusbar(damageTaken);
     }
 
     public void Defend()
     {
+        statusbar.UpdateStatusbar(0);
         state = State.Defending; // gets set to idle in the start of the next turn
         EndTurn();
     }
 
     public void GetHealed(int healing)
     {
+        statusbar.UpdateStatusbar(0);
         currentHp += healing;
         if (currentHp > maxHp)
         {
@@ -198,11 +234,13 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void GetShield(int shielding)
     {
+        statusbar.UpdateStatusbar(0);
         shield = shielding;
     }
 
     public void UseSkill(Skill skillUsed, TurnOrderEntity enemy/*, TurnOrderEntity? actingEntity*/)
     {
+        statusbar.UpdateStatusbar(0);
         switch(skillUsed.skilltype)
         {
             case Skill.Skilltype.Damage:

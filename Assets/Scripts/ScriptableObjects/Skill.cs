@@ -15,13 +15,4 @@ public class Skill : ScriptableObject
         Defense,
         Healing
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }
