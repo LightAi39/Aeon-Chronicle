@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: Enemy Brute
   m_EditorClassIdentifier: 
   name: Brute
-  maxHp: 20
+  maxHp: 26
   maxSp: 0
-  atk: 6
-  def: 3
+  strength: 6
+  resilience: 4
+  intelligence: 1
+  mind: 1
+  agility: 4
+  critChance: 10
+  critDamage: 50
+  damageType: 0
+  element: 4
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}

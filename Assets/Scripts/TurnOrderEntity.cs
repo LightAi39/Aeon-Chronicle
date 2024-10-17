@@ -57,7 +57,8 @@ public class TurnOrderEntity : MonoBehaviour
     public TextMeshPro defenseIndicator;
     public StatusbarController statusbar;
     public TurnOrderEntity EntityToAttackTemp;
-    
+    public Character.DamageType damageType;
+    public Character.Element element;
     private bool isActiveTurn = false;
     private bool isTargeted = false;
     private bool died = false;
@@ -72,9 +73,23 @@ public class TurnOrderEntity : MonoBehaviour
             currentHp = character.maxHp;
             maxSp = character.maxSp;
             currentSp = character.maxSp;
-            strength = character.atk;
-            resilience = character.def;
+            strength = character.strength;
+            resilience = character.resilience;
+            intelligence = character.intelligence;
+            mind = character.mind;
+            agility = character.agility;
+            critChance = character.critChance;
+            critDamage = character.critDamage;
             skills = character.skills;
+            damageType = character.damageType;
+            element = character.element;
+            activeStrength = character.strength;
+            activeResilience = character.resilience;
+            activeIntelligence = character.intelligence;
+            activeMind = character.mind;
+            activeAgility = character.agility;
+            activeCritChance = character.critChance;
+            activeCritDamage = character.critDamage;          
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
@@ -172,46 +187,55 @@ public class TurnOrderEntity : MonoBehaviour
         {
             entity.GetTargeted();
             await Task.Delay(1000);
-            entity.TakeDamage(this.strength);
+            entity.TakeDamage(this.strength, damageType, element, 1f);
             await Task.Delay(500);
             entity.GetUntargeted();
             EndTurn(); // temp
         }
         else
         {
-            entity.TakeDamage(this.strength);
+            entity.TakeDamage(this.strength, damageType, element, 1f);
             EndTurn(); // temp
         }
         
     }
 
-    public void TakeDamage(int damage)
+    //element not relevant for now
+    public void TakeDamage(int damageStat, Character.DamageType damageType, Character.Element element, float powerModifier)
     {
-        int damageTaken;
-        if (state != State.Defending)
+        int defendingStat;
+        if (damageType == Character.DamageType.Magical)
         {
-            damageTaken = Convert.ToInt32(Mathf.Clamp(damage - resilience/2, 0, Mathf.Infinity));
+            defendingStat = activeMind;
         }
         else
         {
-            damageTaken = Convert.ToInt32(Mathf.Clamp((damage - resilience/2)/2, 0, Mathf.Infinity));
+            defendingStat = activeResilience;
         }
+
+        float defending = 1f; //no reduction
+        if(state == State.Defending)
+        {
+            defending = 0.5f; //halve damage
+        }
+        //damagetype/element modifiers to be added, as well as things like area modifiers
+        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending), 1, int.MaxValue);
+
         int trueDamage = damageTaken - shield;
         if (trueDamage > 0)
         {
-            currentHp -=  trueDamage;
+            currentHp -= trueDamage;
             if (currentHp < 0)
             {
-                    currentHp = 0;
+                currentHp = 0;
             }
         }
         shield -= damageTaken;
         if (shield < 0)
         {
             shield = 0;
-        }    
-        
-        // set damage in healthbar here
+        }
+
         statusbar.UpdateStatusbar(damageTaken);
     }
 
@@ -243,14 +267,17 @@ public class TurnOrderEntity : MonoBehaviour
         statusbar.UpdateStatusbar(0);
         switch(skillUsed.skilltype)
         {
-            case Skill.Skilltype.Damage:
-            enemy.TakeDamage(skillUsed.value * strength);
+            case Skill.Skilltype.PDamage:
+            enemy.TakeDamage(skillUsed.value * strength, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
+            break;
+            case Skill.Skilltype.MDamage:
+            enemy.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.Defense:
             GetShield(skillUsed.value * resilience);
             break;
             case Skill.Skilltype.Healing:
-            GetHealed(skillUsed.value * strength); //use attack stat for healing for now
+            GetHealed(skillUsed.value * mind); 
             break;
         }
         EndTurn();

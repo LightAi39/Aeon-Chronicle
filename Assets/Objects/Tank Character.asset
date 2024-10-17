@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Paladin
   maxHp: 34
-  currentHp: 34
   maxSp: 16
-  currentSp: 16
-  shield: 0
-  atk: 3
-  def: 8
-  state: 0
+  strength: 4
+  resilience: 8
+  intelligence: 3
+  mind: 4
+  agility: 3
+  critChance: 10
+  critDamage: 50
+  damageType: 1
+  element: 4
   skills:
   - {fileID: 11400000, guid: 352d0d3de9c138546bddadce2ee5d718, type: 2}

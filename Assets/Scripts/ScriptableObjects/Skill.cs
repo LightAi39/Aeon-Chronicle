@@ -10,8 +10,12 @@ public class Skill : ScriptableObject
     public string description;
     public int value; //multiplier for stat for now
     public int spCost;
+    public float powerModifier;
+    public Character.DamageType damageType;
+    public Character.Element element;
     public enum Skilltype {
-        Damage,
+        PDamage,
+        MDamage,
         Defense,
         Healing
     }

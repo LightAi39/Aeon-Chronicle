@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cleric
   maxHp: 15
-  currentHp: 15
   maxSp: 24
-  currentSp: 24
-  shield: 0
-  atk: 6
-  def: 4
-  state: 0
+  strength: 2
+  resilience: 3
+  intelligence: 6
+  mind: 9
+  agility: 5
+  critChance: 10
+  critDamage: 50
+  damageType: 2
+  element: 4
   skills:
   - {fileID: 11400000, guid: cb072da4cc2579345a8e4688099a575d, type: 2}
