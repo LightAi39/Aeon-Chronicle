@@ -40,7 +40,7 @@ public class StatusbarController : MonoBehaviour
         
         GameObject DamageTextInstance = Instantiate(damageTextPrefab, turnOrderEntity.transform);
         DamageTextInstance.transform.localPosition = new Vector3(14.18f, 6.38f, 4.2f);
-        DamageTextInstance.transform.GetChild(0).GetComponent<TextMeshPro>().SetText($"{damageTaken}");
+        DamageTextInstance.transform.GetChild(0).GetComponent<TextMeshPro>().SetText($"{(damageTaken < 0 ? "" : "+")}{damageTaken}");
         if (turnOrderEntity.team != 0)
         {
             DamageTextInstance.transform.rotation = Quaternion.Euler(0, 0, 0);

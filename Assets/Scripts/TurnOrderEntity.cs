@@ -236,7 +236,7 @@ public class TurnOrderEntity : MonoBehaviour
             shield = 0;
         }
 
-        statusbar.UpdateStatusbar(damageTaken);
+        statusbar.UpdateStatusbar(-damageTaken);
     }
 
     public void Defend()
@@ -248,7 +248,7 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void GetHealed(int healing)
     {
-        statusbar.UpdateStatusbar(0);
+        statusbar.UpdateStatusbar(healing);
         currentHp += healing;
         if (currentHp > maxHp)
         {
