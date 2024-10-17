@@ -83,6 +83,13 @@ public class TurnOrderEntity : MonoBehaviour
             skills = character.skills;
             damageType = character.damageType;
             element = character.element;
+            activeStrength = character.strength;
+            activeResilience = character.resilience;
+            activeIntelligence = character.intelligence;
+            activeMind = character.mind;
+            activeAgility = character.agility;
+            activeCritChance = character.critChance;
+            activeCritDamage = character.critDamage;          
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
@@ -212,7 +219,7 @@ public class TurnOrderEntity : MonoBehaviour
             defending = 0.5f; //halve damage
         }
         //damagetype/element modifiers to be added, as well as things like area modifiers
-        int damageTaken = Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending);
+        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending), 1, int.MaxValue);
 
         int trueDamage = damageTaken - shield;
         if (trueDamage > 0)
