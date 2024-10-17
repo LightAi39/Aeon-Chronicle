@@ -205,7 +205,31 @@ public class TurnOrderEntity : MonoBehaviour
         {
             defendingStat = activeResilience;
         }
-        
+
+        float defending = 1f; //no reduction
+        if(state == State.Defending)
+        {
+            defending = 0.5f; //halve damage
+        }
+        //damagetype/element modifiers to be added, as well as things like area modifiers
+        int damageTaken = Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending);
+
+        int trueDamage = damageTaken - shield;
+        if (trueDamage > 0)
+        {
+            currentHp -= trueDamage;
+            if (currentHp < 0)
+            {
+                currentHp = 0;
+            }
+        }
+        shield -= damageTaken;
+        if (shield < 0)
+        {
+            shield = 0;
+        }
+
+        statusbar.UpdateStatusbar(damageTaken);
     }
 
     public void Defend()

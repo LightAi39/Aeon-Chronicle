@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Brute
   m_EditorClassIdentifier: 
   name: Brute
-  maxHp: 20
+  maxHp: 26
   maxSp: 0
   strength: 6
   resilience: 4
