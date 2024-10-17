@@ -105,10 +105,17 @@ public class TurnOrderEntity : MonoBehaviour
 
         if (!died && currentHp == 0)
         {
-            //transform.position -= Vector3.down * 6.8f;
-            //transform.Rotate(75f, 0f, 0f);
             StartCoroutine(Death());
             died = true;
+            if (team == 0)
+            {
+                CombatManager.Instance.targetingManager.RemoveFriendly(this);
+            }
+            else
+            {
+                CombatManager.Instance.targetingManager.RemoveEnemy(this);
+            }
+            
         }
 
         defenseIndicator.enabled = state == State.Defending;
@@ -145,13 +152,13 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void CheckTargeting()
     {
-        if (team == 1 && CombatManager.Instance.targetingManager.IsActivelyTargeting)
+        if (team == 1)
         {
-            isTargeted = CombatManager.Instance.targetingManager.TargetedEnemy.Equals(this);
+            isTargeted = CombatManager.Instance.targetingManager.IsActivelyTargeting && CombatManager.Instance.targetingManager.TargetedEnemy.Equals(this) && CombatManager.Instance.targetingManager.targetingEnemies;
         }
-        else if (team == 1)
+        else
         {
-            isTargeted = false;
+            isTargeted = CombatManager.Instance.targetingManager.IsActivelyTargeting && CombatManager.Instance.targetingManager.TargetedFriendly.Equals(this) && !CombatManager.Instance.targetingManager.targetingEnemies;
         }
         
         turnIndicator.color = isActiveTurn ? Color.white : Color.red;
@@ -262,22 +269,22 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseSkill(Skill skillUsed, TurnOrderEntity enemy/*, TurnOrderEntity? actingEntity*/)
+    public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
     {
         statusbar.UpdateStatusbar(0);
         switch(skillUsed.skilltype)
         {
             case Skill.Skilltype.PDamage:
-            enemy.TakeDamage(skillUsed.value * strength, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
+                target.TakeDamage(skillUsed.value * strength, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.MDamage:
-            enemy.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
+                target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.Defense:
-            GetShield(skillUsed.value * resilience);
+                target.GetShield(skillUsed.value * resilience);
             break;
             case Skill.Skilltype.Healing:
-            GetHealed(skillUsed.value * mind); 
+                target.GetHealed(skillUsed.value * mind); 
             break;
         }
         EndTurn();
