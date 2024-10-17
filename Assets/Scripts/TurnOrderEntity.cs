@@ -19,8 +19,13 @@ public class TurnOrderEntity : MonoBehaviour
     public string name;
     public int maxHp;
     public int maxSp;
-    public int atk;
-    public int def;
+    public int strength;
+    public int resilience;
+    public int intelligence;
+    public int mind;
+    public int agility;
+    public int critChance;
+    public int critDamage;
     public List<Skill> skills = new List<Skill>();
     
     [Header("Stats (live)")]
@@ -29,6 +34,20 @@ public class TurnOrderEntity : MonoBehaviour
     [Tooltip("Instantiated based on maxSp")]
     public int currentSp;
     public int shield;
+    [Tooltip("Instantiated based on strength")]
+    public int activeStrength;
+    [Tooltip("Instantiated based on resilience")]
+    public int activeResilience;
+    [Tooltip("Instantiated based on intelligence")]
+    public int activeIntelligence;
+    [Tooltip("Instantiated based on mind")]
+    public int activeMind;
+    [Tooltip("Instantiated based on agility")]
+    public int activeAgility;
+    [Tooltip("Instantiated based on critChance")]
+    public int activeCritChance;
+    [Tooltip("Instantiated based on critDamage")]
+    public int activeCritDamage;
     public State state = State.Idle;
     
     [Space(20)]
@@ -52,8 +71,8 @@ public class TurnOrderEntity : MonoBehaviour
             currentHp = character.maxHp;
             maxSp = character.maxSp;
             currentSp = character.maxSp;
-            atk = character.atk;
-            def = character.def;
+            strength = character.atk;
+            resilience = character.def;
             skills = character.skills;
         }
 
@@ -122,14 +141,14 @@ public class TurnOrderEntity : MonoBehaviour
         {
             entity.GetTargeted();
             await Task.Delay(1000);
-            entity.TakeDamage(this.atk);
+            entity.TakeDamage(this.strength);
             await Task.Delay(500);
             entity.GetUntargeted();
             EndTurn(); // temp
         }
         else
         {
-            entity.TakeDamage(this.atk);
+            entity.TakeDamage(this.strength);
             EndTurn(); // temp
         }
         
@@ -140,11 +159,11 @@ public class TurnOrderEntity : MonoBehaviour
         int damageTaken;
         if (state != State.Defending)
         {
-            damageTaken = Convert.ToInt32(Mathf.Clamp(damage - def/2, 0, Mathf.Infinity));
+            damageTaken = Convert.ToInt32(Mathf.Clamp(damage - resilience/2, 0, Mathf.Infinity));
         }
         else
         {
-            damageTaken = Convert.ToInt32(Mathf.Clamp((damage - def/2)/2, 0, Mathf.Infinity));
+            damageTaken = Convert.ToInt32(Mathf.Clamp((damage - resilience/2)/2, 0, Mathf.Infinity));
         }
         int trueDamage = damageTaken - shield;
         if (trueDamage > 0)
@@ -187,13 +206,13 @@ public class TurnOrderEntity : MonoBehaviour
         switch(skillUsed.skilltype)
         {
             case Skill.Skilltype.Damage:
-            enemy.TakeDamage(skillUsed.value * atk);
+            enemy.TakeDamage(skillUsed.value * strength);
             break;
             case Skill.Skilltype.Defense:
-            GetShield(skillUsed.value * def);
+            GetShield(skillUsed.value * resilience);
             break;
             case Skill.Skilltype.Healing:
-            GetHealed(skillUsed.value * atk); //use attack stat for healing for now
+            GetHealed(skillUsed.value * strength); //use attack stat for healing for now
             break;
         }
         EndTurn();
