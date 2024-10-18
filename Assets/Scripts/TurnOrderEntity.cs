@@ -12,6 +12,7 @@ public class TurnOrderEntity : MonoBehaviour
     public int characterIndex = 0;
     public int startDelay = 0;
     public int delayPerTurn = 60;
+    public Color color;
     
     [Header("Stats (instantiated by Character SO)")]
     public Character character;
@@ -56,6 +57,7 @@ public class TurnOrderEntity : MonoBehaviour
     public TextMeshPro turnIndicator;
     public TextMeshPro defenseIndicator;
     public StatusbarController statusbar;
+    public List<Renderer> objectRenderers;
     public TurnOrderEntity EntityToAttackTemp;
     public Character.DamageType damageType;
     public Character.Element element;
@@ -93,6 +95,14 @@ public class TurnOrderEntity : MonoBehaviour
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
+    }
+
+    void Start()
+    {
+        foreach (var renderer in objectRenderers)
+        {
+            renderer.material.SetColor("_Color", color);
+        }
     }
     
     void Update()

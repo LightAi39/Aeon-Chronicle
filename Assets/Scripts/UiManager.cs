@@ -80,7 +80,7 @@ public class UiManager : MonoBehaviour
             TextMeshProUGUI tmpText = newObject.GetComponentInChildren<TextMeshProUGUI>();
             tmpText.text = entity.name + $" {entity.characterIndex}";
             Image img = newObject.GetComponentInChildren<Image>();
-            img.color = entity.team == 0 ? Color.cyan : Color.red;
+            img.color = entity.color;
             orderPanelEntries.Add(newObject);
         }
         

@@ -992,6 +992,7 @@ MonoBehaviour:
   characterIndex: 0
   startDelay: 20
   delayPerTurn: 60
+  color: {r: 0, g: 0, b: 0, a: 0}
   character: {fileID: 0}
   name: 
   maxHp: 0
@@ -1020,7 +1021,15 @@ MonoBehaviour:
   turnIndicator: {fileID: 3475956360865567803}
   defenseIndicator: {fileID: 7368078456997664267}
   statusbar: {fileID: 7588865478622632749}
+  objectRenderers:
+  - {fileID: 8875578054333987588}
+  - {fileID: 2595512486280531830}
+  - {fileID: 1327127263574296397}
+  - {fileID: 2273005191915488563}
+  - {fileID: 439874771362996594}
   EntityToAttackTemp: {fileID: 0}
+  damageType: 0
+  element: 0
 --- !u!1 &8113052073148481377
 GameObject:
   m_ObjectHideFlags: 0
