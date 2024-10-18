@@ -5495,11 +5495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       propertyPath: color.g
-      value: 0.20188677
+      value: 0.8935019
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       propertyPath: color.r
-      value: 0.93600446
+      value: 0.19999999
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 25f73c2871cce2d4284d47be45b5f383, type: 3}
       propertyPath: character
