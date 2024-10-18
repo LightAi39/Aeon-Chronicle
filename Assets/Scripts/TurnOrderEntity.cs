@@ -110,8 +110,8 @@ public class TurnOrderEntity : MonoBehaviour
         hpTextBox.text = currentHp.ToString();
         shieldTextBox.text = shield != 0 ? "+" + shield : "";
         
-        turnIndicator.color = isActiveTurn ? Color.white : Color.red;
-        turnIndicator.enabled = isActiveTurn || isTargeted;
+        //turnIndicator.color = isActiveTurn ? Color.white : Color.red;
+        //turnIndicator.enabled = isActiveTurn || isTargeted;
 
         if (!died && currentHp == 0)
         {
@@ -166,13 +166,40 @@ public class TurnOrderEntity : MonoBehaviour
         {
             isTargeted = CombatManager.Instance.targetingManager.IsActivelyTargeting && CombatManager.Instance.targetingManager.TargetedEnemy.Equals(this) && CombatManager.Instance.targetingManager.targetingEnemies;
         }
-        else
+        else if (isTargeted != true)
         {
             isTargeted = CombatManager.Instance.targetingManager.IsActivelyTargeting && CombatManager.Instance.targetingManager.TargetedFriendly.Equals(this) && !CombatManager.Instance.targetingManager.targetingEnemies;
         }
         
+        // arrows
         turnIndicator.color = isActiveTurn ? Color.white : Color.red;
         turnIndicator.enabled = isActiveTurn || isTargeted;
+        
+        // outline
+        if (isTargeted)
+        {
+            foreach (var renderer in objectRenderers)
+            {
+                renderer.materials[1].SetFloat("_Outline_Thickness", 0.01f);
+                renderer.materials[1].SetColor("_Outline_Color", Color.red);
+            }
+        }
+        else if (isActiveTurn)
+        {
+            foreach (var renderer in objectRenderers)
+            {
+                renderer.materials[1].SetFloat("_Outline_Thickness", 0.01f);
+                renderer.materials[1].SetColor("_Outline_Color", Color.white);
+            }
+        }
+        else
+        {
+            foreach (var renderer in objectRenderers)
+            {
+                renderer.materials[1].SetFloat("_Outline_Thickness", 0f);
+                renderer.materials[1].SetColor("_Outline_Color", Color.black);
+            }
+        }
     }
 
     // all these should be through pub/sub
@@ -180,22 +207,26 @@ public class TurnOrderEntity : MonoBehaviour
     {
         isActiveTurn = true;
         state = State.Idle;
+        CheckTargeting();
     }
 
     public void GetTargeted()
     {
         isTargeted = true;
+        CheckTargeting();
     }
     
     public void EndTurn()
     {
         isActiveTurn = false;
         CombatManager.Instance.DoEntityCompletedAction();
+        CombatManager.Instance.DoTargetChanged();
     }
     
     public void GetUntargeted()
     {
         isTargeted = false;
+        CheckTargeting();
     }
     
     public async void Attack(TurnOrderEntity entity)
