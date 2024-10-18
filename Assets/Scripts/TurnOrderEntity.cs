@@ -281,10 +281,10 @@ public class TurnOrderEntity : MonoBehaviour
                 target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.Defense:
-                target.GetShield(skillUsed.value * resilience);
+                GetShield(skillUsed.value * resilience);
             break;
             case Skill.Skilltype.Healing:
-                target.GetHealed(skillUsed.value * mind); 
+                GetHealed(skillUsed.value * mind); 
             break;
         }
         EndTurn();
