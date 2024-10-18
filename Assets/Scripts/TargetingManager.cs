@@ -145,6 +145,8 @@ public class TargetingManager : MonoBehaviour
         {
             targetedEnemyIndex = Enemies.Count - 1;
         }
+
+        CombatManager.Instance.turnController.KillCharacter(enemy);
         CombatManager.Instance.DoTargetChanged();
     }
     
@@ -155,6 +157,7 @@ public class TargetingManager : MonoBehaviour
         {
             targetedFriendlyIndex = Friendlies.Count - 1;
         }
+        CombatManager.Instance.turnController.KillCharacter(friendly);
         CombatManager.Instance.DoTargetChanged();
     }
 }

@@ -52,6 +52,11 @@ public class TurnController : MonoBehaviour
     {
         _turnOrder = _turnOrder.OrderBy(t => t.currentDelay).ToList();
     }
+
+    public void KillCharacter(TurnOrderEntity entity)
+    {
+        _turnOrder.Remove(_turnOrder.First(x => x.entity == entity));
+    }
 }
 
 public class TurnOrderEntry
