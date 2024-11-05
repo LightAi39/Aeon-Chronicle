@@ -61,6 +61,14 @@ public class TilePlacer : EditorWindow
             SnapPosition();
         }
         GUILayout.EndHorizontal();
+
+        GUILayout.Space(10);
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Temp"))
+        {
+            Temp();
+        }
+        GUILayout.EndHorizontal();
     }
 
     private void MoveTiles(Vector3 direction)
@@ -117,6 +125,22 @@ public class TilePlacer : EditorWindow
             }
 
             position.y = 0;
+            obj.transform.position = position;
+            EditorUtility.SetDirty(obj);
+        }
+    }
+
+    private void Temp()
+    {
+        foreach (GameObject obj in Selection.gameObjects)
+        {
+            Undo.RecordObject(obj.transform, "Snap Position"); 
+
+            Vector3 position = obj.transform.position;
+            
+            position.x += 2.532787f;
+            position.z += 6.408589f;
+
             obj.transform.position = position;
             EditorUtility.SetDirty(obj);
         }
