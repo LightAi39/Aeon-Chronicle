@@ -105,10 +105,23 @@ public class TilePlacer : EditorWindow
             
             if (MathF.Abs(Mathf.Abs(position.x / 2) % cosWidth) > tolerance)
             {
+                bool negativeZ = true;
+                if(position.z > 0)
+                {
+                    negativeZ = false;
+                }
                 position.z = Mathf.Round(position.z / (tileHeight/2f)) * (tileHeight/2f);
                 if (position.z % tileHeight < tolerance)
                 {
                     position.z += tileHeight/2f;
+                }
+                if(negativeZ == false)
+                {
+                    position.z += tileHeight/2f;
+                }
+                else
+                {
+                    position.z -= tileHeight/2f;
                 }
             }
             else
