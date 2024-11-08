@@ -45,7 +45,7 @@ public class UiManager : MonoBehaviour
             GameObject newObject = Instantiate(objectForTurnOrder, uiParentTurnOrder);
             newObject.name = entity.name + $" {entity.team}-{entity.characterIndex}";
             TextMeshProUGUI tmpText = newObject.GetComponentInChildren<TextMeshProUGUI>();
-            tmpText.text = entity.name + $" {entity.characterIndex}";
+            tmpText.text = entity.name;
             Image img = newObject.GetComponentInChildren<Image>();
             img.color = entity.team == 0 ? Color.cyan : Color.red;
             orderPanelEntries.Add(newObject);
@@ -78,7 +78,7 @@ public class UiManager : MonoBehaviour
             GameObject newObject = Instantiate(objectForTurnOrder, uiParentTurnOrder);
             newObject.name = entity.name + $" {entity.team}-{entity.characterIndex}";
             TextMeshProUGUI tmpText = newObject.GetComponentInChildren<TextMeshProUGUI>();
-            tmpText.text = entity.name + $" {entity.characterIndex}";
+            tmpText.text = entity.name;
             Image img = newObject.GetComponentInChildren<Image>();
             img.color = entity.color;
             orderPanelEntries.Add(newObject);

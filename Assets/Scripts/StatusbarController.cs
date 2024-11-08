@@ -33,18 +33,15 @@ public class StatusbarController : MonoBehaviour
         }
     }
     
-    public void UpdateStatusbar(int damageTaken)
+    public void UpdateStatusbar(int damageTaken, Transform dmgPosition)
     {
         //healthbarForeground.value = turnOrderEntity.currentHp;
         //shieldbarForeground.value = turnOrderEntity.shield;
         
         GameObject DamageTextInstance = Instantiate(damageTextPrefab, turnOrderEntity.transform);
-        DamageTextInstance.transform.localPosition = new Vector3(14.18f, 6.38f, 4.2f);
+        DamageTextInstance.transform.position = dmgPosition.position;
+        DamageTextInstance.transform.rotation = dmgPosition.rotation;
         DamageTextInstance.transform.GetChild(0).GetComponent<TextMeshPro>().SetText($"{(damageTaken < 0 ? "" : "+")}{damageTaken}");
-        if (turnOrderEntity.team != 0)
-        {
-            DamageTextInstance.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
 
         StartCoroutine(DelayedSlider());
     }

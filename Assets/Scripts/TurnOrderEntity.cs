@@ -28,6 +28,8 @@ public class TurnOrderEntity : MonoBehaviour
     public int critChance;
     public int critDamage;
     public List<Skill> skills = new List<Skill>();
+    public Character.DamageType damageType;
+    public Character.Element element;
     
     [Header("Stats (live)")]
     [Tooltip("Instantiated based on maxHp")]
@@ -51,6 +53,7 @@ public class TurnOrderEntity : MonoBehaviour
     public int activeCritDamage;
     public State state = State.Idle;
     
+    
     [Space(20)]
     public TextMeshPro hpTextBox;
     public TextMeshPro shieldTextBox;
@@ -58,9 +61,8 @@ public class TurnOrderEntity : MonoBehaviour
     public TextMeshPro defenseIndicator;
     public StatusbarController statusbar;
     public List<Renderer> objectRenderers;
+    public Transform DmgPosition;
     public TurnOrderEntity EntityToAttackTemp;
-    public Character.DamageType damageType;
-    public Character.Element element;
     private bool isActiveTurn = false;
     private bool isTargeted = false;
     private bool died = false;
@@ -284,19 +286,19 @@ public class TurnOrderEntity : MonoBehaviour
             shield = 0;
         }
 
-        statusbar.UpdateStatusbar(-damageTaken);
+        statusbar.UpdateStatusbar(-damageTaken, DmgPosition);
     }
 
     public void Defend()
     {
-        statusbar.UpdateStatusbar(0);
+        statusbar.UpdateStatusbar(0, DmgPosition);
         state = State.Defending; // gets set to idle in the start of the next turn
         EndTurn();
     }
 
     public void GetHealed(int healing)
     {
-        statusbar.UpdateStatusbar(healing);
+        statusbar.UpdateStatusbar(healing, DmgPosition);
         currentHp += healing;
         if (currentHp > maxHp)
         {
@@ -306,13 +308,13 @@ public class TurnOrderEntity : MonoBehaviour
 
     public void GetShield(int shielding)
     {
-        statusbar.UpdateStatusbar(0);
+        statusbar.UpdateStatusbar(0, DmgPosition);
         shield = shielding;
     }
 
     public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
     {
-        statusbar.UpdateStatusbar(0);
+        statusbar.UpdateStatusbar(0, DmgPosition);
         switch(skillUsed.skilltype)
         {
             case Skill.Skilltype.PDamage:
