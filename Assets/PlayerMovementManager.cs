@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovementManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerMovementManager : MonoBehaviour
     
     public TileLogic StartingTile;
     private TileLogic currentTile;
+
+    public GameObject Character;
     
     void Awake()
     {
@@ -18,7 +21,7 @@ public class PlayerMovementManager : MonoBehaviour
     void Start()
     {
         currentTile = StartingTile;
-        UpdateToCurrentTile();
+        UpdateToCurrentTile(quaternion.identity);
     }
 
     // Update is called once per frame
@@ -27,17 +30,19 @@ public class PlayerMovementManager : MonoBehaviour
         
     }
 
-    public void MoveToTile(TileLogic tile)
+    public void MoveToTile(TileLogic tile, Quaternion lookDirection)
     {
         currentTile.DisableMovementMarkers();
         currentTile = tile;
-        UpdateToCurrentTile();
+        UpdateToCurrentTile(lookDirection);
     }
 
-    void UpdateToCurrentTile()
+    void UpdateToCurrentTile(Quaternion lookDirection)
     {
+        Character.transform.rotation = lookDirection;
         transform.position = currentTile.PlayerPosition.position;
         currentTile.GetMovementMarkersReady();
+        
     }
     
 }

@@ -52,7 +52,7 @@ public class DetectionPoint : MonoBehaviour
         var obj = DetectTile();
         
         // move character to new tile main point - inside character, set new active tile
-        PlayerMovementManager.Instance.MoveToTile(obj.GetComponentInParent<TileLogic>());
+        PlayerMovementManager.Instance.MoveToTile(obj.GetComponentInParent<TileLogic>(), transform.rotation);
         
         Debug.Log("moving to tile from collider at " + obj.transform.position);
     }
