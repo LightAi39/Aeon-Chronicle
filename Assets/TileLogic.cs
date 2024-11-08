@@ -8,11 +8,12 @@ public class TileLogic : MonoBehaviour
     public bool IsFight = false; // replace with universal "activity" system later
     public Transform PlayerPosition;
     public List<DetectionPoint> DetectionPoints;
+    public GameObject FightImage;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        FightImage.SetActive(IsFight);
     }
 
     // Update is called once per frame
