@@ -26,14 +26,27 @@ public class CameraController : MonoBehaviour
         currentCamera.enabled = false;
         newCam.enabled = true;
         currentCamera = newCam;
+        ChangeLookAt();
     }
 
     public void ChangeLookAt()
     {
         if (currentCamera != mainCamera)
         {
-            Transform newTarget = CombatManager.Instance.targetingManager.TargetedEnemy.transform;
+            var targeting = CombatManager.Instance.targetingManager;
+            var currentlyActing = CombatManager.Instance.turnController.GetCurrentlyActing();
+            Transform newTarget;
+            if (currentlyActing.team == 0)
+            {
+                newTarget = targeting.TargetedEnemy.transform;
+            }
+            else
+            {
+                newTarget = currentlyActing.entity.transform;
+            }
             currentCamera.LookAt = newTarget;
+            
+            
         }
     }
 }

@@ -39,6 +39,11 @@ public class TurnController : MonoBehaviour
         return _turnOrder[0];
     }
 
+    public TurnOrderEntry GetCurrentlyActing()
+    {
+        return _turnOrder[0];
+    }
+
     public void FinishCurrentTurn()
     {
         Debug.Log("Forwarding turn");
