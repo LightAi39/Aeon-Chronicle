@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8370446205220603944}
   - component: {fileID: 3329850062412486284}
   - component: {fileID: 121601320053558277}
+  - component: {fileID: 7288938510353110781}
   m_Layer: 0
   m_Name: ActiveTurn Indicator
   m_TagString: Untagged
@@ -206,6 +207,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3329850062412486284}
   m_maskType: 0
+--- !u!114 &7288938510353110781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747141410427559089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc59eb7664f8ad4ab5084f9445bf444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638362359258340124
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +230,7 @@ GameObject:
   - component: {fileID: 5602920770567704452}
   - component: {fileID: 6895103394754129026}
   - component: {fileID: 4816316101233793242}
+  - component: {fileID: 3163484880066645742}
   m_Layer: 0
   m_Name: Health Text
   m_TagString: Untagged
@@ -377,6 +391,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6895103394754129026}
   m_maskType: 0
+--- !u!114 &3163484880066645742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638362359258340124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc59eb7664f8ad4ab5084f9445bf444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5574022854954809880
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +414,7 @@ GameObject:
   - component: {fileID: 5044681904882804225}
   - component: {fileID: 2146899883593228376}
   - component: {fileID: 7197786227061041457}
+  - component: {fileID: 8863200833883274389}
   m_Layer: 0
   m_Name: Shield Text
   m_TagString: Untagged
@@ -548,6 +575,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2146899883593228376}
   m_maskType: 0
+--- !u!114 &8863200833883274389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574022854954809880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc59eb7664f8ad4ab5084f9445bf444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6842531783833084478
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +598,7 @@ GameObject:
   - component: {fileID: 8371342348390029660}
   - component: {fileID: 4333654780587355893}
   - component: {fileID: 1539933151415393942}
+  - component: {fileID: 3270775372382064553}
   m_Layer: 0
   m_Name: Defending Indicator
   m_TagString: Untagged
@@ -719,3 +759,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4333654780587355893}
   m_maskType: 0
+--- !u!114 &3270775372382064553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842531783833084478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc59eb7664f8ad4ab5084f9445bf444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
