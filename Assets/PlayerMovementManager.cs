@@ -11,6 +11,7 @@ public class PlayerMovementManager : MonoBehaviour
     private TileLogic currentTile;
 
     public GameObject Character;
+    private float movementSpeed = 3f;
     
     void Awake()
     {
@@ -34,7 +35,8 @@ public class PlayerMovementManager : MonoBehaviour
     {
         currentTile.DisableMovementMarkers();
         currentTile = tile;
-        UpdateToCurrentTile(lookDirection);
+        StartCoroutine(MoveToTileLerp(transform, Character.transform, tile.transform, movementSpeed, lookDirection));
+        
     }
 
     void UpdateToCurrentTile(Quaternion lookDirection)
@@ -42,7 +44,34 @@ public class PlayerMovementManager : MonoBehaviour
         Character.transform.rotation = lookDirection;
         transform.position = currentTile.PlayerPosition.position;
         currentTile.GetMovementMarkersReady();
-        
+    }
+    
+    IEnumerator MoveToTileLerp(Transform character, Transform characterModel, Transform targetTile, float speed, Quaternion lookDirection)
+    {
+        Vector3 startPosition = character.position;
+        Vector3 endPosition = targetTile.position;
+        float journey = 0f;
+
+        // Initial rotation
+        Quaternion startRotation = characterModel.rotation;
+
+        while (journey < 1f)
+        {
+            journey += Time.deltaTime * speed;
+
+            // Interpolate position
+            character.position = Vector3.Lerp(startPosition, endPosition, journey);
+
+            // Interpolate rotation (of only the character model)
+            characterModel.rotation = Quaternion.Slerp(startRotation, lookDirection, journey);
+
+            yield return null;
+        }
+
+        // Snap to final position and rotation
+        character.position = endPosition;
+        characterModel.rotation = lookDirection;
+        currentTile.GetMovementMarkersReady();
     }
     
 }
