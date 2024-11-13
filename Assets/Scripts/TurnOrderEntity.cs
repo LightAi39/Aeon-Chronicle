@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
@@ -62,6 +63,7 @@ public class TurnOrderEntity : MonoBehaviour
     public StatusbarController statusbar;
     public List<Renderer> objectRenderers;
     public Transform DmgPosition;
+    public CinemachineVirtualCamera camera;
     public TurnOrderEntity EntityToAttackTemp;
     private bool isActiveTurn = false;
     private bool isTargeted = false;
