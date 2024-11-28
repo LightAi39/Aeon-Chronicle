@@ -29,8 +29,7 @@ public class TurnOrderEntity : MonoBehaviour
     public int critChance;
     public int critDamage;
     public List<Skill> skills = new List<Skill>();
-    public Character.DamageType damageType;
-    public Character.Element element;
+    public List<Character.DamageType> damageTypes = new List<Character.DamageType>();
     
     [Header("Stats (live)")]
     [Tooltip("Instantiated based on maxHp")]
@@ -87,15 +86,19 @@ public class TurnOrderEntity : MonoBehaviour
             critChance = character.critChance;
             critDamage = character.critDamage;
             skills = character.skills;
-            damageType = character.damageType;
-            element = character.element;
+            damageTypes = character.damageTypes;
             activeStrength = character.strength;
             activeResilience = character.resilience;
             activeIntelligence = character.intelligence;
             activeMind = character.mind;
             activeAgility = character.agility;
             activeCritChance = character.critChance;
-            activeCritDamage = character.critDamage;          
+            activeCritDamage = character.critDamage;     
+
+            for (int i = 0; i < character.damageTypeWeaknesses.Count && i < character.damageTypeValues.Count; i++)
+            {
+                character.damageWeaknesses[character.damageTypeWeaknesses[i]] = character.damageTypeValues[i];
+            }     
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
@@ -239,24 +242,44 @@ public class TurnOrderEntity : MonoBehaviour
         {
             entity.GetTargeted();
             await Task.Delay(1000);
-            entity.TakeDamage(this.strength, damageType, element, 1f);
+            entity.TakeDamage(this.strength, damageTypes, 1f);
             await Task.Delay(500);
             entity.GetUntargeted();
             EndTurn(); // temp
         }
         else
         {
-            entity.TakeDamage(this.strength, damageType, element, 1f);
+            entity.TakeDamage(this.strength, damageTypes, 1f);
             EndTurn(); // temp
+        } 
+    }
+
+    public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
+    {
+        statusbar.UpdateStatusbar(0, DmgPosition);
+        switch(skillUsed.skilltype)
+        {
+            case Skill.Skilltype.PDamage:
+                target.TakeDamage(skillUsed.value * strength, skillUsed.damageTypes, skillUsed.powerModifier);
+            break;
+            case Skill.Skilltype.MDamage:
+                target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageTypes, skillUsed.powerModifier);
+            break;
+            case Skill.Skilltype.Defense:
+                /*target.*/GetShield(skillUsed.value * resilience);
+            break;
+            case Skill.Skilltype.Healing:
+                /*target.*/GetHealed(skillUsed.value * mind); 
+            break;
         }
-        
+        EndTurn();
     }
 
     //element not relevant for now
-    public void TakeDamage(int damageStat, Character.DamageType damageType, Character.Element element, float powerModifier)
+    public void TakeDamage(int damageStat, List<Character.DamageType> damageTypes, float powerModifier)
     {
         int defendingStat;
-        if (damageType == Character.DamageType.Magical)
+        if (damageTypes.Contains(Character.DamageType.Magical))
         {
             defendingStat = activeMind;
         }
@@ -270,8 +293,21 @@ public class TurnOrderEntity : MonoBehaviour
         {
             defending = 0.5f; //halve damage
         }
-        //damagetype/element modifiers to be added, as well as things like area modifiers
-        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending), 1, int.MaxValue);
+        Debug.Log(damageTypes);
+        float damageTypeMultiplier = 1f;
+        foreach (Character.DamageType damageType in damageTypes)
+        {
+            if (character.damageWeaknesses.ContainsKey(damageType))
+            {
+                float multiplier = character.damageWeaknesses[damageType] - 100f; // Calculates the % effectivness (200 - 100 = 100, becoming + 1 to the multiplier).
+                damageTypeMultiplier += multiplier / 100f; // Changes the % effectiveness into a multiplier.
+                Debug.Log("type:" + damageType);
+                Debug.Log("before calc:" + multiplier);
+                Debug.Log("after calc:" + damageTypeMultiplier);
+            }
+        }
+
+        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending * damageTypeMultiplier), 1, int.MaxValue);
 
         int trueDamage = damageTaken - shield;
         if (trueDamage > 0)
@@ -312,27 +348,6 @@ public class TurnOrderEntity : MonoBehaviour
     {
         statusbar.UpdateStatusbar(0, DmgPosition);
         shield = shielding;
-    }
-
-    public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
-    {
-        statusbar.UpdateStatusbar(0, DmgPosition);
-        switch(skillUsed.skilltype)
-        {
-            case Skill.Skilltype.PDamage:
-                target.TakeDamage(skillUsed.value * strength, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
-            break;
-            case Skill.Skilltype.MDamage:
-                target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
-            break;
-            case Skill.Skilltype.Defense:
-                GetShield(skillUsed.value * resilience);
-            break;
-            case Skill.Skilltype.Healing:
-                GetHealed(skillUsed.value * mind); 
-            break;
-        }
-        EndTurn();
     }
 
     public void UseItem(TurnOrderEntity targetEntity/*, Item item*/) //hard coded as a healthpotion rn

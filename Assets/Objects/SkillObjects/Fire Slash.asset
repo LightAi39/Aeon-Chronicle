@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4acfde7b11007e42b0ca7f5d7222346, type: 3}
-  m_Name: Heal
+  m_Name: Fire Slash
   m_EditorClassIdentifier: 
-  name: Heal
-  skilltype: 3
-  description: Heals an ally.
-  value: 1
-  spCost: 6
+  name: Fire Slash
+  skilltype: 0
+  description: Slashes an enemy with a flaming sword.
+  value: 2
+  spCost: 5
   powerModifier: 1
-  damageTypes: 03000000
+  damageTypes: 0000000004000000

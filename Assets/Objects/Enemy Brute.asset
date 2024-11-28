@@ -22,7 +22,17 @@ MonoBehaviour:
   agility: 4
   critChance: 10
   critDamage: 50
-  damageType: 0
-  element: 4
+  damageTypes: 00000000
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
+  damageTypeWeaknesses: 000000000100000002000000030000000400000005000000060000000700000008000000
+  damageTypeValues:
+  - 100
+  - 100
+  - 100
+  - 100
+  - 200
+  - 100
+  - 100
+  - 100
+  - 100
