@@ -1,0 +1,51 @@
+{
+    "name": "InputMaster",
+    "maps": [
+        {
+            "name": "Map tile movement",
+            "id": "fa0e4cbc-539d-483c-8bd9-e81f67b5f6e4",
+            "actions": [
+                {
+                    "name": "Select Tile",
+                    "type": "Button",
+                    "id": "c57ef247-fd3e-4f14-b3c7-c6c1ab91245e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ee69e744-f3a2-4277-9a7c-a5e6090b7044",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Select Tile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard and Mouse",
+            "bindingGroup": "Keyboard and Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
