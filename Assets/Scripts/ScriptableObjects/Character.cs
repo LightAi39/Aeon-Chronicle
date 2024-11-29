@@ -44,16 +44,4 @@ public class Character : ScriptableObject
         100f,
         100f
     }; 
-        public enum DamageType
-    {
-        Slash,
-        Thrust,
-        Blunt,
-        Magical,
-        Fire,
-        Water,
-        Earth,
-        Wind,
-        Neutral
-    }
 }

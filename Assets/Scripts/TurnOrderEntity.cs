@@ -29,7 +29,7 @@ public class TurnOrderEntity : MonoBehaviour
     public int critChance;
     public int critDamage;
     public List<Skill> skills = new List<Skill>();
-    public List<Character.DamageType> damageTypes = new List<Character.DamageType>();
+    public List<DamageType> damageTypes = new List<DamageType>();
     
     [Header("Stats (live)")]
     [Tooltip("Instantiated based on maxHp")]
@@ -95,6 +95,7 @@ public class TurnOrderEntity : MonoBehaviour
             activeCritChance = character.critChance;
             activeCritDamage = character.critDamage;     
 
+            // Set damagetype resistances.
             for (int i = 0; i < character.damageTypeWeaknesses.Count && i < character.damageTypeValues.Count; i++)
             {
                 character.damageWeaknesses[character.damageTypeWeaknesses[i]] = character.damageTypeValues[i];
@@ -275,11 +276,10 @@ public class TurnOrderEntity : MonoBehaviour
         EndTurn();
     }
 
-    //element not relevant for now
-    public void TakeDamage(int damageStat, List<Character.DamageType> damageTypes, float powerModifier)
+    public void TakeDamage(int damageStat, List<DamageType> damageTypes, float powerModifier)
     {
         int defendingStat;
-        if (damageTypes.Contains(Character.DamageType.Magical))
+        if (damageTypes.Contains(DamageType.Magical))
         {
             defendingStat = activeMind;
         }
@@ -288,22 +288,19 @@ public class TurnOrderEntity : MonoBehaviour
             defendingStat = activeResilience;
         }
 
-        float defending = 1f; //no reduction
+        float defending = 1f; // Default modifier, resulting in no effect on damage taken.
         if(state == State.Defending)
         {
-            defending = 0.5f; //halve damage
+            defending = 0.5f; // Modifier now halves damage taken.
         }
         Debug.Log(damageTypes);
         float damageTypeMultiplier = 1f;
-        foreach (Character.DamageType damageType in damageTypes)
+        foreach (DamageType damageType in damageTypes)
         {
             if (character.damageWeaknesses.ContainsKey(damageType))
             {
                 float multiplier = character.damageWeaknesses[damageType] - 100f; // Calculates the % effectivness (200 - 100 = 100, becoming + 1 to the multiplier).
                 damageTypeMultiplier += multiplier / 100f; // Changes the % effectiveness into a multiplier.
-                Debug.Log("type:" + damageType);
-                Debug.Log("before calc:" + multiplier);
-                Debug.Log("after calc:" + damageTypeMultiplier);
             }
         }
 

@@ -11,7 +11,7 @@ public class Skill : ScriptableObject
     public int value; //multiplier for stat for now
     public int spCost;
     public float powerModifier;
-    public List<Character.DamageType> damageTypes = new List<Character.DamageType>();
+    public List<DamageType> damageTypes = new List<DamageType>();
     public enum Skilltype {
         PDamage,
         MDamage,
