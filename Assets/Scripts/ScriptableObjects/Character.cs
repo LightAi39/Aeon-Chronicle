@@ -27,28 +27,15 @@ public class Character : ScriptableObject
     public List<DamageType> damageTypes = new List<DamageType>(); //temporary basic attack type/element tied to character instead of weapon
     public Dictionary<DamageType, float> damageWeaknesses = new Dictionary<DamageType, float>(); // Dictionary for attack weaknesses 100 being neutral damage, 0 being immune and 200 being 2x damage taken
     public List<Skill> skills = new List<Skill>();
-    public List<DamageType> damageTypeWeaknesses = new List<DamageType> 
+    
+    [System.Serializable]
+    public struct Weakness
     {
-        DamageType.Slash,
-        DamageType.Thrust,
-        DamageType.Blunt,
-        DamageType.Magical,
-        DamageType.Fire,
-        DamageType.Water,
-        DamageType.Earth,
-        DamageType.Wind,
-        DamageType.Neutral
-    };
-    public List<float> damageTypeValues = new List<float>
-    {
-        100f,
-        100f,
-        100f,
-        100f,
-        100f,
-        100f,
-        100f,
-        100f,
-        100f
-    }; 
+        public DamageType type;
+        public float weaknessValue;
+    }
+    
+    [HideInInspector]
+    [SerializeField]
+    public Weakness[] weaknesses = new Weakness[0];
 }

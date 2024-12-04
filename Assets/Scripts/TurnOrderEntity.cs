@@ -96,10 +96,10 @@ public class TurnOrderEntity : MonoBehaviour
             activeCritDamage = character.critDamage;     
 
             // Set damagetype resistances.
-            for (int i = 0; i < character.damageTypeWeaknesses.Count && i < character.damageTypeValues.Count; i++)
+            foreach (var weakness in character.weaknesses)
             {
-                character.damageWeaknesses[character.damageTypeWeaknesses[i]] = character.damageTypeValues[i];
-            }     
+                character.damageWeaknesses[weakness.type] = weakness.weaknessValue;
+            }
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
