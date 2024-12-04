@@ -84,7 +84,7 @@ public class TargetingManager : MonoBehaviour
         {
             var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
 
-            teammate.Attack(TargetedEnemy);
+            teammate.UseSkill(teammate.character.weapon.basicAttack, TargetedEnemy);
         }
         
     }

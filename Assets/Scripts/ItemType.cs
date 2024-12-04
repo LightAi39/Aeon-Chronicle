@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ItemType
-    {
-        Slash,
-        Thrust,
-        Blunt,
-        Magical,
-        Fire,
-        Water,
-        Earth,
-        Wind,
-        Neutral
-    }
+{
+    Consumable,
+    Equipment
+}
