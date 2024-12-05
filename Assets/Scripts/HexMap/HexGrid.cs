@@ -49,6 +49,12 @@ public class HexGrid : MonoBehaviour
 
         return _hexTileNeighboursDict[hexCoordinates];
     }
+
+    public Vector3Int GetClosestHex(Vector3 worldPosition)
+    {
+        worldPosition.y = 0;
+        return HexCoordinates.ConvertPositionToOffset(worldPosition);
+    }
 }
 
 public static class Direction

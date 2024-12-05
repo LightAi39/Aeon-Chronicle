@@ -2,16 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class SelectionManager : MonoBehaviour
+public class SelectionSystem : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
 
     public LayerMask selectionMask;
-    public HexGrid hexGrid;
 
-    private List<Vector3Int> _neighbours = new();
+    public UnityEvent<GameObject> OnUnitSelected;
+    public UnityEvent<GameObject> OnTerrainSelected;
     
     private void Awake()
     {
@@ -24,22 +25,20 @@ public class SelectionManager : MonoBehaviour
         GameObject result;
         
         if (!FindTarget(out result)) return;
-        HexTile selectedHex = result.GetComponent<HexTile>();
-        
-        selectedHex.DisableHighlight();
-        foreach (var neighbour in _neighbours)
+
+        if (IsUnitSelectedTarget(result))
         {
-            hexGrid.GetTileAt(neighbour).DisableHighlight();
+            OnUnitSelected?.Invoke(result);
         }
-        
-        //_neighbours = hexGrid.GetNeighboursFor(selectedHex.HexCoords); to get all neighbour tiles
-        GraphSearch.BfsResult bfsResult = GraphSearch.BfsGetRange(hexGrid, selectedHex.HexCoords, 20);
-        _neighbours = new List<Vector3Int>(bfsResult.GetHexPositionsInRange());
-        
-        foreach (var neighbour in _neighbours)
+        else
         {
-            hexGrid.GetTileAt(neighbour).EnableHighlight();
+            OnTerrainSelected.Invoke(result);
         }
+    }
+    
+    private bool IsUnitSelectedTarget(GameObject result)
+    {
+        return result.GetComponent<Unit>() != null;
     }
 
     private bool FindTarget(out GameObject result)

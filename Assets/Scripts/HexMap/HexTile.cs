@@ -46,6 +46,16 @@ public class HexTile : MonoBehaviour
     {
         highlight.ToggleGlow(false);
     }
+
+    public void ResetHighlight()
+    {
+        highlight.ResetGlowHighlight();
+    }
+
+    public void HighlightPath()
+    {
+        highlight.HighlightValidPath();
+    }
 }
 
 public enum HexType
