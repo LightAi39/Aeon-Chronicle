@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf1d5c0e1ddb0d4b8f333eeacc70356, type: 3}
   m_Name: Simple Pants
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemType: 0
-  equipmentType: 0
-  hp: 0
-  sp: 0
-  resilience: 0
-  mind: 0
-  agility: 0
+  itemName: Simple Pants
+  itemDescription: A simple pair of pants.
+  itemType: 1
+  equipmentType: 4
+  hp: 2
+  sp: 1
+  resilience: 1
+  mind: 1
+  agility: 1

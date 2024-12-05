@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec8be5f500805d4d9d58c3d22adf1df, type: 3}
-  m_Name: Leather Boots
+  m_Script: {fileID: 11500000, guid: b7872c46a64c2fe459be2f143edd0a20, type: 3}
+  m_Name: Potion
   m_EditorClassIdentifier: 
-  itemName: Leather Boots
-  itemDescription: Boots made of leather.
-  itemType: 1
-  equipmentType: 5
-  agility: 3
-  critChance: 0
-  critDamage: 0
+  itemName: 
+  itemDescription: 
+  itemType: 0
+  effect: 0
+  aoe: 0
+  effectStrength: 0
+  amountOfUses: 0

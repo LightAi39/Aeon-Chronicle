@@ -27,6 +27,7 @@ public class Character : ScriptableObject
     public List<DamageType> damageTypes = new List<DamageType>(); //temporary basic attack type/element tied to character instead of weapon
     public Dictionary<DamageType, float> damageWeaknesses = new Dictionary<DamageType, float>(); // Dictionary for attack weaknesses 100 being neutral damage, 0 being immune and 200 being 2x damage taken
     public List<Skill> skills = new List<Skill>();
+    public List<Consumable> consumables = new List<Consumable>();
     
     [System.Serializable]
     public struct Weakness

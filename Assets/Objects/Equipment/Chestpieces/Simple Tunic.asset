@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e733bfe36d91fac4083fd4b5ea1ea224, type: 3}
   m_Name: Simple Tunic
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemType: 0
-  equipmentType: 0
-  hp: 0
-  sp: 0
-  resilience: 0
-  mind: 0
+  itemName: Simple Tunic
+  itemDescription: A simple tunic.
+  itemType: 1
+  equipmentType: 2
+  hp: 3
+  sp: 2
+  resilience: 1
+  mind: 1

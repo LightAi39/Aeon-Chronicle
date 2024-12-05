@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b8c784ecf496949a340cae75ee36ba, type: 3}
   m_Name: Simple Ring
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemType: 0
-  equipmentType: 0
-  strength: 0
-  intelligence: 0
+  itemName: Simple Ring
+  itemDescription: A simple ring.
+  itemType: 1
+  equipmentType: 6
+  strength: 1
+  intelligence: 1
   critChance: 0
   critDamage: 0

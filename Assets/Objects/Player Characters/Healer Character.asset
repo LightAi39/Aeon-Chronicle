@@ -22,17 +22,14 @@ MonoBehaviour:
   agility: 5
   critChance: 10
   critDamage: 50
+  weapon: {fileID: 11400000, guid: efd3e2eb3045ad34f8603bbe8161b681, type: 2}
+  headpiece: {fileID: 0}
+  chestpiece: {fileID: 0}
+  gloves: {fileID: 0}
+  legs: {fileID: 0}
+  boots: {fileID: 0}
+  accessory: {fileID: 0}
   damageTypes: 02000000
   skills:
   - {fileID: 11400000, guid: cb072da4cc2579345a8e4688099a575d, type: 2}
-  damageTypeWeaknesses: 000000000100000002000000030000000400000005000000060000000700000008000000
-  damageTypeValues:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  weaknesses: []

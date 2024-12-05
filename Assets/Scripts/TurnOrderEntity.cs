@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Cinemachine;
 using TMPro;
@@ -73,11 +74,13 @@ public class TurnOrderEntity : MonoBehaviour
     {
         if (character != null)
         {
+            List<int> stats = GetEquipmentStats();
+
             name = character.name;
-            maxHp = character.maxHp;
-            currentHp = character.maxHp;
-            maxSp = character.maxSp;
-            currentSp = character.maxSp;
+            maxHp = character.maxHp + stats[0];
+            currentHp = maxHp;
+            maxSp = character.maxSp + stats[1];
+            currentSp = maxSp;
             strength = character.strength;
             resilience = character.resilience;
             intelligence = character.intelligence;
@@ -87,13 +90,13 @@ public class TurnOrderEntity : MonoBehaviour
             critDamage = character.critDamage;
             skills = character.skills;
             damageTypes = character.damageTypes;
-            activeStrength = character.strength;
-            activeResilience = character.resilience;
-            activeIntelligence = character.intelligence;
-            activeMind = character.mind;
-            activeAgility = character.agility;
-            activeCritChance = character.critChance;
-            activeCritDamage = character.critDamage;     
+            activeStrength = character.strength + stats[2];
+            activeResilience = character.resilience + stats[3];
+            activeIntelligence = character.intelligence + stats[4];
+            activeMind = character.mind + stats[5];
+            activeAgility = character.agility + stats[6];
+            activeCritChance = character.critChance + stats[7];
+            activeCritDamage = character.critDamage + stats[8];     
 
             // Set damagetype resistances.
             foreach (var weakness in character.weaknesses)
@@ -103,6 +106,76 @@ public class TurnOrderEntity : MonoBehaviour
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
+    }
+
+    private List<int> GetEquipmentStats()
+    {
+        List<int> stats = new List<int>
+        {
+            0, //hp 0
+            0, //sp 1
+            0, //strength 2
+            0, //resilience 3 
+            0, //intelligence 4
+            0, //mind 5
+            0, //agility 6
+            0, //critchance 7
+            0 //critdamage 8
+        };
+        
+        if (character.weapon != null)
+        {
+            stats[2] += character.weapon.strength;
+            stats[4] += character.weapon.intelligence;
+        }
+
+        if (character.headpiece != null)
+        {
+            stats[0] += character.headpiece.hp;
+            stats[1] += character.headpiece.sp;
+            stats[4] += character.headpiece.intelligence;
+        }
+
+        if (character.chestpiece != null)
+        {
+            stats[0] += character.chestpiece.hp;
+            stats[1] += character.chestpiece.sp;
+            stats[3] += character.chestpiece.resilience;
+            stats[5] += character.chestpiece.mind;
+        }
+
+        if (character.gloves != null)
+        {
+            stats[2] += character.gloves.strength;
+            stats[7] += character.gloves.critChance;
+            stats[8] += character.gloves.critDamage;
+        }
+
+        if (character.legs != null)
+        {
+            stats[0] += character.legs.hp;
+            stats[1] += character.legs.sp;
+            stats[3] += character.legs.resilience;
+            stats[5] += character.legs.mind;
+            stats[6] += character.legs.agility;
+        }
+
+        if (character.boots != null)
+        {
+            stats[6] += character.boots.agility;
+            stats[7] += character.boots.critChance;
+            stats[8] += character.boots.critDamage;
+        }
+
+        if (character.accessory != null)
+        {
+            stats[2] += character.accessory.strength;
+            stats[4] += character.accessory.intelligence;
+            stats[7] += character.accessory.critChance;
+            stats[8] += character.accessory.critDamage;
+        }
+
+        return stats;
     }
 
     void Start()
@@ -261,16 +334,16 @@ public class TurnOrderEntity : MonoBehaviour
         switch(skillUsed.skilltype)
         {
             case Skill.Skilltype.PDamage:
-                target.TakeDamage(skillUsed.value * strength, skillUsed.damageTypes, skillUsed.powerModifier);
+                target.TakeDamage(skillUsed.value * activeStrength, skillUsed.damageTypes, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.MDamage:
-                target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageTypes, skillUsed.powerModifier);
+                target.TakeDamage(skillUsed.value * activeIntelligence, skillUsed.damageTypes, skillUsed.powerModifier);
             break;
             case Skill.Skilltype.Defense:
-                /*target.*/GetShield(skillUsed.value * resilience);
+                /*target.*/GetShield(skillUsed.value * activeResilience);
             break;
             case Skill.Skilltype.Healing:
-                /*target.*/GetHealed(skillUsed.value * mind); 
+                /*target.*/GetHealed(skillUsed.value * activeMind); 
             break;
         }
         EndTurn();
@@ -293,7 +366,7 @@ public class TurnOrderEntity : MonoBehaviour
         {
             defending = 0.5f; // Modifier now halves damage taken.
         }
-        Debug.Log(damageTypes);
+        UnityEngine.Debug.Log(damageTypes);
         float damageTypeMultiplier = 1f;
         foreach (DamageType damageType in damageTypes)
         {
@@ -347,9 +420,27 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseItem(TurnOrderEntity targetEntity/*, Item item*/) //hard coded as a healthpotion rn
+    public void UseItem(Consumable consumable, TurnOrderEntity target) //List target for aoe when aoe implemented 
     {
-        GetHealed(10); //item.value or so
+        switch(consumable.effect)
+        {
+            case ConsumableEffect.Heal:
+            target.GetHealed(consumable.effectStrength);
+            break;
+            case ConsumableEffect.Shield:
+            target.GetShield(consumable.effectStrength);
+            break;
+            case ConsumableEffect.Revive: // not implemented
+            break;
+            case ConsumableEffect.Buff: // not implemented
+            break;
+        }
+
+        consumable.amountOfUses --;
+        if (consumable.amountOfUses == 0)
+        {
+            character.consumables.Remove(consumable);
+        }
     }
 }
 

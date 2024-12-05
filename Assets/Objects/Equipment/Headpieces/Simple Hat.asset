@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012ac43d91d310f41af8cc3910a5c129, type: 3}
   m_Name: Simple Hat
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemType: 0
-  equipmentType: 0
-  hp: 0
-  sp: 0
-  intelligence: 0
+  itemName: Simple Hat
+  itemDescription: A simple hat.
+  itemType: 1
+  equipmentType: 1
+  hp: 2
+  sp: 3
+  intelligence: 1
