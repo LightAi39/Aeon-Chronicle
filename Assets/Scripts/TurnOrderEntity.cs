@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Cinemachine;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -68,7 +70,7 @@ public class TurnOrderEntity : MonoBehaviour
     {
         if (characterScriptableObject != null)
         {
-            character = Instantiate(characterScriptableObject);
+            character = PrepareScriptableObjects(characterScriptableObject);
             List<int> stats = GetEquipmentStats();
 
             name = character.name;
@@ -92,6 +94,22 @@ public class TurnOrderEntity : MonoBehaviour
         }
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
+    }
+
+    private Character PrepareScriptableObjects(Character character)
+    {
+        Character result = Instantiate(character);
+        result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
+        result.headpiece = result.headpiece ? Instantiate(result.headpiece) : result.headpiece;
+        result.chestpiece = result.chestpiece ? Instantiate(result.chestpiece) : result.chestpiece;
+        result.gloves = result.gloves ? Instantiate(result.gloves) : result.gloves;
+        result.legs = result.legs ? Instantiate(result.legs) : result.legs;
+        result.boots = result.boots ? Instantiate(result.boots) : result.boots;
+        result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;
+        result.skills = result.skills.Select(Instantiate).ToList();
+        result.consumables = result.consumables.Select(Instantiate).ToList();
+
+        return result;
     }
 
     private List<int> GetEquipmentStats()
@@ -416,8 +434,12 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseItem(Consumable consumable, TurnOrderEntity target) //List target for aoe when aoe implemented 
+    public void UseItem(Consumable consumable, [CanBeNull] TurnOrderEntity target) //List target for aoe when aoe implemented 
     {
+        if (target == null)
+        {
+            target = consumable.useOnFriendlies ? this : CombatManager.Instance.targetingManager.TargetedEnemy;
+        }
         switch(consumable.effect)
         {
             case ConsumableEffect.Heal:
@@ -437,6 +459,7 @@ public class TurnOrderEntity : MonoBehaviour
         {
             character.consumables.Remove(consumable);
         }
+        EndTurn();
     }
 }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CombatSequenceController : MonoBehaviour
 {
-    private ICombatState _currentState;
+    public ICombatState CurrentState { get; private set; }
 
     private bool _entityCompletedAction = false;
     private bool _actionComplete = true;
@@ -18,21 +18,21 @@ public class CombatSequenceController : MonoBehaviour
     
     void Start()
     {
-        _currentState = new TurnPickerState(this);
-        _currentState.Enter();
+        CurrentState = new TurnPickerState(this);
+        CurrentState.Enter();
     }
     
     void Update()
     {
-        _currentState.Execute();
+        CurrentState.Execute();
     }
 
     public void ChangeState(ICombatState newState)
     {
-        _currentState.Exit();
+        CurrentState.Exit();
         CombatManager.Instance.DoCombatStateChanged();
-        _currentState = newState;
-        _currentState.Enter();
+        CurrentState = newState;
+        CurrentState.Enter();
     }
     
     // condition checks

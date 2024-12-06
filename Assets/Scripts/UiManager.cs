@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 public class UiManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UiManager : MonoBehaviour
     
     public GameObject objectForTurnOrder;
     public Transform uiParentTurnOrder;
+    public GameObject itemButtonPrefab;
 
     public void ShowSkillPanel()
     {
@@ -31,6 +33,32 @@ public class UiManager : MonoBehaviour
         if (CombatManager.Instance.targetingManager.IsActivelyTargeting)
         {
             skillPanel.SetActive(false);
+            
+            foreach (Transform child in itemPanel.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            var turnOrderEntity = CombatManager.Instance.turnController.GetCurrentlyActing().entity;
+
+            foreach (var consumable in turnOrderEntity.character.consumables)
+            {
+                if (consumable.amountOfUses <= 0) continue;
+                GameObject newButton = Instantiate(itemButtonPrefab, itemPanel.transform);
+                TextMeshProUGUI textComponent = newButton.GetComponentInChildren<TextMeshProUGUI>();
+                Button button = newButton.GetComponentInChildren<Button>();
+                button.onClick.AddListener(() => turnOrderEntity.UseItem(consumable, null));
+                if (textComponent != null)
+                {
+                    textComponent.text = $"{consumable.itemName}: {consumable.amountOfUses}";
+                }
+                else
+                {
+                    Debug.LogWarning("The button prefab is missing a TextMeshProUGUI component.");
+                }
+
+            }
+            
             itemPanel.SetActive(!itemPanel.activeSelf);
         }
     }
@@ -39,7 +67,6 @@ public class UiManager : MonoBehaviour
     {
         if (!weaknessInfoManager.isEnabled)
         { 
-            weaknessInfoManager.PreparePanel(CombatManager.Instance.targetingManager.TargetedEnemy);
             weaknessInfoManager.ShowPanel();
         }
         else
