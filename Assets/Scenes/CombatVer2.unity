@@ -151,10 +151,6 @@ PrefabInstance:
       value: 0.5321958
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
-    - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
       propertyPath: startDelay
       value: 50
       objectReference: {fileID: 0}
@@ -162,6 +158,10 @@ PrefabInstance:
       propertyPath: EntityToAttackTemp
       value: 
       objectReference: {fileID: 1297478502}
+    - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
+      propertyPath: characterScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
     - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
       propertyPath: objectRenderers.Array.size
       value: 0
@@ -1872,10 +1872,6 @@ PrefabInstance:
       value: 0.87169814
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
-    - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
       propertyPath: startDelay
       value: 20
       objectReference: {fileID: 0}
@@ -1887,6 +1883,10 @@ PrefabInstance:
       propertyPath: EntityToAttackTemp
       value: 
       objectReference: {fileID: 383652923}
+    - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
+      propertyPath: characterScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
     - target: {fileID: 246618426761798308, guid: 12fde643e082cb7419fe59b6f85184d7, type: 3}
       propertyPath: objectRenderers.Array.size
       value: 0
@@ -2703,10 +2703,6 @@ PrefabInstance:
       value: 0.7660377
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 9482735d7a66a254a8be904c893db959, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
-    - target: {fileID: 246618426761798308, guid: 9482735d7a66a254a8be904c893db959, type: 3}
       propertyPath: startDelay
       value: 40
       objectReference: {fileID: 0}
@@ -2718,6 +2714,10 @@ PrefabInstance:
       propertyPath: EntityToAttackTemp
       value: 
       objectReference: {fileID: 1313264622}
+    - target: {fileID: 246618426761798308, guid: 9482735d7a66a254a8be904c893db959, type: 3}
+      propertyPath: characterScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d9c315a3582b254ca137ab02bcccbb1, type: 2}
     - target: {fileID: 246618426761798308, guid: 9482735d7a66a254a8be904c893db959, type: 3}
       propertyPath: objectRenderers.Array.size
       value: 0
@@ -9277,10 +9277,6 @@ PrefabInstance:
       value: 0.25800145
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: 321a1bdeb0f2683438d88688c7fd1ca1, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 11400000, guid: 4bec04b17a62fe7459cd9d02f2439d36, type: 2}
-    - target: {fileID: 246618426761798308, guid: 321a1bdeb0f2683438d88688c7fd1ca1, type: 3}
       propertyPath: startDelay
       value: 10
       objectReference: {fileID: 0}
@@ -9292,6 +9288,10 @@ PrefabInstance:
       propertyPath: EntityToAttackTemp
       value: 
       objectReference: {fileID: 405030966}
+    - target: {fileID: 246618426761798308, guid: 321a1bdeb0f2683438d88688c7fd1ca1, type: 3}
+      propertyPath: characterScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bec04b17a62fe7459cd9d02f2439d36, type: 2}
     - target: {fileID: 246618426761798308, guid: 321a1bdeb0f2683438d88688c7fd1ca1, type: 3}
       propertyPath: objectRenderers.Array.size
       value: 0
@@ -10807,10 +10807,6 @@ PrefabInstance:
       value: 0.14350298
       objectReference: {fileID: 0}
     - target: {fileID: 246618426761798308, guid: c6b997778a01e204d8ca1905a9fe10cd, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 11400000, guid: 3470b1475525fc841ad0b659c9d951d8, type: 2}
-    - target: {fileID: 246618426761798308, guid: c6b997778a01e204d8ca1905a9fe10cd, type: 3}
       propertyPath: startDelay
       value: 30
       objectReference: {fileID: 0}
@@ -10822,6 +10818,10 @@ PrefabInstance:
       propertyPath: EntityToAttackTemp
       value: 
       objectReference: {fileID: 1289588920}
+    - target: {fileID: 246618426761798308, guid: c6b997778a01e204d8ca1905a9fe10cd, type: 3}
+      propertyPath: characterScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 3470b1475525fc841ad0b659c9d951d8, type: 2}
     - target: {fileID: 246618426761798308, guid: c6b997778a01e204d8ca1905a9fe10cd, type: 3}
       propertyPath: objectRenderers.Array.size
       value: 0

@@ -32,4 +32,23 @@ MonoBehaviour:
   damageTypes: 00000000
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
-  weaknesses: []
+  consumables: []
+  weaknesses:
+  - type: 0
+    weaknessValue: 80
+  - type: 1
+    weaknessValue: 120
+  - type: 2
+    weaknessValue: 50
+  - type: 3
+    weaknessValue: 150
+  - type: 4
+    weaknessValue: 150
+  - type: 5
+    weaknessValue: 100
+  - type: 6
+    weaknessValue: 80
+  - type: 7
+    weaknessValue: 100
+  - type: 8
+    weaknessValue: 100

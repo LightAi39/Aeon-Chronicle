@@ -37,7 +37,7 @@ public class EnemyTurnState : ICombatState
             _entity.StartTurn();
         
             // placeholder logic
-            _entity.UseSkill(_entity.character.weapon.basicAttack, _entity.EntityToAttackTemp);
+            _entity.UseSkill(_entity.characterScriptableObject.weapon.basicAttack, _entity.EntityToAttackTemp);
         }
     }
 

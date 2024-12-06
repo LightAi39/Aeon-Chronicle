@@ -21,13 +21,13 @@ public class StatusbarController : MonoBehaviour
     {
         if (turnOrderEntity != null)
         {
-            healthbarForeground.maxValue = turnOrderEntity.maxHp;
-            healthbarBackground.maxValue = turnOrderEntity.maxHp;
+            healthbarForeground.maxValue = turnOrderEntity.character.maxHp;
+            healthbarBackground.maxValue = turnOrderEntity.character.maxHp;
             healthbarForeground.value = turnOrderEntity.currentHp;
             healthbarBackground.value = turnOrderEntity.currentHp;
             //you can have a max amount of shield maybe? at least this makes the bar fill up the same amount of relatively to hp
-            shieldbarForeground.maxValue = turnOrderEntity.maxHp;
-            shieldbarBackground.maxValue = turnOrderEntity.maxHp;
+            shieldbarForeground.maxValue = turnOrderEntity.character.maxHp;
+            shieldbarBackground.maxValue = turnOrderEntity.character.maxHp;
             shieldbarForeground.value = turnOrderEntity.shield;
             shieldbarBackground.value = turnOrderEntity.shield;
         }

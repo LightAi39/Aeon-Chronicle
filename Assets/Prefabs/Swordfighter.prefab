@@ -157,20 +157,8 @@ MonoBehaviour:
   startDelay: 0
   delayPerTurn: 60
   color: {r: 0, g: 0, b: 0, a: 0}
-  character: {fileID: 11400000, guid: 4c1978211aa2fc241acfcad77116928a, type: 2}
-  name: 
-  maxHp: 0
-  maxSp: 0
-  strength: 0
-  resilience: 0
-  intelligence: 0
-  mind: 0
-  agility: 0
-  critChance: 0
-  critDamage: 0
-  skills: []
-  damageType: 0
-  element: 0
+  characterScriptableObject: {fileID: 11400000, guid: 4c1978211aa2fc241acfcad77116928a, type: 2}
+  character: {fileID: 0}
   currentHp: 0
   currentSp: 0
   shield: 0

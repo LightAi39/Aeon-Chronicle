@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TurnOrderEntity : MonoBehaviour
 {
@@ -16,21 +17,13 @@ public class TurnOrderEntity : MonoBehaviour
     public int delayPerTurn = 60;
     public Color color;
     
-    [Header("Stats (instantiated by Character SO)")]
+    [FormerlySerializedAs("character")] [Header("Stats (instantiated by Character SO)")]
+    public Character characterScriptableObject;
+    [FormerlySerializedAs("characterInstance")]
+    [Tooltip("DO NOT SET, instantiated based on character scriptable object above")]
     public Character character;
+    
     [Space(20)]
-    public string name;
-    public int maxHp;
-    public int maxSp;
-    public int strength;
-    public int resilience;
-    public int intelligence;
-    public int mind;
-    public int agility;
-    public int critChance;
-    public int critDamage;
-    public List<Skill> skills = new List<Skill>();
-    public List<DamageType> damageTypes = new List<DamageType>();
     
     [Header("Stats (live)")]
     [Tooltip("Instantiated based on maxHp")]
@@ -53,6 +46,7 @@ public class TurnOrderEntity : MonoBehaviour
     [Tooltip("Instantiated based on critDamage")]
     public int activeCritDamage;
     public State state = State.Idle;
+    [Tooltip("Instantiated based on Consumables")]
     
     
     [Space(20)]
@@ -72,31 +66,23 @@ public class TurnOrderEntity : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (character != null)
+        if (characterScriptableObject != null)
         {
+            character = Instantiate(characterScriptableObject);
             List<int> stats = GetEquipmentStats();
 
             name = character.name;
-            maxHp = character.maxHp + stats[0];
-            currentHp = maxHp;
-            maxSp = character.maxSp + stats[1];
-            currentSp = maxSp;
-            strength = character.strength;
-            resilience = character.resilience;
-            intelligence = character.intelligence;
-            mind = character.mind;
-            agility = character.agility;
-            critChance = character.critChance;
-            critDamage = character.critDamage;
-            skills = character.skills;
-            damageTypes = character.damageTypes;
+            character.maxHp += stats[0];
+            currentHp = character.maxHp;
+            character.maxSp += stats[1];
+            currentSp = character.maxSp;
             activeStrength = character.strength + stats[2];
             activeResilience = character.resilience + stats[3];
             activeIntelligence = character.intelligence + stats[4];
             activeMind = character.mind + stats[5];
             activeAgility = character.agility + stats[6];
             activeCritChance = character.critChance + stats[7];
-            activeCritDamage = character.critDamage + stats[8];     
+            activeCritDamage = character.critDamage + stats[8];
 
             // Set damagetype resistances.
             foreach (var weakness in character.weaknesses)
@@ -316,14 +302,14 @@ public class TurnOrderEntity : MonoBehaviour
         {
             entity.GetTargeted();
             await Task.Delay(1000);
-            entity.TakeDamage(this.strength, damageTypes, 1f);
+            entity.TakeDamage(character.strength, character.damageTypes, 1f);
             await Task.Delay(500);
             entity.GetUntargeted();
             EndTurn(); // temp
         }
         else
         {
-            entity.TakeDamage(this.strength, damageTypes, 1f);
+            entity.TakeDamage(character.strength, character.damageTypes, 1f);
             EndTurn(); // temp
         } 
     }
@@ -418,9 +404,9 @@ public class TurnOrderEntity : MonoBehaviour
     {
         statusbar.UpdateStatusbar(healing, DmgPosition);
         currentHp += healing;
-        if (currentHp > maxHp)
+        if (currentHp > character.maxHp)
         {
-            currentHp = maxHp;
+            currentHp = character.maxHp;
         }
     }
 

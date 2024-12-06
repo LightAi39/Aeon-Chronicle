@@ -85,7 +85,7 @@ public class TargetingManager : MonoBehaviour
         {
             var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
 
-            teammate.UseSkill(teammate.character.weapon.basicAttack, TargetedEnemy);
+            teammate.UseSkill(teammate.characterScriptableObject.weapon.basicAttack, TargetedEnemy);
         }
         
     }
@@ -120,11 +120,11 @@ public class TargetingManager : MonoBehaviour
 
             if (targetingEnemies)
             {
-                teammate.UseSkill(teammate.skills[0], TargetedEnemy);
+                teammate.UseSkill(teammate.character.skills[0], TargetedEnemy);
             }
             else
             {
-                teammate.UseSkill(teammate.skills[0], TargetedFriendly);
+                teammate.UseSkill(teammate.character.skills[0], TargetedFriendly);
             }
 
             targetingEnemies = true;

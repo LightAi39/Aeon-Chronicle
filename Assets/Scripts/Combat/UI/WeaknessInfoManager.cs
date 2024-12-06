@@ -21,13 +21,13 @@ public class WeaknessInfoManager : MonoBehaviour
 
     public void PreparePanel(TurnOrderEntity target)
     {
-        slashText.text = target.character.damageWeaknesses[DamageType.Slash].ToString(CultureInfo.InvariantCulture);
-        bluntText.text = target.character.damageWeaknesses[DamageType.Blunt].ToString(CultureInfo.InvariantCulture);
-        thrustText.text = target.character.damageWeaknesses[DamageType.Thrust].ToString(CultureInfo.InvariantCulture);
-        fireText.text = target.character.damageWeaknesses[DamageType.Fire].ToString(CultureInfo.InvariantCulture);
-        waterText.text = target.character.damageWeaknesses[DamageType.Water].ToString(CultureInfo.InvariantCulture);
-        earthText.text = target.character.damageWeaknesses[DamageType.Earth].ToString(CultureInfo.InvariantCulture);
-        windText.text = target.character.damageWeaknesses[DamageType.Wind].ToString(CultureInfo.InvariantCulture);
+        slashText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Slash].ToString(CultureInfo.InvariantCulture);
+        bluntText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Blunt].ToString(CultureInfo.InvariantCulture);
+        thrustText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Thrust].ToString(CultureInfo.InvariantCulture);
+        fireText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Fire].ToString(CultureInfo.InvariantCulture);
+        waterText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Water].ToString(CultureInfo.InvariantCulture);
+        earthText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Earth].ToString(CultureInfo.InvariantCulture);
+        windText.text = target.characterScriptableObject.damageWeaknesses[DamageType.Wind].ToString(CultureInfo.InvariantCulture);
     }
 
     public void ShowPanel()

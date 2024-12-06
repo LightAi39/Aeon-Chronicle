@@ -58,9 +58,9 @@ public class UiManager : MonoBehaviour
         foreach (var entity in entities)
         {
             GameObject newObject = Instantiate(objectForTurnOrder, uiParentTurnOrder);
-            newObject.name = entity.name + $" {entity.team}-{entity.characterIndex}";
+            newObject.name = entity.character.name + $" {entity.team}-{entity.characterIndex}";
             TextMeshProUGUI tmpText = newObject.GetComponentInChildren<TextMeshProUGUI>();
-            tmpText.text = entity.name;
+            tmpText.text = entity.character.name;
             Image img = newObject.GetComponentInChildren<Image>();
             img.color = entity.team == 0 ? Color.cyan : Color.red;
             orderPanelEntries.Add(newObject);
@@ -105,6 +105,6 @@ public class UiManager : MonoBehaviour
         itemPanel.SetActive(false);
 
         var buttonText = skillPanel.GetComponentInChildren<TextMeshProUGUI>();
-        buttonText.text = CombatManager.Instance.turnController.GetNextTurn().entity.skills[0].name;
+        buttonText.text = CombatManager.Instance.turnController.GetNextTurn().entity.character.skills[0].name;
     }
 }
