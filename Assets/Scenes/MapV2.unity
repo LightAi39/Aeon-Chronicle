@@ -5587,7 +5587,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1456108337}
-        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: SelectionSystem, Assembly-CSharp
         m_MethodName: HandleTileClick
         m_Mode: 0
         m_Arguments:

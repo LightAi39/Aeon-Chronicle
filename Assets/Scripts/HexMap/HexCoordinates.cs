@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[SelectionBase]
 public class HexCoordinates : MonoBehaviour
 {
     public static float xOffset = 3, yOffset = 1, zOffset = 2.598f; // z is square root
