@@ -33,7 +33,8 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: 0a15ea20b6cf45948af59cbef05acecf, type: 2}
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
-  consumables: []
+  consumables:
+  - {fileID: 11400000, guid: 57b0c30226f2fbe4eaf4b2525eec7e88, type: 2}
   weaknesses:
   - type: 0
     weaknessValue: 100
