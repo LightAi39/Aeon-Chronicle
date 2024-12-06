@@ -31,32 +31,6 @@ public class TargetingManager : MonoBehaviour
     {
         
     }
-
-    //temporary hierbij
-
-    public GameObject panel;
-    public TextMeshProUGUI slashText;
-    public TextMeshProUGUI bluntText;
-    public TextMeshProUGUI thrustText;
-    public TextMeshProUGUI fireText;
-    public TextMeshProUGUI waterText;
-    public TextMeshProUGUI earthText;
-    public TextMeshProUGUI windText;
-    public void ToggleWeaknessInfo()
-    {
-        if (panel != null)
-        {
-            slashText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Slash].ToString();
-            bluntText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Blunt].ToString();
-            thrustText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Thrust].ToString();
-            fireText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Fire].ToString();
-            waterText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Water].ToString();
-            earthText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Earth].ToString();
-            windText.text = TargetedEnemy.character.damageWeaknesses[DamageType.Wind].ToString();
-
-            panel.SetActive(!panel.activeSelf);
-        }
-    }
     
     // TODO: fuck this temp shit
     public void ChangeTargetLeft()

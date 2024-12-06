@@ -328,8 +328,13 @@ public class TurnOrderEntity : MonoBehaviour
         } 
     }
 
-    public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
+    public async void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
     {
+        if (team == 1) // simulate targeting and buffer
+        {
+            target.GetTargeted();
+            await Task.Delay(1000);
+        }
         statusbar.UpdateStatusbar(0, DmgPosition);
         switch(skillUsed.skilltype)
         {
@@ -345,6 +350,11 @@ public class TurnOrderEntity : MonoBehaviour
             case Skill.Skilltype.Healing:
                 /*target.*/GetHealed(skillUsed.value * activeMind); 
             break;
+        }
+        if (team == 1) // simulate detargeting and buffer
+        {
+            await Task.Delay(500);
+            target.GetUntargeted();
         }
         EndTurn();
     }

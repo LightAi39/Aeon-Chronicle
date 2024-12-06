@@ -1802,7 +1802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 38.3, y: 47.6}
+  m_AnchoredPosition: {x: 38.30005, y: 47.599976}
   m_SizeDelta: {x: 649.51, y: 139.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252581065
@@ -4239,6 +4239,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683894673}
   m_CullTransparentMesh: 1
+--- !u!1 &692899752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692899753}
+  - component: {fileID: 692899754}
+  m_Layer: 0
+  m_Name: WeaknessInfoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692899753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692899752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 708016243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692899754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692899752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214c2e959bbc6df4a8d427e48be8ac71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1095766437}
+  slashText: {fileID: 2130232449}
+  bluntText: {fileID: 789379335}
+  thrustText: {fileID: 683894675}
+  fireText: {fileID: 617260649}
+  waterText: {fileID: 1517167688}
+  earthText: {fileID: 1707509394}
+  windText: {fileID: 1182279305}
+  isEnabled: 0
 --- !u!1 &708016242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,7 +4321,8 @@ Transform:
   m_LocalPosition: {x: 6, y: 3.1999998, z: 1.6999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 692899753}
   m_Father: {fileID: 1257618714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &708016244
@@ -4283,6 +4337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee2033e6cb5a924da10e690d4d572e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaknessInfoManager: {fileID: 692899754}
   skillPanel: {fileID: 2032092019}
   itemPanel: {fileID: 825684207}
   orderPanelEntries: []
@@ -5848,7 +5903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1095766438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5880,7 +5935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 42.5}
+  m_AnchoredPosition: {x: 31.875, y: -156.25}
   m_SizeDelta: {x: 332.6, y: 138.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095766439
@@ -10088,14 +10143,6 @@ MonoBehaviour:
   Enemies: []
   IsActivelyTargeting: 0
   targetingEnemies: 1
-  panel: {fileID: 0}
-  slashText: {fileID: 0}
-  bluntText: {fileID: 0}
-  thrustText: {fileID: 0}
-  fireText: {fileID: 0}
-  waterText: {fileID: 0}
-  earthText: {fileID: 0}
-  windText: {fileID: 0}
 --- !u!1001 &1820511653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11243,9 +11290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1804221825}
-        m_TargetAssemblyTypeName: TargetingManager, Assembly-CSharp
-        m_MethodName: ToggleWeaknessInfo
+      - m_Target: {fileID: 708016244}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ToggleTargetInfoPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

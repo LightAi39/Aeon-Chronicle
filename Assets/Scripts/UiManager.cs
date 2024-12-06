@@ -8,10 +8,11 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+    public WeaknessInfoManager weaknessInfoManager;
     public GameObject skillPanel;
     public GameObject itemPanel;
     public List<GameObject> orderPanelEntries = new();
-
+    
     public GameObject objectForTurnOrder;
     public Transform uiParentTurnOrder;
 
@@ -32,6 +33,20 @@ public class UiManager : MonoBehaviour
             skillPanel.SetActive(false);
             itemPanel.SetActive(!itemPanel.activeSelf);
         }
+    }
+
+    public void ToggleTargetInfoPanel()
+    {
+        if (!weaknessInfoManager.isEnabled)
+        { 
+            weaknessInfoManager.PreparePanel(CombatManager.Instance.targetingManager.TargetedEnemy);
+            weaknessInfoManager.ShowPanel();
+        }
+        else
+        {
+            weaknessInfoManager.HidePanel();
+        }
+        
     }
 
     public void Start()
