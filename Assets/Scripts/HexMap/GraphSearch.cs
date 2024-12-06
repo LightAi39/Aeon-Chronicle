@@ -44,13 +44,15 @@ public class GraphSearch
 
         return new BfsResult
         {
-            Visited = visited
+            Visited = visited,
+            StartPoint = startPoint
         };
     }
     
     public struct BfsResult
     {
         public Dictionary<Vector3Int, Vector3Int?> Visited;
+        public Vector3Int StartPoint;
 
         public List<Vector3Int> GetPath(Vector3Int destination)
         {

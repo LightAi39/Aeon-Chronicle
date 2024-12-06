@@ -41,13 +41,16 @@ public class HexMovementSystem : MonoBehaviour
     {
         if (movementRange.GetHexPositionsInRange().Contains(selectedHexPosition))
         {
+            hexGrid.GetTileAt(movementRange.StartPoint).ResetHighlight(); // also reset current position
             foreach (Vector3Int hexPosition in currentPath)
             {
                 hexGrid.GetTileAt(hexPosition).ResetHighlight();
             }
             currentPath = movementRange.GetPath(selectedHexPosition);
+            hexGrid.GetTileAt(movementRange.StartPoint).HighlightPath(); // also highlight current position
             foreach (Vector3Int hexPosition in currentPath)
             {
+                
                 hexGrid.GetTileAt(hexPosition).HighlightPath();
             }
         }

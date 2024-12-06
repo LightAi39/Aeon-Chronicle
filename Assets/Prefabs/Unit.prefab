@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementPoints: 20
-  movementDuration: 1
-  rotationDuration: 0.3
+  movementDuration: 0.7
+  rotationDuration: 0.2
 --- !u!114 &5040522752481562003
 MonoBehaviour:
   m_ObjectHideFlags: 0
