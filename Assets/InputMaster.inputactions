@@ -28,6 +28,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Map saving",
+            "id": "76ce4ac9-fc28-4346-93c3-79a933128b37",
+            "actions": [
+                {
+                    "name": "Save",
+                    "type": "Button",
+                    "id": "794bf80b-bbf0-4bf0-8ea8-e34180f7545a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Load",
+                    "type": "Button",
+                    "id": "3869c419-44b5-4aa6-bae1-6b940b9560d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "72fb9fcf-30e4-4b2c-8227-ae20bb4cfb37",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Save",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecd620d0-1289-48f3-87fa-bd62907e83f5",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Load",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

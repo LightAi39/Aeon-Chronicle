@@ -1,0 +1,184 @@
+{
+    "Data": [
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":10.392000198364258},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":0.0},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":-5.196000099182129},\"hexType\":6,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":5.196000099182129},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":10.392000198364258},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":12.0,\"y\":0.0,\"z\":10.392000198364258},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":10.5,\"y\":0.0,\"z\":7.794000148773193},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":0.0},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":7.794000625610352},\"hexType\":2,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":5.196000099182129},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-4.5,\"y\":0.0,\"z\":2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":7.794000148773193},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":0.0},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":7.794000148773193},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":-2.5980000495910646},\"hexType\":6,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":13.5,\"y\":0.0,\"z\":7.794000148773193},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":5.196000576019287},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":0.0},\"hexType\":6,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":10.392000198364258},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":-2.5980000495910646},\"hexType\":6,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":7.794000148773193},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "Unit+UnitData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.6000000238418579,\"z\":0.0},\"MovementPoints\":20,\"PrefabId\":\"Hex map/Unit\"}",
+            "PrefabID": "Hex map/Unit"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":12.989999771118164},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":5.196000099182129},\"hexType\":5,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":5.196000099182129},\"hexType\":7,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":12.989999771118164},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":10.392000198364258},\"hexType\":3,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":12.989999771118164},\"hexType\":1,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":-5.196000099182129},\"hexType\":6,\"PrefabId\":\"Hex map/HexTile\"}",
+            "PrefabID": "Hex map/HexTile"
+        }
+    ]
+}

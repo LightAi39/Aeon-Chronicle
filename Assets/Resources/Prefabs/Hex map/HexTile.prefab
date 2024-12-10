@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb63399a706d59440a8dddb027be91ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabID: Hex map/HexTile
   highlight: {fileID: 2052988018567543014}
   hexType: 1
 --- !u!114 &2052988018567543014

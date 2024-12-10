@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [SelectionBase]
-public class HexTile : MonoBehaviour
+public class HexTile : MonoBehaviour, ISaveable
 {
+    [SerializeField] private string prefabID;
     [SerializeField] private GlowHighlight highlight;
     private HexCoordinates _hexCoordinates;
 
@@ -55,6 +57,42 @@ public class HexTile : MonoBehaviour
     public void HighlightPath()
     {
         highlight.HighlightValidPath();
+    }
+
+    
+    public object SaveData()
+    {
+        return new HexTileData()
+        {
+            Position = transform.position,
+            hexType = hexType,
+            PrefabId = prefabID
+        };
+        // TODO: add custom model saving.
+    }
+
+    public void LoadData(object data)
+    {
+        var hexTileData = data as HexTileData;
+        if (hexTileData == null) throw new Exception("hexTileData is null");
+        
+        transform.position = hexTileData.Position;
+        hexType = hexTileData.hexType;
+        prefabID = hexTileData.PrefabId;
+
+        // TODO: load custom model
+    }
+
+    public string GetPrefabID() => prefabID;
+
+    [Serializable]
+    private class HexTileData
+    {
+        public Vector3 Position;
+        public HexType hexType;
+
+        public string PrefabId;
+        // TODO: add custom models
     }
 }
 

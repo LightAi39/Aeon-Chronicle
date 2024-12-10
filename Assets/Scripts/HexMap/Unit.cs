@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, ISaveable
 {
+    [SerializeField] private string prefabID;
     [SerializeField]
     private int movementPoints = 20;
     public int MovementPoints { get => movementPoints; }
@@ -87,5 +88,36 @@ public class Unit : MonoBehaviour
             Debug.Log("Movement finished!");
             MovementFinished?.Invoke(this);
         }
+    }
+
+    public object SaveData()
+    {
+        return new UnitData
+        {
+            Position = transform.position,
+            MovementPoints = movementPoints,
+            PrefabId = prefabID
+        };
+        
+        // TODO: save model used
+    }
+
+    public void LoadData(object data)
+    {
+        var unitData = data as UnitData;
+        if (unitData == null) throw new Exception("unitData is null");
+        transform.position = unitData.Position;
+        movementPoints = unitData.MovementPoints;
+        prefabID = unitData.PrefabId;
+    }
+
+    public string GetPrefabID() => prefabID;
+
+    [Serializable]
+    private class UnitData
+    {
+        public Vector3 Position;
+        public int MovementPoints;
+        public string PrefabId;
     }
 }
