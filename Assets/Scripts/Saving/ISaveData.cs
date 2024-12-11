@@ -11,10 +11,11 @@ public abstract class ISaveData
     public Vector3 Scale;
     public string PrefabID;
     public string GUID;
-    public string ParentGuid;
+    public ParentReference ParentReference;
 }
 
-public abstract class ParentReference
+[System.Serializable]
+public class ParentReference
 {
     public string ParentGuid;
     public string PrefabChildId;

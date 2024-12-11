@@ -109,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4980426279988628005}
+  - component: {fileID: 4048013851372799816}
   m_Layer: 0
   m_Name: Props
   m_TagString: Untagged
@@ -131,6 +132,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 509279313094230874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4048013851372799816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204016755700071329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889c96f795d361345a96e5ec9983ef38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childID: fbed6bcb-0015-4b1d-ad22-56a29e00f6dc
 --- !u!1 &7819562750003502176
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7636956618205887299}
+  - component: {fileID: 6165004836919139554}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -162,3 +177,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 509279313094230874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6165004836919139554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819562750003502176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889c96f795d361345a96e5ec9983ef38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childID: a341f262-cff1-49a2-ad9f-c54204d7f26c

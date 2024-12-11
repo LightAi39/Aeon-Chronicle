@@ -18,8 +18,10 @@ public class Unit : SaveableMonoBehaviour
 
     public event Action<Unit> MovementFinished;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         glowHighlight = GetComponent<GlowHighlight>();
     }
 

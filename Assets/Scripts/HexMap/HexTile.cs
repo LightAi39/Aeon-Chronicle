@@ -31,9 +31,11 @@ public class HexTile : SaveableMonoBehaviour
         // requirement later on could be a different movement cost and depend on if you have a requirement or not (either if you are allowed to move on it or if the cost is different), but for now its counted as an obstacle
         // TODO: implement conditional movement costs
     }
-    
-    private void Awake()
+
+    protected override void Awake()
     {
+        base.Awake();
+        
         _hexCoordinates = GetComponent<HexCoordinates>();
         highlight = GetComponent<GlowHighlight>();
     }

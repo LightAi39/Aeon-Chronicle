@@ -2,479 +2,275 @@
     "Data": [
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"bc2c1feb-db8d-4f9d-9517-d4f163bf0327\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "bc2c1feb-db8d-4f9d-9517-d4f163bf0327",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"1061a79e-fe76-4b99-a4e9-34be2018d6dd\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"bd99b05a-b396-466a-af4e-0c022d0ee7cf\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "bd99b05a-b396-466a-af4e-0c022d0ee7cf",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"3ea3b85a-cb54-4ca5-9940-f68d8a2d94b1\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "3ea3b85a-cb54-4ca5-9940-f68d8a2d94b1",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"074f4fe9-1712-4b9a-b440-583790b6bb2c\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "074f4fe9-1712-4b9a-b440-583790b6bb2c",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"0aedc76b-6456-4b77-88d6-292510fd6afd\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "0aedc76b-6456-4b77-88d6-292510fd6afd",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"83e57b78-0b6c-43a7-9e0f-b7a58a063c82\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "83e57b78-0b6c-43a7-9e0f-b7a58a063c82",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"65bf4de8-037c-4b2c-9847-81f720978cd6\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "65bf4de8-037c-4b2c-9847-81f720978cd6",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"d23ca467-6345-4929-8c57-7e1fb3070eaf\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "d23ca467-6345-4929-8c57-7e1fb3070eaf",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":7.794000625610352},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"f8d3d62a-fd03-445b-99ec-497359119b00\",\"ParentGuid\":\"\",\"hexType\":2}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "f8d3d62a-fd03-445b-99ec-497359119b00",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"b525b0c2-95a2-4890-b974-b9751292de6a\",\"ParentGuid\":\"\",\"hexType\":7}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "b525b0c2-95a2-4890-b974-b9751292de6a",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"31658add-5ff4-463d-96f4-2567cf4b3583\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "31658add-5ff4-463d-96f4-2567cf4b3583",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"435fe015-1a9d-4cc9-9c53-17c2b86d5f06\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "435fe015-1a9d-4cc9-9c53-17c2b86d5f06",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"0c49761b-5d30-4b60-b67e-fa5c31fad620\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "0c49761b-5d30-4b60-b67e-fa5c31fad620",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"1d8a456c-a365-435a-9d85-e6deee534ef4\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "1d8a456c-a365-435a-9d85-e6deee534ef4",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"0d239ed8-4f60-4fca-90c4-de2328db9c4e\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "0d239ed8-4f60-4fca-90c4-de2328db9c4e",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"76885f98-9e13-4046-8507-6c5c999b0d0d\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "76885f98-9e13-4046-8507-6c5c999b0d0d",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"c19455b0-14a3-4f69-ae27-05e55d9074ea\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "c19455b0-14a3-4f69-ae27-05e55d9074ea",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"580e5bf8-d478-481c-a39e-19407bf26785\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "580e5bf8-d478-481c-a39e-19407bf26785",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":-5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"24560b5a-9eff-48c0-8475-e9678f482980\",\"ParentGuid\":\"\",\"hexType\":6}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "24560b5a-9eff-48c0-8475-e9678f482980",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"df14c27a-980a-4d5f-86d0-98a1384faa13\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "df14c27a-980a-4d5f-86d0-98a1384faa13",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"424bf3dd-0dfc-4dd4-a107-ea177a932bf1\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "424bf3dd-0dfc-4dd4-a107-ea177a932bf1",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"f00a3945-b82f-49ef-a251-6886a3c85f47\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "f00a3945-b82f-49ef-a251-6886a3c85f47",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"4624ddbe-e305-4057-9058-9f81ad560c29\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "4624ddbe-e305-4057-9058-9f81ad560c29",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"584cc0b8-b50e-4b2f-8d4d-4ef9719f121e\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "584cc0b8-b50e-4b2f-8d4d-4ef9719f121e",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"54ae1c9b-1cd7-49b6-ba70-cc2657f498f5\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/water tile",
-            "GUID": "54ae1c9b-1cd7-49b6-ba70-cc2657f498f5",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"f55378d1-6ba9-421f-92e5-271e72cc8479\",\"ParentGuid\":\"\",\"hexType\":5}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "f55378d1-6ba9-421f-92e5-271e72cc8479",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":-5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"a9afa27b-1c02-4a2f-a4c6-a41729e94fee\",\"ParentGuid\":\"\",\"hexType\":6}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "a9afa27b-1c02-4a2f-a4c6-a41729e94fee",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"c180bc8c-5244-4b20-8690-7dac46bb0885\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "c180bc8c-5244-4b20-8690-7dac46bb0885",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"666bc21d-e308-418a-894f-4eb084be2094\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "666bc21d-e308-418a-894f-4eb084be2094",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"ffa2ff19-f206-4ffd-a5dc-120e64324607\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "ffa2ff19-f206-4ffd-a5dc-120e64324607",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"64e46cc4-60b5-4fc9-bd04-e3ef3dfe2353\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "64e46cc4-60b5-4fc9-bd04-e3ef3dfe2353",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"a77c6ed5-3e90-45a8-864d-d26a7e5d58b6\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "a77c6ed5-3e90-45a8-864d-d26a7e5d58b6",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"6bb2618c-41ca-4aac-82ee-ff80c58ac289\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "6bb2618c-41ca-4aac-82ee-ff80c58ac289",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"b2bda0e9-2a28-49ad-9f6a-578a2eaefcf6\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "b2bda0e9-2a28-49ad-9f6a-578a2eaefcf6",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"88b0c66d-dff8-4a92-a66a-7d801432e0fd\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "88b0c66d-dff8-4a92-a66a-7d801432e0fd",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"598fb48b-f325-46c2-b423-7c473919d715\",\"ParentReference\":{\"ParentGuid\":\"25ddfbf7-8180-4aa3-b07c-f40db1b9fde5\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "Unit+UnitData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.6000000238418579,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/Unit\",\"GUID\":\"894c38c6-66cb-47fe-9876-2d1ced382fdc\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Prefabs/Hex map/Unit",
-            "GUID": "894c38c6-66cb-47fe-9876-2d1ced382fdc",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"718ca1b5-904a-493e-9823-b854f3eb55ea\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "718ca1b5-904a-493e-9823-b854f3eb55ea",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"4a58e518-7a3e-47ed-9bba-506476ba0afd\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "4a58e518-7a3e-47ed-9bba-506476ba0afd",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"9eff7941-5a8a-468f-9ab3-649704cd7513\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "9eff7941-5a8a-468f-9ab3-649704cd7513",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":10.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"4ac97996-292f-4f00-8d8b-7397e6310251\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "4ac97996-292f-4f00-8d8b-7397e6310251",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"71c1c740-aa45-45ef-96af-da0efd93475b\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "71c1c740-aa45-45ef-96af-da0efd93475b",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.6000000238418579,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/Unit\",\"GUID\":\"055ac2e5-ce38-4498-8637-a1c893be4f53\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"}}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"3f00064f-c18c-42ee-bae1-836f9c8f1158\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "3f00064f-c18c-42ee-bae1-836f9c8f1158",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"fd463646-b243-410f-807e-b47b1a3840bc\",\"ParentReference\":{\"ParentGuid\":\"82200713-56fe-4c17-8d63-acd124a68428\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":5.196000576019287},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"3dbb0ffc-9fa4-4d26-8732-5909d308d669\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":7.794000625610352},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"86cf35a7-f041-4bd6-a2ce-4f0a24369553\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":2}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"19d07d11-620c-4726-b168-d4c43ae3f665\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":6}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"07e0f18d-4c81-45d1-a7ef-6664f6e8ea16\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "07e0f18d-4c81-45d1-a7ef-6664f6e8ea16",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"b629a71f-fbc0-4dc0-8c3e-bf7511ed480b\",\"ParentReference\":{\"ParentGuid\":\"b78cbd3c-5003-47de-98ac-e1afc8cb73da\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"548b1b7a-e3d1-482d-9b41-0d5599df7b10\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "548b1b7a-e3d1-482d-9b41-0d5599df7b10",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"a5b2c4d8-5fd8-470d-88ac-c31b2f0630d8\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":12.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"03bff3ac-afe9-40ab-a618-953d840ccd27\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"f89d8c1c-3e75-41d9-8a89-6c613bff5e69\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "f89d8c1c-3e75-41d9-8a89-6c613bff5e69",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"428c26fd-ba62-43cf-805a-7c0a406e564a\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "428c26fd-ba62-43cf-805a-7c0a406e564a",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"27dfe288-a892-499c-9c25-f310ad060026\",\"ParentGuid\":\"\",\"hexType\":6}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "27dfe288-a892-499c-9c25-f310ad060026",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"2650f15a-7aec-4a0e-bdd4-6574a60e328b\",\"ParentReference\":{\"ParentGuid\":\"22196643-1388-4e79-9652-15d6df7511e0\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"f4d857fd-f813-4c72-8e50-405ccc29e665\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/water tile",
-            "GUID": "f4d857fd-f813-4c72-8e50-405ccc29e665",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"43253f51-3d9f-4bfc-a684-ad7fbdda2345\",\"ParentReference\":{\"ParentGuid\":\"3204dfd8-52f1-4787-b6b6-e6e3d44517e4\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"f1a59756-8e77-4c19-bdc7-965691066f27\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "f1a59756-8e77-4c19-bdc7-965691066f27",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"cb8136b8-b775-400f-89e6-5e056849c292\",\"ParentGuid\":\"\",\"hexType\":6}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "cb8136b8-b775-400f-89e6-5e056849c292",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"abdaa691-74fc-4497-bb59-76d4e447f05d\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":6}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"09864d7a-f179-473b-8a9d-8adf81f7d87a\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/water tile",
-            "GUID": "09864d7a-f179-473b-8a9d-8adf81f7d87a",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"83958deb-5690-4146-9d9b-596e04781817\",\"ParentReference\":{\"ParentGuid\":\"a06795e0-6e85-4f18-9e80-d3c62f67982c\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":5.196000576019287},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"827282c6-0302-444e-84af-0f4ab9ace1bc\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "827282c6-0302-444e-84af-0f4ab9ace1bc",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"4e34bc42-9325-4336-aa24-89290ec76197\",\"ParentGuid\":\"\",\"hexType\":6}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "4e34bc42-9325-4336-aa24-89290ec76197",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":13.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"6e54e4d4-547b-45b9-b85a-8315694008d5\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "6e54e4d4-547b-45b9-b85a-8315694008d5",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"8b02d0f5-3516-460d-bbf0-78242af39378\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"13687272-a21e-4917-a670-3e60b8ae03f6\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "13687272-a21e-4917-a670-3e60b8ae03f6",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"91690aad-c94d-4e6e-bd48-2158f1557d79\",\"ParentReference\":{\"ParentGuid\":\"d0e4e44b-e1ba-48ee-b292-75d8958b2774\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":13.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"803dcc2b-8989-48b1-8314-00d610c15e9b\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"326c5799-7e9b-44f5-84db-05f47c95274b\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"e8fd438c-c605-43e6-ae41-451c91f61782\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"c53f0ba1-7110-4114-b79a-03e396516729\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "c53f0ba1-7110-4114-b79a-03e396516729",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"ced7ebea-8b17-4914-8458-53cd2c92befc\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "ced7ebea-8b17-4914-8458-53cd2c92befc",
-            "ParentGUID": ""
-        },
-        {
-            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"c40325af-1241-4c9e-b19c-a2c75877c6c7\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "c40325af-1241-4c9e-b19c-a2c75877c6c7",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"136caee4-6db8-4a8c-a53c-015cb50dca69\",\"ParentReference\":{\"ParentGuid\":\"e8fd438c-c605-43e6-ae41-451c91f61782\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"363248d5-0619-43bb-a579-bcde0e361859\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/grass tile",
-            "GUID": "363248d5-0619-43bb-a579-bcde0e361859",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"13589720-12e8-457d-a778-8a5656836086\",\"ParentReference\":{\"ParentGuid\":\"128eeb55-ccf4-4921-9461-c99462affcb0\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"608885ec-b8e3-42fa-97a4-01a090cd791c\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":-5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"065f8d5e-5927-47bc-bae2-45b978e75bc6\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":6}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"128eeb55-ccf4-4921-9461-c99462affcb0\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"4bcfab13-22b5-427c-b2d9-bde27dedc29b\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/water tile",
-            "GUID": "4bcfab13-22b5-427c-b2d9-bde27dedc29b",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"e09ce97b-5957-4520-9be7-65b0d3252028\",\"ParentReference\":{\"ParentGuid\":\"608885ec-b8e3-42fa-97a4-01a090cd791c\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"8cd21ebc-16fd-4805-b906-48815681b725\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "8cd21ebc-16fd-4805-b906-48815681b725",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"d6871ff7-20d9-47aa-b5f0-f8ed0f238f79\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"22196643-1388-4e79-9652-15d6df7511e0\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"ef24553e-8387-4035-aa0b-5c0419b5fe85\",\"ParentGuid\":\"\"}",
-            "PrefabID": "Models/water tile",
-            "GUID": "ef24553e-8387-4035-aa0b-5c0419b5fe85",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"8f7a7af9-8e96-4a83-8574-b7a81b060e37\",\"ParentReference\":{\"ParentGuid\":\"1061a79e-fe76-4b99-a4e9-34be2018d6dd\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"c7cf9d49-c70e-442a-b7c9-27057f975451\",\"ParentReference\":{\"ParentGuid\":\"6d5aa7a8-c6da-47a5-b2a6-842d201a2202\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"fa94613b-5e5e-4f70-9a82-61ecc0137283\",\"ParentReference\":{\"ParentGuid\":\"aa3095bf-3f80-492b-9b00-88acf0a0ae03\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"f7b373e1-b28a-4c23-8772-4b2a32adc7cb\",\"ParentReference\":{\"ParentGuid\":\"d6871ff7-20d9-47aa-b5f0-f8ed0f238f79\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"4a8ec9be-0d1a-4b6d-90a5-4f7004248f82\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "4a8ec9be-0d1a-4b6d-90a5-4f7004248f82",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"12f79b41-0100-49f3-abb4-a3e116e97589\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":7}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"4fd7adbd-9f76-4b2e-8951-2b0023699382\",\"ParentReference\":{\"ParentGuid\":\"03bff3ac-afe9-40ab-a618-953d840ccd27\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"863329fd-5201-4b38-b3cf-157197977121\",\"ParentReference\":{\"ParentGuid\":\"326c5799-7e9b-44f5-84db-05f47c95274b\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"2f758304-247c-4146-abc1-a7f6d32d9a16\",\"ParentReference\":{\"ParentGuid\":\"baede518-a5ac-4af5-a151-cb3118a72b4f\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"9a9e2e87-2189-4601-b42e-5fbde9ced5e5\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "9a9e2e87-2189-4601-b42e-5fbde9ced5e5",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":-4.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"6d5aa7a8-c6da-47a5-b2a6-842d201a2202\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"e953415d-e3a4-438d-b9cd-42477ce3ea2e\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "e953415d-e3a4-438d-b9cd-42477ce3ea2e",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"baede518-a5ac-4af5-a151-cb3118a72b4f\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":-4.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"6dc3f18d-eb01-4f57-a9ac-54dfc864f0ea\",\"ParentGuid\":\"\",\"hexType\":1}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "6dc3f18d-eb01-4f57-a9ac-54dfc864f0ea",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"49ba88f9-7169-4763-a535-76c58cd02b16\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"46b47de7-8926-4847-afd6-814ff4464fa5\",\"ParentReference\":{\"ParentGuid\":\"5e4aad34-1a79-423f-89d9-96d743b664a9\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":12.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"9b2277ea-f0ee-4d47-9081-7c9ee03e791a\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "9b2277ea-f0ee-4d47-9081-7c9ee03e791a",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":10.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"e7bb6209-699a-408f-a37b-994555a38a06\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
         },
         {
             "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"912ca3e2-00d9-4a18-9b7f-18a57822a8fa\",\"ParentGuid\":\"\",\"hexType\":3}",
-            "PrefabID": "Prefabs/Hex map/HexTile",
-            "GUID": "912ca3e2-00d9-4a18-9b7f-18a57822a8fa",
-            "ParentGUID": ""
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"a06795e0-6e85-4f18-9e80-d3c62f67982c\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"345d7041-9294-44c6-a618-14ad72a42e9e\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":6}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"61e1d145-975f-4cbc-aa57-50fdf867fa66\",\"ParentReference\":{\"ParentGuid\":\"49ba88f9-7169-4763-a535-76c58cd02b16\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"e3a7ceae-7744-49da-8500-951e0782506c\",\"ParentReference\":{\"ParentGuid\":\"aa2934aa-1169-437b-a435-e356dfeccc66\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":6.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"d0e4e44b-e1ba-48ee-b292-75d8958b2774\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"5b68b1a2-5140-415e-aa3e-38764dd79e38\",\"ParentReference\":{\"ParentGuid\":\"065f8d5e-5927-47bc-bae2-45b978e75bc6\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"4eafb547-c1f3-446a-8b1a-2cde691157ca\",\"ParentReference\":{\"ParentGuid\":\"8b02d0f5-3516-460d-bbf0-78242af39378\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":-5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"aa2934aa-1169-437b-a435-e356dfeccc66\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":6}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"83bd01a9-d236-4e65-bdd2-cc9f23341189\",\"ParentReference\":{\"ParentGuid\":\"345d7041-9294-44c6-a618-14ad72a42e9e\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"04124a6d-f998-4b73-b85f-7048b9c1764c\",\"ParentReference\":{\"ParentGuid\":\"e7bb6209-699a-408f-a37b-994555a38a06\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"36bc91f7-16dc-4a08-aa04-3b7282bd2f74\",\"ParentReference\":{\"ParentGuid\":\"a5b2c4d8-5fd8-470d-88ac-c31b2f0630d8\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"197989ba-6edc-4fb5-85c5-a5af246201e5\",\"ParentReference\":{\"ParentGuid\":\"19d07d11-620c-4726-b168-d4c43ae3f665\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"25ddfbf7-8180-4aa3-b07c-f40db1b9fde5\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"3204dfd8-52f1-4787-b6b6-e6e3d44517e4\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/water tile\",\"GUID\":\"496cb8e3-f93a-481c-b9d5-a9c97ff7f5a8\",\"ParentReference\":{\"ParentGuid\":\"abdaa691-74fc-4497-bb59-76d4e447f05d\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":-3.0,\"y\":0.0,\"z\":5.196000099182129},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"65694ca2-fc2f-4cf6-876f-49d33049f223\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":5}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":9.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"b78cbd3c-5003-47de-98ac-e1afc8cb73da\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"8d96c5c0-50fb-4d0c-bbdc-b05d022cb760\",\"ParentReference\":{\"ParentGuid\":\"e3a22ff9-2991-48da-bc0f-05a07253eaf1\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"86b4dbf5-8ab1-4802-8334-af4595fa386b\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"57895dea-8c2f-46d5-a2cf-e0bb14390b40\",\"ParentReference\":{\"ParentGuid\":\"86b4dbf5-8ab1-4802-8334-af4595fa386b\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":7.5,\"y\":0.0,\"z\":2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"5e4aad34-1a79-423f-89d9-96d743b664a9\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":-2.5980000495910646},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"e3a22ff9-2991-48da-bc0f-05a07253eaf1\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":4.5,\"y\":0.0,\"z\":12.989999771118164},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"3b755b50-7221-4458-8b1a-05752cddd8f4\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":1}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"01e5c9d3-d64f-4f68-af48-b66728c8b9ff\",\"ParentReference\":{\"ParentGuid\":\"3dbb0ffc-9fa4-4d26-8732-5909d308d669\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":3.0,\"y\":0.0,\"z\":10.392000198364258},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"82200713-56fe-4c17-8d63-acd124a68428\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"31d8d450-092a-46e6-b1b2-0b38b59fd0a2\",\"ParentReference\":{\"ParentGuid\":\"3b755b50-7221-4458-8b1a-05752cddd8f4\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
+        },
+        {
+            "TypeName": "HexTile+HexTileData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":1.5,\"y\":0.0,\"z\":7.794000148773193},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Prefabs/Hex map/HexTile\",\"GUID\":\"aa3095bf-3f80-492b-9b00-88acf0a0ae03\",\"ParentReference\":{\"ParentGuid\":\"\",\"PrefabChildId\":\"\"},\"hexType\":3}"
+        },
+        {
+            "TypeName": "PrefabData, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "JsonData": "{\"Position\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"Rotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"Scale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"PrefabID\":\"Models/grass tile\",\"GUID\":\"e7897513-ce90-448d-abc4-09880a1fcf5c\",\"ParentReference\":{\"ParentGuid\":\"803dcc2b-8989-48b1-8314-00d610c15e9b\",\"PrefabChildId\":\"a341f262-cff1-49a2-ad9f-c54204d7f26c\"}}"
         }
     ]
 }
