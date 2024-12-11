@@ -6,7 +6,13 @@ using UnityEngine;
 [SelectionBase]
 public class Unit : MonoBehaviour, ISaveable
 {
+    private string _guid;
+    public string GUID => _guid;
+    
     [SerializeField] private string prefabID;
+    public string PrefabID => prefabID;
+
+    
     [SerializeField]
     private int movementPoints = 20;
     public int MovementPoints { get => movementPoints; }
@@ -22,6 +28,11 @@ public class Unit : MonoBehaviour, ISaveable
     private void Awake()
     {
         glowHighlight = GetComponent<GlowHighlight>();
+        
+        if (string.IsNullOrEmpty(_guid))
+        {
+            _guid = Guid.NewGuid().ToString();
+        }
     }
 
     public void Deselect()
@@ -90,34 +101,44 @@ public class Unit : MonoBehaviour, ISaveable
         }
     }
 
-    public object SaveData()
+    public ISaveData SaveData()
     {
         return new UnitData
         {
-            Position = transform.position,
+            Position = transform.localPosition,
+            Rotation = transform.localRotation,
+            Scale = transform.localScale,
+            GUID = _guid,
+            ParentGUID = transform.parent != null ? transform.parent.GetComponent<ISaveableComponent>()?.GUID : null,
             MovementPoints = movementPoints,
-            PrefabId = prefabID
+            PrefabID = prefabID
         };
         
         // TODO: save model used
     }
 
-    public void LoadData(object data)
+    public void LoadData(ISaveData data)
     {
         var unitData = data as UnitData;
         if (unitData == null) throw new Exception("unitData is null");
-        transform.position = unitData.Position;
+        transform.localPosition = unitData.Position;
+        transform.localRotation = unitData.Rotation;
+        transform.localScale = unitData.Scale;
+        _guid = unitData.GUID;
         movementPoints = unitData.MovementPoints;
-        prefabID = unitData.PrefabId;
+        prefabID = unitData.PrefabID;
     }
 
-    public string GetPrefabID() => prefabID;
-
     [Serializable]
-    private class UnitData
+    private class UnitData : ISaveData
     {
-        public Vector3 Position;
-        public int MovementPoints;
-        public string PrefabId;
+        public Vector3 Position { get; set; }
+        public Quaternion Rotation { get; set; }
+        public Vector3 Scale { get; set; }
+        public string PrefabID { get; set; }
+        public string GUID { get; set; }
+        public string ParentGUID { get; set; }
+        
+        public int MovementPoints { get; set; }
     }
 }

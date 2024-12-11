@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb63399a706d59440a8dddb027be91ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabID: Hex map/HexTile
+  prefabID: Prefabs/Hex map/HexTile
   highlight: {fileID: 2052988018567543014}
   hexType: 1
 --- !u!114 &2052988018567543014
@@ -109,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4980426279988628005}
+  - component: {fileID: 4312558590058001556}
   m_Layer: 0
   m_Name: Props
   m_TagString: Untagged
@@ -131,6 +132,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 509279313094230874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4312558590058001556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204016755700071329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf44acf14201f74f86b47318a58f325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7819562750003502176
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7636956618205887299}
+  - component: {fileID: 2585584180724516278}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -162,3 +176,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 509279313094230874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2585584180724516278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819562750003502176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf44acf14201f74f86b47318a58f325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

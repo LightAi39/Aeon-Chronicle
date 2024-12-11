@@ -35,13 +35,15 @@ public class SaveManager : MonoBehaviour
         {
             var saveData = saveable.SaveData();
             string saveDataJson = JsonUtility.ToJson(saveData);
-            string prefabId = saveable.GetPrefabID();
-            if (string.IsNullOrEmpty(prefabId))
+            string prefabId = saveData.PrefabID;
+            string guid = saveData.GUID;
+            string parentGuid = saveData.ParentGUID;
+            if (string.IsNullOrEmpty(prefabId) || string.IsNullOrEmpty(guid))
             {
-                Debug.LogError("Prefab ID not found for saveable: " + saveable);
+                Debug.LogError($"Prefab ID or GUID not found in ISaveData for saveable: {saveable}. These must be present to be saved.");
                 continue;
             }
-            serializedData.Add(new SerializableSaveData(saveData.GetType().AssemblyQualifiedName, saveDataJson, prefabId));
+            serializedData.Add(new SerializableSaveData(saveData.GetType().AssemblyQualifiedName, saveDataJson, prefabId, guid, parentGuid));
         }
         
         string json = JsonUtility.ToJson(new SerializableSaveDataList(serializedData), true);
@@ -56,6 +58,7 @@ public class SaveManager : MonoBehaviour
         var serializedList = JsonUtility.FromJson<SerializableSaveDataList>(json);
         
         RegisterSaveables();
+        
         // Clear existing saveables
         foreach (var saveable in _saveables)
         {
@@ -64,6 +67,7 @@ public class SaveManager : MonoBehaviour
         
         _saveables.Clear();
         
+        List<InstantiatedObject> instantiatedObjects = new(); // To track loaded objects so we can later give them their parents.
         
         // Process loaded data
         foreach (var serializedEntry in serializedList.Data)
@@ -78,24 +82,66 @@ public class SaveManager : MonoBehaviour
             }
             
             string prefabID = serializedEntry.PrefabID;
+            string guid = serializedEntry.GUID;
 
             // Load the prefab
-            GameObject prefab = Resources.Load<GameObject>($"Prefabs/{prefabID}");
+            GameObject prefab = Resources.Load<GameObject>($"{prefabID}");
             if (prefab == null)
             {
-                Debug.LogError($"Prefab not found: Prefabs/{prefabID}");
+                Debug.LogError($"Prefab not found: {prefabID}");
                 continue;
             }
 
             // Instantiate the prefab
             GameObject instance = Instantiate(prefab);
+            instantiatedObjects.Add(new InstantiatedObject{
+                GameObject = instance,
+                ParentGUID = serializedEntry.ParentGUID
+            });
 
             // Assign the loaded data to the instantiated prefab
             var saveable = instance.GetComponent<ISaveable>();
             if (saveable != null)
             {
-                saveable.LoadData(JsonUtility.FromJson(jsonData, type));
-                _saveables.Add(saveable);
+                var objFromJson = JsonUtility.FromJson(jsonData, type);
+                if (objFromJson is ISaveData saveData)
+                {
+                    saveable.LoadData(saveData);
+                }
+                else
+                {
+                    Debug.LogError($"ISaveData not found: {objFromJson}. The data of instance {instance} will not be loaded.");
+                }
+            }
+        }
+        
+        // prepare a list of objects with GUIDs
+        Dictionary<string, GameObject> possibleParents = new Dictionary<string, GameObject>();
+        var objects = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>().ToList();
+        
+        foreach (var guidObjects in objects)
+        {
+            string guid = guidObjects.GUID;
+            
+            if (!string.IsNullOrEmpty(guid) && guidObjects is MonoBehaviour saveableObject)
+            {
+                possibleParents[guid] = saveableObject.gameObject;
+            }
+        }
+        
+        
+        // resolve parent-child relationships based on GUIDs
+        foreach (var obj in instantiatedObjects)
+        {
+            string parentGUID = obj.ParentGUID;
+            if (!string.IsNullOrEmpty(parentGUID) && possibleParents.TryGetValue(parentGUID, out var possibleParent))
+            {
+                GameObject parent = possibleParent.gameObject;
+                obj.GameObject.transform.SetParent(parent.transform);
+            }
+            else if (!string.IsNullOrEmpty(parentGUID))
+            {
+                Debug.LogWarning("Parent not found: " + parentGUID);
             }
         }
         
@@ -105,15 +151,19 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class SerializableSaveData
     {
-        public string TypeName; // The fully qualified name of the type
+        public string TypeName;
         public string JsonData;
         public string PrefabID;
+        public string GUID;
+        public string ParentGUID; // Parent GUID for parent-child relationships
 
-        public SerializableSaveData(string typeName, string jsonData, string prefabID)
+        public SerializableSaveData(string typeName, string jsonData, string prefabID, string guid, string parentGUID = null)
         {
             TypeName = typeName;
             JsonData = jsonData;
             PrefabID = prefabID;
+            GUID = guid;
+            ParentGUID = parentGUID;
         }
     }
     
@@ -126,5 +176,11 @@ public class SaveManager : MonoBehaviour
         {
             Data = data;
         }
+    }
+
+    private class InstantiatedObject
+    {
+        public GameObject GameObject;
+        public string ParentGUID;
     }
 }

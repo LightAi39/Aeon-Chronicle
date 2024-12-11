@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41788734d7aa5844afd930abb90c6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabID: Hex map/Unit
+  prefabID: Prefabs/Hex map/Unit
   movementPoints: 20
   movementDuration: 0.7
   rotationDuration: 0.2

@@ -7,7 +7,12 @@ using UnityEngine.Serialization;
 [SelectionBase]
 public class HexTile : MonoBehaviour, ISaveable
 {
+    private string _guid;
+    public string GUID => _guid;
+    
     [SerializeField] private string prefabID;
+    public string PrefabID => prefabID;
+    
     [SerializeField] private GlowHighlight highlight;
     private HexCoordinates _hexCoordinates;
 
@@ -35,6 +40,11 @@ public class HexTile : MonoBehaviour, ISaveable
     
     private void Awake()
     {
+        if (string.IsNullOrEmpty(_guid))
+        {
+            _guid = Guid.NewGuid().ToString();
+        }
+        
         _hexCoordinates = GetComponent<HexCoordinates>();
         highlight = GetComponent<GlowHighlight>();
     }
@@ -59,40 +69,44 @@ public class HexTile : MonoBehaviour, ISaveable
         highlight.HighlightValidPath();
     }
 
-    
-    public object SaveData()
+    public ISaveData SaveData()
     {
         return new HexTileData()
         {
-            Position = transform.position,
+            Position = transform.localPosition,
+            Rotation = transform.localRotation,
+            Scale = transform.localScale,
             hexType = hexType,
-            PrefabId = prefabID
+            PrefabID = prefabID,
+            GUID = _guid,
+            ParentGUID = transform.parent != null ? transform.parent.GetComponent<ISaveableComponent>()?.GUID : null
         };
-        // TODO: add custom model saving.
     }
 
-    public void LoadData(object data)
+    public void LoadData(ISaveData data)
     {
         var hexTileData = data as HexTileData;
         if (hexTileData == null) throw new Exception("hexTileData is null");
         
-        transform.position = hexTileData.Position;
+        transform.localPosition = hexTileData.Position;
+        transform.localRotation = hexTileData.Rotation;
+        transform.localScale = hexTileData.Scale;
         hexType = hexTileData.hexType;
-        prefabID = hexTileData.PrefabId;
-
-        // TODO: load custom model
+        prefabID = hexTileData.PrefabID;
+        _guid = hexTileData.GUID;
     }
 
-    public string GetPrefabID() => prefabID;
-
     [Serializable]
-    private class HexTileData
+    private class HexTileData : ISaveData
     {
-        public Vector3 Position;
+        public Vector3 Position { get; set; }
+        public Quaternion Rotation { get; set; }
+        public Vector3 Scale { get; set; }
+        public string PrefabID { get; set; }
+        public string GUID { get; set; }
+        public string ParentGUID { get; set; }
+        
         public HexType hexType;
-
-        public string PrefabId;
-        // TODO: add custom models
     }
 }
 

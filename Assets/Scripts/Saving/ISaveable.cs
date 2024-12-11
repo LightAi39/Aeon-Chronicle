@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
-public interface ISaveable
+public interface ISaveable : ISaveableComponent
 {
-    object SaveData();
-    void LoadData(object data);
-    string GetPrefabID();
+    string PrefabID { get; }
+    ISaveData SaveData();
+    void LoadData(ISaveData data);
 }
