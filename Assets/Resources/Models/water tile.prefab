@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6838704354005065804}
   - component: {fileID: 1620280457005385519}
   m_Layer: 0
-  m_Name: Water Tile
+  m_Name: water tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a057f59e48b656c45a86d20523686b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabID: Models/Water Tile
+  _prefabId: Models/water tile
 --- !u!1001 &6566180068959984869
 PrefabInstance:
   m_ObjectHideFlags: 0

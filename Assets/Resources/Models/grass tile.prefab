@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4937397367240034286}
   - component: {fileID: 3491248512286149307}
   m_Layer: 0
-  m_Name: Grass TIle
+  m_Name: grass tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a057f59e48b656c45a86d20523686b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabID: Models/Grass Tile
+  _prefabId: Models/grass tile
 --- !u!1001 &1869577228945831012
 PrefabInstance:
   m_ObjectHideFlags: 0

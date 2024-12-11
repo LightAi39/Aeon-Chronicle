@@ -37,7 +37,7 @@ public class SaveManager : MonoBehaviour
             string saveDataJson = JsonUtility.ToJson(saveData);
             string prefabId = saveData.PrefabID;
             string guid = saveData.GUID;
-            string parentGuid = saveData.ParentGUID;
+            string parentGuid = saveData.ParentGuid;
             if (string.IsNullOrEmpty(prefabId) || string.IsNullOrEmpty(guid))
             {
                 Debug.LogError($"Prefab ID or GUID not found in ISaveData for saveable: {saveable}. These must be present to be saved.");
