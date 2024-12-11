@@ -29,8 +29,8 @@ public abstract class SaveableMonoBehaviour : MonoBehaviour, ISaveable
         }
         
         var data = CreateSaveDataInstance();
-        data.Position = transform.localPosition;
-        data.Rotation = transform.localRotation;
+        data.Position = transform.position;
+        data.Rotation = transform.rotation;
         data.Scale = transform.localScale;
         data.PrefabID = _prefabId;
         data.GUID = currentGuid;
@@ -41,8 +41,8 @@ public abstract class SaveableMonoBehaviour : MonoBehaviour, ISaveable
     public virtual void LoadData(ISaveData data)
     {
         var transformData = data;
-        transform.localPosition = transformData.Position;
-        transform.localRotation = transformData.Rotation;
+        transform.position = transformData.Position;
+        transform.rotation = transformData.Rotation;
         transform.localScale = transformData.Scale;
         _prefabId = transformData.PrefabID;
         _guid = transformData.GUID;
