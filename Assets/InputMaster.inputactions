@@ -43,6 +43,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Select Tile",
+                    "type": "Button",
+                    "id": "6ae63316-8cb2-4b73-bc71-067661bf6a0c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Load",
                     "type": "Button",
                     "id": "3869c419-44b5-4aa6-bae1-6b940b9560d6",
@@ -72,6 +81,17 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Load",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dce4fced-8e6b-4e43-a261-285ff07e7e1f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Select Tile",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

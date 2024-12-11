@@ -5537,6 +5537,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3869c419-44b5-4aa6-bae1-6b940b9560d6
     m_ActionName: Map saving/Load[/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1456108337}
+        m_TargetAssemblyTypeName: SelectionSystem, Assembly-CSharp
+        m_MethodName: HandleTileClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6ae63316-8cb2-4b73-bc71-067661bf6a0c
+    m_ActionName: Map saving/Select Tile[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Map saving
