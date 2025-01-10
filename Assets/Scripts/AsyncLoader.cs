@@ -12,6 +12,8 @@ public class AsyncLoader : MonoBehaviour
     private GameObject loadingScreen;
     [SerializeField] 
     private Animator _animator;
+    [SerializeField]
+    private string animationToTrigger;
     private CanvasGroup _canvasGroup;
 
     private void Awake()
@@ -21,13 +23,13 @@ public class AsyncLoader : MonoBehaviour
     public async void LoadScene(string sceneToLoad)
     {
         loadingScreen.SetActive(true);
-        StartCoroutine(LoadSceneSequence(sceneToLoad));
+        StartCoroutine(LoadSceneSequence(sceneToLoad, animationToTrigger));
     }
-    private IEnumerator LoadSceneSequence(string sceneToLoad)
+    private IEnumerator LoadSceneSequence(string sceneToLoad, string animationToTrigger)
     {
     yield return StartCoroutine(FadeInLoadingScreen());
 
-    yield return StartCoroutine(LoadSceneAsync(sceneToLoad));
+    yield return StartCoroutine(LoadSceneAsync(sceneToLoad, animationToTrigger));
     }
     private IEnumerator FadeInLoadingScreen()
     {
@@ -45,7 +47,7 @@ public class AsyncLoader : MonoBehaviour
 
         _canvasGroup.alpha = 1;
     }
-    IEnumerator LoadSceneAsync(string sceneToLoad)
+    IEnumerator LoadSceneAsync(string sceneToLoad, string animationToTrigger)
     {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         loadOperation.allowSceneActivation = false;
@@ -56,11 +58,11 @@ public class AsyncLoader : MonoBehaviour
             yield return null;  
         }
         
-        yield return StartCoroutine(EngageAnimation());
+        yield return StartCoroutine(EngageAnimation(animationToTrigger));
 
         loadOperation.allowSceneActivation = true;
     }
-    IEnumerator EngageAnimation()
+    IEnumerator EngageAnimation(string animationToTrigger)
     {
         if (_animator == null)
         {
@@ -68,7 +70,7 @@ public class AsyncLoader : MonoBehaviour
             yield break;
         }
 
-        _animator.SetTrigger("LoadFinish");
+        _animator.SetTrigger(animationToTrigger);
 
         while (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f || _animator.IsInTransition(0))
         {
