@@ -27,9 +27,9 @@ public class AsyncLoader : MonoBehaviour
     }
     private IEnumerator LoadSceneSequence(string sceneToLoad, string animationToTrigger)
     {
-    yield return StartCoroutine(FadeInLoadingScreen());
+        yield return StartCoroutine(FadeInLoadingScreen());
 
-    yield return StartCoroutine(LoadSceneAsync(sceneToLoad, animationToTrigger));
+        yield return StartCoroutine(LoadSceneAsync(sceneToLoad, animationToTrigger));
     }
     private IEnumerator FadeInLoadingScreen()
     {
