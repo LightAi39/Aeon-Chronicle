@@ -99,15 +99,13 @@ public class TurnOrderEntity : MonoBehaviour
     private Character PrepareScriptableObjects(Character character)
     {
         Character result = Instantiate(character);
-        /*
-        result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
+        /*result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
         result.headpiece = result.headpiece ? Instantiate(result.headpiece) : result.headpiece;
         result.chestpiece = result.chestpiece ? Instantiate(result.chestpiece) : result.chestpiece;
         result.gloves = result.gloves ? Instantiate(result.gloves) : result.gloves;
         result.legs = result.legs ? Instantiate(result.legs) : result.legs;
         result.boots = result.boots ? Instantiate(result.boots) : result.boots;
-        result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;
-        */
+        result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;*/
         result.skills = result.skills.Select(Instantiate).ToList();
         result.consumables = result.consumables.Select(Instantiate).ToList();
         
@@ -131,36 +129,36 @@ public class TurnOrderEntity : MonoBehaviour
         
         foreach(Equipment equipment in character.equipment)
         {
-            foreach(KeyValuePair<Stats, int> stat in equipment.stats)
+            foreach(StatValuePair _stat in equipment.stats)
             {
-                switch(stat.Key)
+                switch(_stat.stat)
                 {
                     case Stats.HP:
-                    stats[0] += stat.Value;
+                    stats[0] += _stat.value;
                     break;
                     case Stats.SP:
-                    stats[1] += stat.Value;
+                    stats[1] += _stat.value;
                     break; 
                     case Stats.Strength:
-                    stats[2] += stat.Value;
+                    stats[2] += _stat.value;
                     break; 
                     case Stats.Resilience:
-                    stats[3] += stat.Value;
+                    stats[3] += _stat.value;
                     break; 
                     case Stats.Intelligence:
-                    stats[4] += stat.Value;
+                    stats[4] += _stat.value;
                     break; 
                     case Stats.Mind:
-                    stats[5] += stat.Value;
+                    stats[5] += _stat.value;
                     break; 
                     case Stats.Agility:
-                    stats[6] += stat.Value;
+                    stats[6] += _stat.value;
                     break; 
                     case Stats.CritChance:
-                    stats[7] += stat.Value;
+                    stats[7] += _stat.value;
                     break; 
                     case Stats.CritDamage:
-                    stats[8] += stat.Value;
+                    stats[8] += _stat.value;
                     break;  
                     default:
                     break;

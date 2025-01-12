@@ -22,13 +22,16 @@ MonoBehaviour:
   agility: 7
   critChance: 25
   critDamage: 50
-  weapon: {fileID: 11400000, guid: efd3e2eb3045ad34f8603bbe8161b681, type: 2}
-  headpiece: {fileID: 11400000, guid: 878d88d527e189642a62e675dfd2ec83, type: 2}
-  chestpiece: {fileID: 11400000, guid: 96c7ba201c357b540a0eeb769f56b754, type: 2}
-  gloves: {fileID: 11400000, guid: 01151eeba27071844a6ad7a94944fd56, type: 2}
-  legs: {fileID: 11400000, guid: 0bce6e749e548d843b7455e1ce9c4769, type: 2}
-  boots: {fileID: 11400000, guid: 6f7630bd25f8faa4e8691817a22099d9, type: 2}
-  accessory: {fileID: 11400000, guid: de720b82ee8800b409b49bf5f2e9716b, type: 2}
+  equipment:
+  - {fileID: 11400000, guid: 7b88797bc6a6bf3458d918afb89f60f3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   damageTypes: 00000000
   skills:
   - {fileID: 11400000, guid: 0a15ea20b6cf45948af59cbef05acecf, type: 2}
