@@ -68,7 +68,34 @@ public class TurnOrderEntity : MonoBehaviour
     private bool isActiveTurn = false;
     private bool isTargeted = false;
     private bool died = false;
-    
+    public void Initialize() //Unit test
+    {
+        if (character != null)
+        {
+            name = character.name;
+            maxHp = character.maxHp;
+            currentHp = character.maxHp;
+            maxSp = character.maxSp;
+            currentSp = character.maxSp;
+            strength = character.strength;
+            resilience = character.resilience;
+            intelligence = character.intelligence;
+            mind = character.mind;
+            agility = character.agility;
+            critChance = character.critChance;
+            critDamage = character.critDamage;
+            skills = character.skills;
+            damageType = character.damageType;
+            element = character.element;
+            activeStrength = character.strength;
+            activeResilience = character.resilience;
+            activeIntelligence = character.intelligence;
+            activeMind = character.mind;
+            activeAgility = character.agility;
+            activeCritChance = character.critChance;
+            activeCritDamage = character.critDamage;          
+        }
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -288,7 +315,10 @@ public class TurnOrderEntity : MonoBehaviour
             shield = 0;
         }
 
-        statusbar.UpdateStatusbar(-damageTaken, DmgPosition);
+        if(statusbar != null)
+        {
+            statusbar.UpdateStatusbar(-damageTaken, DmgPosition);
+        }
     }
 
     public void Defend()
