@@ -99,6 +99,7 @@ public class TurnOrderEntity : MonoBehaviour
     private Character PrepareScriptableObjects(Character character)
     {
         Character result = Instantiate(character);
+        /*
         result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
         result.headpiece = result.headpiece ? Instantiate(result.headpiece) : result.headpiece;
         result.chestpiece = result.chestpiece ? Instantiate(result.chestpiece) : result.chestpiece;
@@ -106,9 +107,10 @@ public class TurnOrderEntity : MonoBehaviour
         result.legs = result.legs ? Instantiate(result.legs) : result.legs;
         result.boots = result.boots ? Instantiate(result.boots) : result.boots;
         result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;
+        */
         result.skills = result.skills.Select(Instantiate).ToList();
         result.consumables = result.consumables.Select(Instantiate).ToList();
-
+        
         return result;
     }
 
@@ -127,56 +129,43 @@ public class TurnOrderEntity : MonoBehaviour
             0 //critdamage 8
         };
         
-        if (character.weapon != null)
+        foreach(Equipment equipment in character.equipment)
         {
-            stats[2] += character.weapon.strength;
-            stats[4] += character.weapon.intelligence;
-        }
-
-        if (character.headpiece != null)
-        {
-            stats[0] += character.headpiece.hp;
-            stats[1] += character.headpiece.sp;
-            stats[4] += character.headpiece.intelligence;
-        }
-
-        if (character.chestpiece != null)
-        {
-            stats[0] += character.chestpiece.hp;
-            stats[1] += character.chestpiece.sp;
-            stats[3] += character.chestpiece.resilience;
-            stats[5] += character.chestpiece.mind;
-        }
-
-        if (character.gloves != null)
-        {
-            stats[2] += character.gloves.strength;
-            stats[7] += character.gloves.critChance;
-            stats[8] += character.gloves.critDamage;
-        }
-
-        if (character.legs != null)
-        {
-            stats[0] += character.legs.hp;
-            stats[1] += character.legs.sp;
-            stats[3] += character.legs.resilience;
-            stats[5] += character.legs.mind;
-            stats[6] += character.legs.agility;
-        }
-
-        if (character.boots != null)
-        {
-            stats[6] += character.boots.agility;
-            stats[7] += character.boots.critChance;
-            stats[8] += character.boots.critDamage;
-        }
-
-        if (character.accessory != null)
-        {
-            stats[2] += character.accessory.strength;
-            stats[4] += character.accessory.intelligence;
-            stats[7] += character.accessory.critChance;
-            stats[8] += character.accessory.critDamage;
+            foreach(KeyValuePair<Stats, int> stat in equipment.stats)
+            {
+                switch(stat.Key)
+                {
+                    case Stats.HP:
+                    stats[0] += stat.Value;
+                    break;
+                    case Stats.SP:
+                    stats[1] += stat.Value;
+                    break; 
+                    case Stats.Strength:
+                    stats[2] += stat.Value;
+                    break; 
+                    case Stats.Resilience:
+                    stats[3] += stat.Value;
+                    break; 
+                    case Stats.Intelligence:
+                    stats[4] += stat.Value;
+                    break; 
+                    case Stats.Mind:
+                    stats[5] += stat.Value;
+                    break; 
+                    case Stats.Agility:
+                    stats[6] += stat.Value;
+                    break; 
+                    case Stats.CritChance:
+                    stats[7] += stat.Value;
+                    break; 
+                    case Stats.CritDamage:
+                    stats[8] += stat.Value;
+                    break;  
+                    default:
+                    break;
+                }
+            }
         }
 
         return stats;
