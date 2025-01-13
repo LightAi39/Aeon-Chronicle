@@ -99,13 +99,13 @@ public class TurnOrderEntity : MonoBehaviour
     private Character PrepareScriptableObjects(Character character)
     {
         Character result = Instantiate(character);
-        /*result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
-        result.headpiece = result.headpiece ? Instantiate(result.headpiece) : result.headpiece;
-        result.chestpiece = result.chestpiece ? Instantiate(result.chestpiece) : result.chestpiece;
-        result.gloves = result.gloves ? Instantiate(result.gloves) : result.gloves;
-        result.legs = result.legs ? Instantiate(result.legs) : result.legs;
-        result.boots = result.boots ? Instantiate(result.boots) : result.boots;
-        result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;*/
+
+        int i = 0;
+        foreach(Equipment equipment in result.equipment)
+        {
+            result.equipment[i] = equipment ? Instantiate(equipment) : equipment;
+            i++;
+        }
         result.skills = result.skills.Select(Instantiate).ToList();
         result.consumables = result.consumables.Select(Instantiate).ToList();
         
@@ -126,9 +126,14 @@ public class TurnOrderEntity : MonoBehaviour
             0, //critchance 7
             0 //critdamage 8
         };
-        
+        int i = 0;
         foreach(Equipment equipment in character.equipment)
         {
+            if(equipment == null)
+            {
+                continue;
+            }
+
             foreach(StatValuePair _stat in equipment.stats)
             {
                 switch(_stat.stat)

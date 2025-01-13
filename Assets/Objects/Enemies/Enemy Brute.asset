@@ -25,13 +25,13 @@ MonoBehaviour:
   equipment:
   - {fileID: 11400000, guid: 7b88797bc6a6bf3458d918afb89f60f3, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ed967df63d8e37c4ea70a4815ead1862, type: 2}
+  - {fileID: 11400000, guid: 70c363e000a9f3243840c81d57acf5f8, type: 2}
+  - {fileID: 11400000, guid: cea5506ced8df7246a5d3f9f102b2705, type: 2}
+  - {fileID: 11400000, guid: cff2b610fc3231c45853c0b73acbff54, type: 2}
+  - {fileID: 11400000, guid: 4fbca2d93652874448f8bb99fbaae902, type: 2}
+  - {fileID: 11400000, guid: cf75f8eb26fa8ce48ba5a6713a861fd0, type: 2}
+  - {fileID: 11400000, guid: cf75f8eb26fa8ce48ba5a6713a861fd0, type: 2}
   damageTypes: 00000000
   skills:
   - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
