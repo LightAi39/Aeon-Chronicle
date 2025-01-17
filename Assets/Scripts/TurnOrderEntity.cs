@@ -64,9 +64,7 @@ public class TurnOrderEntity : MonoBehaviour
     private bool isActiveTurn = false;
     private bool isTargeted = false;
     private bool died = false;
-    
-    // Start is called before the first frame update
-    void Awake()
+    public void Initialize()
     {
         if (characterScriptableObject != null)
         {
@@ -92,6 +90,11 @@ public class TurnOrderEntity : MonoBehaviour
                 character.damageWeaknesses[weakness.type] = weakness.weaknessValue;
             }
         }
+    }
+    // Start is called before the first frame update
+    void Awake()
+    {
+        Initialize();
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
     }
@@ -400,7 +403,10 @@ public class TurnOrderEntity : MonoBehaviour
             shield = 0;
         }
 
-        statusbar.UpdateStatusbar(-damageTaken, DmgPosition);
+        if(statusbar != null)
+        {
+            statusbar.UpdateStatusbar(-damageTaken, DmgPosition);
+        }
     }
 
     public void Defend()
