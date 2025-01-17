@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class TargetingManager : MonoBehaviour
@@ -84,7 +85,7 @@ public class TargetingManager : MonoBehaviour
         {
             var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
 
-            teammate.Attack(TargetedEnemy);
+            teammate.UseSkill(teammate.characterScriptableObject.equipment[0].basicAttack, TargetedEnemy);
         }
         
     }
@@ -119,11 +120,11 @@ public class TargetingManager : MonoBehaviour
 
             if (targetingEnemies)
             {
-                teammate.UseSkill(teammate.skills[0], TargetedEnemy);
+                teammate.UseSkill(teammate.character.skills[0], TargetedEnemy);
             }
             else
             {
-                teammate.UseSkill(teammate.skills[0], TargetedFriendly);
+                teammate.UseSkill(teammate.character.skills[0], TargetedFriendly);
             }
 
             targetingEnemies = true;

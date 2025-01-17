@@ -18,5 +18,4 @@ MonoBehaviour:
   value: 1
   spCost: 6
   powerModifier: 1
-  damageType: 3
-  element: 4
+  damageTypes: 03000000

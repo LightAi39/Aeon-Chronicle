@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Cinemachine;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TurnOrderEntity : MonoBehaviour
 {
@@ -15,22 +19,13 @@ public class TurnOrderEntity : MonoBehaviour
     public int delayPerTurn = 60;
     public Color color;
     
-    [Header("Stats (instantiated by Character SO)")]
+    [FormerlySerializedAs("character")] [Header("Stats (instantiated by Character SO)")]
+    public Character characterScriptableObject;
+    [FormerlySerializedAs("characterInstance")]
+    [Tooltip("DO NOT SET, instantiated based on character scriptable object above")]
     public Character character;
+    
     [Space(20)]
-    public string name;
-    public int maxHp;
-    public int maxSp;
-    public int strength;
-    public int resilience;
-    public int intelligence;
-    public int mind;
-    public int agility;
-    public int critChance;
-    public int critDamage;
-    public List<Skill> skills = new List<Skill>();
-    public Character.DamageType damageType;
-    public Character.Element element;
     
     [Header("Stats (live)")]
     [Tooltip("Instantiated based on maxHp")]
@@ -53,6 +48,7 @@ public class TurnOrderEntity : MonoBehaviour
     [Tooltip("Instantiated based on critDamage")]
     public int activeCritDamage;
     public State state = State.Idle;
+    [Tooltip("Instantiated based on Consumables")]
     
     
     [Space(20)]
@@ -70,30 +66,29 @@ public class TurnOrderEntity : MonoBehaviour
     private bool died = false;
     public void Initialize()
     {
-        if (character != null)
+        if (characterScriptableObject != null)
         {
+            character = PrepareScriptableObjects(characterScriptableObject);
+            List<int> stats = GetEquipmentStats();
+
             name = character.name;
-            maxHp = character.maxHp;
+            character.maxHp += stats[0];
             currentHp = character.maxHp;
-            maxSp = character.maxSp;
+            character.maxSp += stats[1];
             currentSp = character.maxSp;
-            strength = character.strength;
-            resilience = character.resilience;
-            intelligence = character.intelligence;
-            mind = character.mind;
-            agility = character.agility;
-            critChance = character.critChance;
-            critDamage = character.critDamage;
-            skills = character.skills;
-            damageType = character.damageType;
-            element = character.element;
-            activeStrength = character.strength;
-            activeResilience = character.resilience;
-            activeIntelligence = character.intelligence;
-            activeMind = character.mind;
-            activeAgility = character.agility;
-            activeCritChance = character.critChance;
-            activeCritDamage = character.critDamage;          
+            activeStrength = character.strength + stats[2];
+            activeResilience = character.resilience + stats[3];
+            activeIntelligence = character.intelligence + stats[4];
+            activeMind = character.mind + stats[5];
+            activeAgility = character.agility + stats[6];
+            activeCritChance = character.critChance + stats[7];
+            activeCritDamage = character.critDamage + stats[8];
+
+            // Set damagetype resistances.
+            foreach (var weakness in character.weaknesses)
+            {
+                character.damageWeaknesses[weakness.type] = weakness.weaknessValue;
+            }
         }
     }
     // Start is called before the first frame update
@@ -102,6 +97,84 @@ public class TurnOrderEntity : MonoBehaviour
         Initialize();
 
         CombatManager.Instance.TargetChanged += CheckTargeting;
+    }
+
+    private Character PrepareScriptableObjects(Character character)
+    {
+        Character result = Instantiate(character);
+
+        int i = 0;
+        foreach(Equipment equipment in result.equipment)
+        {
+            result.equipment[i] = equipment ? Instantiate(equipment) : equipment;
+            i++;
+        }
+        result.skills = result.skills.Select(Instantiate).ToList();
+        result.consumables = result.consumables.Select(Instantiate).ToList();
+        
+        return result;
+    }
+
+    private List<int> GetEquipmentStats()
+    {
+        List<int> stats = new List<int>
+        {
+            0, //hp 0
+            0, //sp 1
+            0, //strength 2
+            0, //resilience 3 
+            0, //intelligence 4
+            0, //mind 5
+            0, //agility 6
+            0, //critchance 7
+            0 //critdamage 8
+        };
+        int i = 0;
+        foreach(Equipment equipment in character.equipment)
+        {
+            if(equipment == null)
+            {
+                continue;
+            }
+
+            foreach(StatValuePair _stat in equipment.stats)
+            {
+                switch(_stat.stat)
+                {
+                    case Stats.HP:
+                    stats[0] += _stat.value;
+                    break;
+                    case Stats.SP:
+                    stats[1] += _stat.value;
+                    break; 
+                    case Stats.Strength:
+                    stats[2] += _stat.value;
+                    break; 
+                    case Stats.Resilience:
+                    stats[3] += _stat.value;
+                    break; 
+                    case Stats.Intelligence:
+                    stats[4] += _stat.value;
+                    break; 
+                    case Stats.Mind:
+                    stats[5] += _stat.value;
+                    break; 
+                    case Stats.Agility:
+                    stats[6] += _stat.value;
+                    break; 
+                    case Stats.CritChance:
+                    stats[7] += _stat.value;
+                    break; 
+                    case Stats.CritDamage:
+                    stats[8] += _stat.value;
+                    break;  
+                    default:
+                    break;
+                }
+            }
+        }
+
+        return stats;
     }
 
     void Start()
@@ -242,24 +315,53 @@ public class TurnOrderEntity : MonoBehaviour
         {
             entity.GetTargeted();
             await Task.Delay(1000);
-            entity.TakeDamage(this.strength, damageType, element, 1f);
+            entity.TakeDamage(character.strength, character.damageTypes, 1f);
             await Task.Delay(500);
             entity.GetUntargeted();
             EndTurn(); // temp
         }
         else
         {
-            entity.TakeDamage(this.strength, damageType, element, 1f);
+            entity.TakeDamage(character.strength, character.damageTypes, 1f);
             EndTurn(); // temp
-        }
-        
+        } 
     }
 
-    //element not relevant for now
-    public void TakeDamage(int damageStat, Character.DamageType damageType, Character.Element element, float powerModifier)
+    public async void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
+    {
+        if (team == 1) // simulate targeting and buffer
+        {
+            target.GetTargeted();
+            await Task.Delay(1000);
+        }
+        statusbar.UpdateStatusbar(0, DmgPosition);
+        switch(skillUsed.skilltype)
+        {
+            case Skill.Skilltype.PDamage:
+                target.TakeDamage(skillUsed.value * activeStrength, skillUsed.damageTypes, skillUsed.powerModifier);
+            break;
+            case Skill.Skilltype.MDamage:
+                target.TakeDamage(skillUsed.value * activeIntelligence, skillUsed.damageTypes, skillUsed.powerModifier);
+            break;
+            case Skill.Skilltype.Defense:
+                /*target.*/GetShield(skillUsed.value * activeResilience);
+            break;
+            case Skill.Skilltype.Healing:
+                /*target.*/GetHealed(skillUsed.value * activeMind); 
+            break;
+        }
+        if (team == 1) // simulate detargeting and buffer
+        {
+            await Task.Delay(500);
+            target.GetUntargeted();
+        }
+        EndTurn();
+    }
+
+    public void TakeDamage(int damageStat, List<DamageType> damageTypes, float powerModifier)
     {
         int defendingStat;
-        if (damageType == Character.DamageType.Magical)
+        if (damageTypes.Contains(DamageType.Magical))
         {
             defendingStat = activeMind;
         }
@@ -268,13 +370,23 @@ public class TurnOrderEntity : MonoBehaviour
             defendingStat = activeResilience;
         }
 
-        float defending = 1f; //no reduction
+        float defending = 1f; // Default modifier, resulting in no effect on damage taken.
         if(state == State.Defending)
         {
-            defending = 0.5f; //halve damage
+            defending = 0.5f; // Modifier now halves damage taken.
         }
-        //damagetype/element modifiers to be added, as well as things like area modifiers
-        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending), 1, int.MaxValue);
+        UnityEngine.Debug.Log(damageTypes);
+        float damageTypeMultiplier = 1f;
+        foreach (DamageType damageType in damageTypes)
+        {
+            if (character.damageWeaknesses.ContainsKey(damageType))
+            {
+                float multiplier = character.damageWeaknesses[damageType] - 100f; // Calculates the % effectivness (200 - 100 = 100, becoming + 1 to the multiplier).
+                damageTypeMultiplier += multiplier / 100f; // Changes the % effectiveness into a multiplier.
+            }
+        }
+
+        int damageTaken = Mathf.Clamp(Convert.ToInt32(((damageStat * powerModifier) - (defendingStat / 2)) * defending * damageTypeMultiplier), 1, int.MaxValue);
 
         int trueDamage = damageTaken - shield;
         if (trueDamage > 0)
@@ -308,9 +420,9 @@ public class TurnOrderEntity : MonoBehaviour
     {
         statusbar.UpdateStatusbar(healing, DmgPosition);
         currentHp += healing;
-        if (currentHp > maxHp)
+        if (currentHp > character.maxHp)
         {
-            currentHp = maxHp;
+            currentHp = character.maxHp;
         }
     }
 
@@ -320,30 +432,32 @@ public class TurnOrderEntity : MonoBehaviour
         shield = shielding;
     }
 
-    public void UseSkill(Skill skillUsed, TurnOrderEntity target/*, TurnOrderEntity? actingEntity*/)
+    public void UseItem(Consumable consumable, [CanBeNull] TurnOrderEntity target) //List target for aoe when aoe implemented 
     {
-        statusbar.UpdateStatusbar(0, DmgPosition);
-        switch(skillUsed.skilltype)
+        if (target == null)
         {
-            case Skill.Skilltype.PDamage:
-                target.TakeDamage(skillUsed.value * strength, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
+            target = consumable.useOnFriendlies ? this : CombatManager.Instance.targetingManager.TargetedEnemy;
+        }
+        switch(consumable.effect)
+        {
+            case ConsumableEffect.Heal:
+            target.GetHealed(consumable.effectStrength);
             break;
-            case Skill.Skilltype.MDamage:
-                target.TakeDamage(skillUsed.value * intelligence, skillUsed.damageType, skillUsed.element, skillUsed.powerModifier);
+            case ConsumableEffect.Shield:
+            target.GetShield(consumable.effectStrength);
             break;
-            case Skill.Skilltype.Defense:
-                GetShield(skillUsed.value * resilience);
+            case ConsumableEffect.Revive: // not implemented
             break;
-            case Skill.Skilltype.Healing:
-                GetHealed(skillUsed.value * mind); 
+            case ConsumableEffect.Buff: // not implemented
             break;
         }
-        EndTurn();
-    }
 
-    public void UseItem(TurnOrderEntity targetEntity/*, Item item*/) //hard coded as a healthpotion rn
-    {
-        GetHealed(10); //item.value or so
+        consumable.amountOfUses --;
+        if (consumable.amountOfUses == 0)
+        {
+            character.consumables.Remove(consumable);
+        }
+        EndTurn();
     }
 }
 

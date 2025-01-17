@@ -17,22 +17,20 @@ public class Character : ScriptableObject
     public int agility;
     public int critChance;
     public int critDamage;
-    public DamageType damageType;
-    public Element element;
+    public Equipment[] equipment = new Equipment[9];
+    public List<DamageType> damageTypes = new List<DamageType>(); //temporary basic attack type/element tied to character instead of weapon
+    public Dictionary<DamageType, float> damageWeaknesses = new Dictionary<DamageType, float>(); // Dictionary for attack weaknesses 100 being neutral damage, 0 being immune and 200 being 2x damage taken
     public List<Skill> skills = new List<Skill>();
-        public enum DamageType
+    public List<Consumable> consumables = new List<Consumable>();
+    
+    [System.Serializable]
+    public struct Weakness
     {
-        Slash,
-        Thrust,
-        Blunt,
-        Magical
+        public DamageType type;
+        public float weaknessValue;
     }
-    public enum Element
-    { 
-        Fire,
-        Water,
-        Earth,
-        Wind,
-        Neutral
-    } 
+    
+    [HideInInspector]
+    [SerializeField]
+    public Weakness[] weaknesses = new Weakness[0];
 }
