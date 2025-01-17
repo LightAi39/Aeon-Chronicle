@@ -99,16 +99,16 @@ public class TurnOrderEntity : MonoBehaviour
     private Character PrepareScriptableObjects(Character character)
     {
         Character result = Instantiate(character);
-        result.weapon = result.weapon ? Instantiate(result.weapon) : result.weapon;
-        result.headpiece = result.headpiece ? Instantiate(result.headpiece) : result.headpiece;
-        result.chestpiece = result.chestpiece ? Instantiate(result.chestpiece) : result.chestpiece;
-        result.gloves = result.gloves ? Instantiate(result.gloves) : result.gloves;
-        result.legs = result.legs ? Instantiate(result.legs) : result.legs;
-        result.boots = result.boots ? Instantiate(result.boots) : result.boots;
-        result.accessory = result.accessory ? Instantiate(result.accessory) : result.accessory;
+
+        int i = 0;
+        foreach(Equipment equipment in result.equipment)
+        {
+            result.equipment[i] = equipment ? Instantiate(equipment) : equipment;
+            i++;
+        }
         result.skills = result.skills.Select(Instantiate).ToList();
         result.consumables = result.consumables.Select(Instantiate).ToList();
-
+        
         return result;
     }
 
@@ -126,57 +126,49 @@ public class TurnOrderEntity : MonoBehaviour
             0, //critchance 7
             0 //critdamage 8
         };
-        
-        if (character.weapon != null)
+        int i = 0;
+        foreach(Equipment equipment in character.equipment)
         {
-            stats[2] += character.weapon.strength;
-            stats[4] += character.weapon.intelligence;
-        }
+            if(equipment == null)
+            {
+                continue;
+            }
 
-        if (character.headpiece != null)
-        {
-            stats[0] += character.headpiece.hp;
-            stats[1] += character.headpiece.sp;
-            stats[4] += character.headpiece.intelligence;
-        }
-
-        if (character.chestpiece != null)
-        {
-            stats[0] += character.chestpiece.hp;
-            stats[1] += character.chestpiece.sp;
-            stats[3] += character.chestpiece.resilience;
-            stats[5] += character.chestpiece.mind;
-        }
-
-        if (character.gloves != null)
-        {
-            stats[2] += character.gloves.strength;
-            stats[7] += character.gloves.critChance;
-            stats[8] += character.gloves.critDamage;
-        }
-
-        if (character.legs != null)
-        {
-            stats[0] += character.legs.hp;
-            stats[1] += character.legs.sp;
-            stats[3] += character.legs.resilience;
-            stats[5] += character.legs.mind;
-            stats[6] += character.legs.agility;
-        }
-
-        if (character.boots != null)
-        {
-            stats[6] += character.boots.agility;
-            stats[7] += character.boots.critChance;
-            stats[8] += character.boots.critDamage;
-        }
-
-        if (character.accessory != null)
-        {
-            stats[2] += character.accessory.strength;
-            stats[4] += character.accessory.intelligence;
-            stats[7] += character.accessory.critChance;
-            stats[8] += character.accessory.critDamage;
+            foreach(StatValuePair _stat in equipment.stats)
+            {
+                switch(_stat.stat)
+                {
+                    case Stats.HP:
+                    stats[0] += _stat.value;
+                    break;
+                    case Stats.SP:
+                    stats[1] += _stat.value;
+                    break; 
+                    case Stats.Strength:
+                    stats[2] += _stat.value;
+                    break; 
+                    case Stats.Resilience:
+                    stats[3] += _stat.value;
+                    break; 
+                    case Stats.Intelligence:
+                    stats[4] += _stat.value;
+                    break; 
+                    case Stats.Mind:
+                    stats[5] += _stat.value;
+                    break; 
+                    case Stats.Agility:
+                    stats[6] += _stat.value;
+                    break; 
+                    case Stats.CritChance:
+                    stats[7] += _stat.value;
+                    break; 
+                    case Stats.CritDamage:
+                    stats[8] += _stat.value;
+                    break;  
+                    default:
+                    break;
+                }
+            }
         }
 
         return stats;

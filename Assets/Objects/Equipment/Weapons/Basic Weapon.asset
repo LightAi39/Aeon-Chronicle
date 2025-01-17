@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faee3f0b28b865a4a812e51c800863b4, type: 3}
-  m_Name: Basic Katana
+  m_Script: {fileID: 11500000, guid: 8d89147983f15354988d1008f7b1dd2a, type: 3}
+  m_Name: Basic Weapon
   m_EditorClassIdentifier: 
-  itemName: Basic Katana.
-  itemDescription: A basic katana.
+  itemName: Basic Weapon
+  itemDescription: A basic weapon for your main hand.
   itemType: 1
   equipmentType: 0
+  stats:
+  - stat: 0
+    value: 5
   basicAttack: {fileID: 11400000, guid: e863d59be18f4634c92110f9f7e9143c, type: 2}
-  damageTypes: 00000000
+  passives: 

@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b8c784ecf496949a340cae75ee36ba, type: 3}
-  m_Name: Simple Ring
+  m_Script: {fileID: 11500000, guid: 8d89147983f15354988d1008f7b1dd2a, type: 3}
+  m_Name: Pants
   m_EditorClassIdentifier: 
-  itemName: Simple Ring
-  itemDescription: A simple ring.
+  itemName: Pants
+  itemDescription: Pants.
   itemType: 1
-  equipmentType: 6
-  strength: 1
-  intelligence: 1
-  critChance: 0
-  critDamage: 0
+  equipmentType: 5
+  stats:
+  - stat: 0
+    value: 1
+  basicAttack: {fileID: 0}
+  passives: 

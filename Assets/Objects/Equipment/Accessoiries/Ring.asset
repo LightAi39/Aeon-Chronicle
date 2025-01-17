@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec8be5f500805d4d9d58c3d22adf1df, type: 3}
-  m_Name: Leather Boots
+  m_Script: {fileID: 11500000, guid: 8d89147983f15354988d1008f7b1dd2a, type: 3}
+  m_Name: Ring
   m_EditorClassIdentifier: 
-  itemName: Leather Boots
-  itemDescription: Boots made of leather.
+  itemName: Ring
+  itemDescription: A ring.
   itemType: 1
-  equipmentType: 5
-  agility: 3
-  critChance: 0
-  critDamage: 0
+  equipmentType: 7
+  stats:
+  - stat: 0
+    value: 1
+  basicAttack: {fileID: 0}
+  passives: 

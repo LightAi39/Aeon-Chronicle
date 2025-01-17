@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 012ac43d91d310f41af8cc3910a5c129, type: 3}
-  m_Name: Simple Hat
+  m_Script: {fileID: 11500000, guid: 8d89147983f15354988d1008f7b1dd2a, type: 3}
+  m_Name: Hat
   m_EditorClassIdentifier: 
-  itemName: Simple Hat
-  itemDescription: A simple hat.
+  itemName: Hat
+  itemDescription: Hat.
   itemType: 1
-  equipmentType: 1
-  hp: 2
-  sp: 3
-  intelligence: 1
+  equipmentType: 2
+  stats:
+  - stat: 0
+    value: 1
+  basicAttack: {fileID: 0}
+  passives: 

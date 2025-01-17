@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum EquipmentType
 {
-    Weapon,
+    Main_Hand,
+    Off_Hand,
     Headpiece,
     Chestpiece,
     Gloves,
