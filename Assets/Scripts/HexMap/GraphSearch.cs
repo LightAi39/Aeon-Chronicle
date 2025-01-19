@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// This is the BFS algorithm used to find the movement cost based movement range, as well as constructing the path.
+/// </summary>
 public class GraphSearch
 {
     public static BfsResult BfsGetRange(HexGrid hexGrid, Vector3Int startPoint, int movementPoints)

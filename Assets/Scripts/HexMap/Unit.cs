@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class serves as the Unit moving on the map. This implementation is intended to be the player controlled character.
+/// 
+/// </summary>
 [SelectionBase]
 public class Unit : MonoBehaviour
 {

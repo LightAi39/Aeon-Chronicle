@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles all units on the map, their selection states, and additional selection management related to unit movement.
+/// </summary>
 public class UnitManager : MonoBehaviour
 {
     [SerializeField]

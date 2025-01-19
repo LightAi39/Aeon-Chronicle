@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is the hex grid "manager".
+/// It gathers a list of all tiles at Start. It manages getting tiles from both world space and tile coordinates, as well as all neighbouring tiles of a tile coordinate.
+/// </summary>
 public class HexGrid : MonoBehaviour
 {
     private Dictionary<Vector3Int, HexTile> _hexTileDict = new();
@@ -57,6 +61,7 @@ public class HexGrid : MonoBehaviour
     }
 }
 
+// This stores coordinate offsets for use in the GetNeighboursFor function.
 public static class Direction
 {
     public static readonly List<Vector3Int> DirectionsOffsetOdd = new()

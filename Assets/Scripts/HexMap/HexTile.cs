@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class defines a Hex Tile itself. It stores its type, movement cost, and some base logic.
+/// </summary>
 [SelectionBase]
 public class HexTile : MonoBehaviour
 {

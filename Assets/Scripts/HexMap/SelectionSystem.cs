@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// This class handles the logic for selecting tiles and units with the cursor from the camera view.
+/// This is where you can expand mouse input actions to make other clickable things.
+/// </summary>
 public class SelectionSystem : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
