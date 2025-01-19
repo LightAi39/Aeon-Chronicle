@@ -10,6 +10,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// This is not a manager, but the main acting unit’s script. It contains a lot of logic for all actions and states, which you can get more information about in the inline comments.
+/// If you want a character to do something, or be affected by something, this is where it is implemented. This script is also extensively used as a marker that a game object is a character entity, such as in the TargetingManager or TurnController.
+/// Statistics of the entity are loaded in from a scriptable object at the Initialize method.
+/// </summary>
 public class TurnOrderEntity : MonoBehaviour
 {
     [Header("Turn Stats")]

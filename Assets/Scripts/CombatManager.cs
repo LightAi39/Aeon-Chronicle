@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+/// <summary>
+/// This script is used as a top level manager. It’s where events are declared and acts as a singleton which you can use to find the other managers.
+/// </summary>
 public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;

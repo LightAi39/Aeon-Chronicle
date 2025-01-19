@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// This script, as the name implies, controls which Turn Order Entity may act according to the delay-based queue. At the Awake, this script will find all TurnOrderEntity’s and put them in a list sorted by delay.
+/// To get the next turn, you call the GetNextTurn method. If necessary, this involves advancing the delay.
+/// When you wish to end a turn, you can call FinishCurrentTurn, which will update the entity’s delay based on its stat, and reorder the list.
+/// When a character dies, they are removed with the KillCharacter method.
+/// </summary>
 public class TurnController : MonoBehaviour
 {
     public List<TurnOrderEntry> TurnOrder => _turnOrder;

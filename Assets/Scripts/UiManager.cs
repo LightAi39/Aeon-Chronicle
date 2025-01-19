@@ -7,6 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
+/// <summary>
+/// This is where all UI logic is done, in order to consolidate it. There is nothing special about this particular manager, as it is not at all necessary to expand UI with this manager. You can look at the inline documentation for more information.
+/// </summary>
 public class UiManager : MonoBehaviour
 {
     public WeaknessInfoManager weaknessInfoManager;

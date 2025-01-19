@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class is the hex grid "manager".
-/// It gathers a list of all tiles at Start. It manages getting tiles from both world space and tile coordinates, as well as all neighbouring tiles of a tile coordinate.
+/// This class is the top-level hex grid manager. It gathers a list of all tiles at Start and stores it.
+/// It also manages getting tiles from both world space and tile coordinates, as well as all neighbouring tiles of a tile coordinate.
+/// When loading tiles after loading them dynamically in the future, you can simply trigger the Start logic to initialize everything correctly.
 /// </summary>
 public class HexGrid : MonoBehaviour
 {

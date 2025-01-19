@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+/// <summary>
+/// This script simply switches the active camera based on the current acting character and the selected character. The cinemachine package handles the movement.
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     private CinemachineVirtualCamera currentCamera;

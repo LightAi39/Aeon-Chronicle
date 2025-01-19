@@ -4,6 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// This class handles all units on the map, their selection states, and additional selection management related to unit movement.
+/// This is essential for making sure the right actions/visual states get applied to the right unit, if more than one are present on the map.
 /// </summary>
 public class UnitManager : MonoBehaviour
 {

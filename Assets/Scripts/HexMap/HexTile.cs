@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class defines a Hex Tile itself. It stores its type, movement cost, and some base logic.
+/// This is the main script that defines a hex tile itself. It stores its type, movement cost related with that type, and some base logic like highlighting the tile. This class is used to look for tiles in some of the other scripts.
 /// </summary>
 [SelectionBase]
 public class HexTile : MonoBehaviour

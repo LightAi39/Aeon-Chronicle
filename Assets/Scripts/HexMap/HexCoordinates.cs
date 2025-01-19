@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class provides a coordinate on the hex map.
+/// This class provides a coordinate on the hex map. It is attached to the hex tile prefab as a means of storing its hex map coordinate.
 /// This could be refactored into being replaced by a unity 2d Grid component, as they essentially serve the same purpose of providing coordinates, if desired for other functionality.
 /// </summary>
 [SelectionBase]

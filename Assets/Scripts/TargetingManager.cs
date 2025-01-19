@@ -4,6 +4,10 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// This manager facilitates the targeting mechanic, including methods for triggering actions.
+/// This lets the player cycle between targets with a left and right input, and perform actions on the target, which will call logic inside the target TurnOrderEntity.
+/// </summary>
 public class TargetingManager : MonoBehaviour
 {
     [HideInInspector]
@@ -32,7 +36,7 @@ public class TargetingManager : MonoBehaviour
         
     }
     
-    // TODO: fuck this temp shit
+    // this could be done with a better approach, but this works
     public void ChangeTargetLeft()
     {
         if (targetingEnemies)

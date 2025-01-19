@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class serves as the Unit moving on the map. This implementation is intended to be the player controlled character.
-/// 
+/// This is the script for the unit that represents the players position, it will move along the map based on its movementPoints stat, and the speed at which it moves visually can also be configured with variables here.
+/// The movement lerp logic called in the movement system is inside this script.
 /// </summary>
 [SelectionBase]
 public class Unit : MonoBehaviour

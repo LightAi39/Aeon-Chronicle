@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This puts a glow effect shader onto an object when eeded, as well as restoring the original state.
+/// </summary>
 public class GlowHighlight : MonoBehaviour
 {
     private Dictionary<Renderer, Material[]> glowMaterialDictionary = new();
