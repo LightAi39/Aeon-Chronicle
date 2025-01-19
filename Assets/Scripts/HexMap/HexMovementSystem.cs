@@ -5,7 +5,7 @@ using UnityEngine;
 using static GraphSearch;
 
 /// <summary>
-/// This is the movement system for the Unit on the Hex map. It manages the visuals for range, movement,
+/// This is the movement system for the Unit on the Hex map. It manages the visuals for range,
 /// interacting with the range search algorithm, as well as showing the path and moving the character on it.
 ///
 /// This uses a BFS algorithm you can find in GraphSearch.cs
