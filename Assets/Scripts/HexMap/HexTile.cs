@@ -13,6 +13,7 @@ public class HexTile : MonoBehaviour
     private HexCoordinates _hexCoordinates;
 
     [SerializeField] private HexType hexType;
+    public HexType HexType => hexType;
 
     public Vector3Int HexCoords => _hexCoordinates.GetHexCoords();
     
@@ -23,6 +24,7 @@ public class HexTile : MonoBehaviour
         HexType.Road => 5,
         HexType.Town => 10,
         HexType.PoI => 10,
+        HexType.Fight => 10,
         _ => throw new Exception($"Hex of type {hexType} not supported")
     };
 
@@ -71,5 +73,6 @@ public enum HexType
     PoI,
     Water,
     Requirement,
-    Obstacle
+    Obstacle,
+    Fight
 }

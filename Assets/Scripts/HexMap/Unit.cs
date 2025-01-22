@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private int movementPoints = 20;
     public int MovementPoints { get => movementPoints; }
+    public HexGrid HexGrid;
 
     [SerializeField]
     private float movementDuration = 1, rotationDuration = 0.3f;
@@ -20,11 +21,37 @@ public class Unit : MonoBehaviour
     private GlowHighlight glowHighlight;
     private Queue<Vector3> pathPositions = new Queue<Vector3>();
 
+    public GameObject enterFightButton;
+
     public event Action<Unit> MovementFinished;
 
     private void Awake()
     {
         glowHighlight = GetComponent<GlowHighlight>();
+        MovementFinished += OnMovementFinished;
+    }
+    
+    // this is to handle the temporary start fight button
+    private void OnMovementFinished(Unit obj)
+    {
+        var hexPos = HexCoordinates.ConvertPositionToOffset(transform.position);
+        hexPos.y = 0;
+        HexTile currentTile = HexGrid.GetTileAt(hexPos);
+
+        if (currentTile == null)
+        {
+            Debug.Log("unit does not appear to be on a tile");
+            return;
+        }
+
+        if (currentTile.HexType == HexType.Fight)
+        {
+            enterFightButton.SetActive(true);
+        }
+        else
+        {
+            enterFightButton.SetActive(false);
+        }
     }
 
     public void Deselect()
@@ -68,6 +95,7 @@ public class Unit : MonoBehaviour
 
     private IEnumerator MovementCoroutine(Vector3 endPosition)
     {
+        enterFightButton.SetActive(false); // this is to handle the temporary start fight button
         Vector3 startPosition = transform.position;
         endPosition.y = startPosition.y;
         float timeElapsed = 0;
