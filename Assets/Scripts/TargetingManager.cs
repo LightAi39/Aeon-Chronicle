@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ public class TargetingManager : MonoBehaviour
     public List<TurnOrderEntity> Friendlies = new();
     [HideInInspector]
     public List<TurnOrderEntity> Enemies = new();
-    
-    public TurnOrderEntity TargetedEnemy => Enemies[targetedEnemyIndex];
-    public TurnOrderEntity TargetedFriendly => Friendlies[targetedFriendlyIndex];
+
+    public TurnOrderEntity TargetedEnemy => GetEnemy();
+    public TurnOrderEntity TargetedFriendly => GetFriendly();
     [HideInInspector]
     public bool IsActivelyTargeting = false;
     
@@ -34,6 +35,32 @@ public class TargetingManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private TurnOrderEntity GetEnemy()
+    {
+        try
+        {
+            return Enemies[targetedEnemyIndex];
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Debug.LogError(e);
+            return null;
+        }
+    }
+    
+    private TurnOrderEntity GetFriendly()
+    {
+        try
+        {
+            return Friendlies[targetedFriendlyIndex];
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Debug.LogError(e);
+            return null;
+        }
     }
     
     // this could be done with a better approach, but this works

@@ -28,8 +28,10 @@ public class TurnController : MonoBehaviour
         }
         
         SortList();
+        
+        CombatManager.Instance.CombatStateChanged += OnCombatStateChanged;
     }
-
+    
     // gets the next turn (and advances time to make the next turn 0 delay)
     public TurnOrderEntry GetNextTurn()
     {
@@ -67,6 +69,16 @@ public class TurnController : MonoBehaviour
     public void KillCharacter(TurnOrderEntity entity)
     {
         _turnOrder.Remove(_turnOrder.First(x => x.entity == entity));
+    }
+    
+    // temporary check if the battle is over - if it is, return to the main menu
+    private void OnCombatStateChanged()
+    {
+        // one of the teams is completely defeated
+        if (_turnOrder.All(x => x.team != 0) || _turnOrder.All(x => x.team != 1))
+        {
+            CombatManager.Instance.asyncLoader.LoadScene("Main Menu");
+        }
     }
 }
 

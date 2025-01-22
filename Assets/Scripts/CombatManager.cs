@@ -14,6 +14,7 @@ public class CombatManager : MonoBehaviour
     public TurnController turnController;
     public TargetingManager targetingManager;
     public CameraController cameraController;
+    public AsyncLoader asyncLoader;
     
     void Awake()
     {
