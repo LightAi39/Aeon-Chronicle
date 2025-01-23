@@ -17,3 +17,5 @@ MonoBehaviour:
   description: Slashes an enemy.
   value: 2
   spCost: 3
+  powerModifier: 1
+  damageTypes: 00000000
