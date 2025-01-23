@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   name: Block
-  skilltype: 1
+  skilltype: 2
   description: Blocks incoming damage.
-  value: 3
+  value: 1
   spCost: 8
+  powerModifier: 1
+  damageTypes: 08000000

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7a60895dc8c641aff0bf0e023b091, type: 3}
+  m_Name: Dps Character
+  m_EditorClassIdentifier: 
+  name: Swordfighter
+  maxHp: 20
+  maxSp: 12
+  strength: 7
+  resilience: 4
+  intelligence: 1
+  mind: 2
+  agility: 7
+  critChance: 25
+  critDamage: 50
+  equipment:
+  - {fileID: 11400000, guid: 7b88797bc6a6bf3458d918afb89f60f3, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: ed967df63d8e37c4ea70a4815ead1862, type: 2}
+  - {fileID: 11400000, guid: 70c363e000a9f3243840c81d57acf5f8, type: 2}
+  - {fileID: 11400000, guid: cea5506ced8df7246a5d3f9f102b2705, type: 2}
+  - {fileID: 11400000, guid: cff2b610fc3231c45853c0b73acbff54, type: 2}
+  - {fileID: 11400000, guid: cff2b610fc3231c45853c0b73acbff54, type: 2}
+  - {fileID: 11400000, guid: cf75f8eb26fa8ce48ba5a6713a861fd0, type: 2}
+  - {fileID: 11400000, guid: cf75f8eb26fa8ce48ba5a6713a861fd0, type: 2}
+  damageTypes: 00000000
+  skills:
+  - {fileID: 11400000, guid: 0a15ea20b6cf45948af59cbef05acecf, type: 2}
+  - {fileID: 11400000, guid: c23c74bf81e7d1e4f91cbdfe8629d937, type: 2}
+  consumables:
+  - {fileID: 11400000, guid: 57b0c30226f2fbe4eaf4b2525eec7e88, type: 2}
+  weaknesses:
+  - type: 0
+    weaknessValue: 100
+  - type: 1
+    weaknessValue: 100
+  - type: 2
+    weaknessValue: 100
+  - type: 3
+    weaknessValue: 100
+  - type: 4
+    weaknessValue: 100
+  - type: 5
+    weaknessValue: 100
+  - type: 6
+    weaknessValue: 100
+  - type: 7
+    weaknessValue: 100
+  - type: 8
+    weaknessValue: 100

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerTurnState : ICombatState
 {
     private readonly CombatSequenceController _controller;
     private readonly TurnOrderEntity _entity;
+    private CameraController _cameraController;
 
     public PlayerTurnState(CombatSequenceController combatSequenceController, TurnOrderEntity entity)
     {
@@ -16,7 +19,16 @@ public class PlayerTurnState : ICombatState
     
     public void Enter()
     {
+        if (!_cameraController)
+        {
+            _cameraController = CombatManager.Instance.cameraController;
+        }
+        
         Debug.Log("Player Turn Start");
+        
+        // move camera in position
+        _cameraController.SwitchCamera(_entity.camera);
+        
         // TODO: handle initialization of UI or player actions
         // TODO; remove the stupid
         CombatManager.Instance.targetingManager.ActivateTargeting();

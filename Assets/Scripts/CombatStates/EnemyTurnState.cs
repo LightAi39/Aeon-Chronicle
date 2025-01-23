@@ -7,6 +7,7 @@ public class EnemyTurnState : ICombatState
 {
     private readonly CombatSequenceController _controller;
     private readonly TurnOrderEntity _entity;
+    private CameraController _cameraController;
 
     public EnemyTurnState(CombatSequenceController combatSequenceController, TurnOrderEntity entity)
     {
@@ -16,6 +17,11 @@ public class EnemyTurnState : ICombatState
     
     public void Enter()
     {
+        if (!_cameraController)
+        {
+            _cameraController = CombatManager.Instance.cameraController;
+        }
+        
         Debug.Log("Enemy Turn Start");
         if (_entity.currentHp == 0)
         {
@@ -24,11 +30,18 @@ public class EnemyTurnState : ICombatState
         }
         else
         {
-            // TODO: handle AI
+            // pick a random target
+            var friendlies = CombatManager.Instance.targetingManager.Friendlies;
+            var target = friendlies[Random.Range(0, friendlies.Count)];
+            
+            // move camera in position
+            _cameraController.SwitchCamera(target.camera);
+            
+            // initialize turn
             _entity.StartTurn();
         
-            // placeholder logic
-            _entity.Attack(_entity.EntityToAttackTemp);
+            // attack
+            _entity.UseSkill(_entity.characterScriptableObject.equipment[0].basicAttack, target);
         }
     }
 

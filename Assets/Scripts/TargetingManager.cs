@@ -1,20 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// This manager facilitates the targeting mechanic, including methods for triggering actions.
+/// This lets the player cycle between targets with a left and right input, and perform actions on the target, which will call logic inside the target TurnOrderEntity.
+/// </summary>
 public class TargetingManager : MonoBehaviour
 {
     [HideInInspector]
     public List<TurnOrderEntity> Friendlies = new();
     [HideInInspector]
     public List<TurnOrderEntity> Enemies = new();
-    
-    public TurnOrderEntity TargetedEnemy => Enemies[targetedEnemyIndex];
+
+    public TurnOrderEntity TargetedEnemy => GetEnemy();
+    public TurnOrderEntity TargetedFriendly => GetFriendly();
     [HideInInspector]
     public bool IsActivelyTargeting = false;
     
     private int targetedEnemyIndex = 0;
+    private int targetedFriendlyIndex = 0;
+    public bool targetingEnemies = true;
     
     void Awake()
     {
@@ -27,27 +36,77 @@ public class TargetingManager : MonoBehaviour
     {
         
     }
+
+    private TurnOrderEntity GetEnemy()
+    {
+        try
+        {
+            return Enemies[targetedEnemyIndex];
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Debug.LogError(e);
+            return null;
+        }
+    }
     
-    // TODO: fuck this temp shit
+    private TurnOrderEntity GetFriendly()
+    {
+        try
+        {
+            return Friendlies[targetedFriendlyIndex];
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Debug.LogError(e);
+            return null;
+        }
+    }
+    
+    // this could be done with a better approach, but this works
     public void ChangeTargetLeft()
     {
-        targetedEnemyIndex += 1;
-        if (targetedEnemyIndex > 2)
+        if (targetingEnemies)
         {
-            targetedEnemyIndex = 0;
+            targetedEnemyIndex += 1;
+            if (targetedEnemyIndex > Enemies.Count - 1)
+            {
+                targetedEnemyIndex = 0;
+            }
         }
+        else
+        {
+            targetedFriendlyIndex += 1;
+            if (targetedFriendlyIndex > Friendlies.Count - 1)
+            {
+                targetedFriendlyIndex = 0;
+            }
+        }
+        
 
         CombatManager.Instance.DoTargetChanged();
     }
-
+    
     public void ChangeTargetRight()
     {
-        targetedEnemyIndex -= 1;
-        if (targetedEnemyIndex < 0)
+        if (targetingEnemies)
         {
-            targetedEnemyIndex = 2;
+            targetedEnemyIndex -= 1;
+            if (targetedEnemyIndex < 0)
+            {
+                targetedEnemyIndex = Enemies.Count - 1;
+            }
+        }
+        else
+        {
+            targetedFriendlyIndex -= 1;
+            if (targetedFriendlyIndex < 0)
+            {
+                targetedFriendlyIndex = Friendlies.Count - 1;
+            }
         }
         
+
         CombatManager.Instance.DoTargetChanged();
     }
 
@@ -57,7 +116,7 @@ public class TargetingManager : MonoBehaviour
         {
             var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
 
-            teammate.Attack(TargetedEnemy);
+            teammate.UseSkill(teammate.characterScriptableObject.equipment[0].basicAttack, TargetedEnemy);
         }
         
     }
@@ -90,7 +149,47 @@ public class TargetingManager : MonoBehaviour
         {
             var teammate = CombatManager.Instance.turnController.GetNextTurn().entity;
 
-            teammate.UseSkill(teammate.skills[0], TargetedEnemy);
+            if (targetingEnemies)
+            {
+                teammate.UseSkill(teammate.character.skills[0], TargetedEnemy);
+            }
+            else
+            {
+                teammate.UseSkill(teammate.character.skills[0], TargetedFriendly);
+            }
+
+            targetingEnemies = true;
+            CombatManager.Instance.DoTargetChanged();
         }
+    }
+
+    public void ToggleTargetingFriendlies()
+    {
+        targetingEnemies = !targetingEnemies;
+        CombatManager.Instance.DoTargetChanged();
+    }
+    
+
+    public void RemoveEnemy(TurnOrderEntity enemy)
+    {
+        Enemies.Remove(enemy);
+        if (targetedEnemyIndex > Enemies.Count - 1)
+        {
+            targetedEnemyIndex = Enemies.Count - 1;
+        }
+
+        CombatManager.Instance.turnController.KillCharacter(enemy);
+        CombatManager.Instance.DoTargetChanged();
+    }
+    
+    public void RemoveFriendly(TurnOrderEntity friendly)
+    {
+        Friendlies.Remove(friendly);
+        if (targetedFriendlyIndex > Friendlies.Count - 1)
+        {
+            targetedFriendlyIndex = Friendlies.Count - 1;
+        }
+        CombatManager.Instance.turnController.KillCharacter(friendly);
+        CombatManager.Instance.DoTargetChanged();
     }
 }

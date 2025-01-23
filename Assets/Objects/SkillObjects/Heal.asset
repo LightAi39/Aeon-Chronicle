@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   name: Heal
-  skilltype: 2
+  skilltype: 3
   description: Heals an ally.
-  value: 2
+  value: 1
   spCost: 6
+  powerModifier: 1
+  damageTypes: 03000000
