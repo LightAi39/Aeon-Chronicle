@@ -15,13 +15,18 @@ public class AsyncLoader : MonoBehaviour
     [SerializeField]
     private string animationToTrigger;
     private CanvasGroup _canvasGroup;
+    private bool isLoading;
 
     private void Awake()
     {
         _canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
     }
+    
     public async void LoadScene(string sceneToLoad)
     {
+        if (isLoading) return; // Prevent duplicate loads
+        isLoading = true;
+        
         loadingScreen.SetActive(true);
         StartCoroutine(LoadSceneSequence(sceneToLoad, animationToTrigger));
     }
@@ -61,6 +66,7 @@ public class AsyncLoader : MonoBehaviour
         yield return StartCoroutine(EngageAnimation(animationToTrigger));
 
         loadOperation.allowSceneActivation = true;
+        isLoading = false;
     }
     IEnumerator EngageAnimation(string animationToTrigger)
     {

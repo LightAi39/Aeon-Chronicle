@@ -20858,6 +20858,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c57ef247-fd3e-4f14-b3c7-c6c1ab91245e
     m_ActionName: Map tile movement/Select Tile[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 461522101}
+        m_TargetAssemblyTypeName: AsyncLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main Menu
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e61b950a-ccd3-4dd6-8c10-fd4fc2fe19df
+    m_ActionName: Map tile movement/go to main menu[/Keyboard/delete]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Map tile movement
