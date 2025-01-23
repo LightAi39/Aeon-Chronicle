@@ -65,7 +65,6 @@ public class TurnOrderEntity : MonoBehaviour
     public List<Renderer> objectRenderers;
     public Transform DmgPosition;
     public CinemachineVirtualCamera camera;
-    public TurnOrderEntity EntityToAttackTemp;
     private bool isActiveTurn = false;
     private bool isTargeted = false;
     private bool died = false;

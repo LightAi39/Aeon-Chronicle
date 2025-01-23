@@ -54,7 +54,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 90
+    FieldOfView: 80
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -247,7 +247,6 @@ MonoBehaviour:
   - {fileID: 0}
   DmgPosition: {fileID: 2652222125708088529}
   camera: {fileID: 4323001565457280563}
-  EntityToAttackTemp: {fileID: 0}
 --- !u!1 &8303464097251237327
 GameObject:
   m_ObjectHideFlags: 0

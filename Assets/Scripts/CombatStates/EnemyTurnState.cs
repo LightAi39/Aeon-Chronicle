@@ -30,14 +30,18 @@ public class EnemyTurnState : ICombatState
         }
         else
         {
-            // move camera in position
-            _cameraController.SwitchCamera(_entity.EntityToAttackTemp.camera);
+            // pick a random target
+            var friendlies = CombatManager.Instance.targetingManager.Friendlies;
+            var target = friendlies[Random.Range(0, friendlies.Count)];
             
-            // TODO: handle AI
+            // move camera in position
+            _cameraController.SwitchCamera(target.camera);
+            
+            // initialize turn
             _entity.StartTurn();
         
-            // placeholder logic
-            _entity.UseSkill(_entity.characterScriptableObject.equipment[0].basicAttack, _entity.EntityToAttackTemp);
+            // attack
+            _entity.UseSkill(_entity.characterScriptableObject.equipment[0].basicAttack, target);
         }
     }
 
